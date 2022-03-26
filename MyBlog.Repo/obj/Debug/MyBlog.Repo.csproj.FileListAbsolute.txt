@@ -1,0 +1,74 @@
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\obj\Debug\MyBlog.Repo.csprojResolveAssemblyReference.cache
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll.config
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\EntityFramework.dll
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\MyBlog.Service.dll
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\MyBlog.Service.pdb
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\EntityFramework.xml
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\documents\visual studio 2015\Projects\MyBlog-website\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll.config
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\EntityFramework.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\MyBlog.Service.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\MyBlog.Service.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\EntityFramework.xml
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\obj\Debug\MyBlog.Repo.csprojResolveAssemblyReference.cache
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-website - Copy (12)\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll.config
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Service.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Service.pdb
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.xml
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csprojResolveAssemblyReference.cache
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Documents\Visual Studio 2015\Projects\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll.config
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Repo.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Data.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Service.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Data.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\MyBlog.Service.pdb
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.xml
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csprojAssemblyReference.cache
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csproj.CoreCompileInputs.cache
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.csproj.CopyComplete
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
+C:\Users\Alaeddin\Desktop\Temp\VS\MyBlog-ASP.NET-MVC5\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll.config
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Repo.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Data.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Service.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Data.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Service.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.xml
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.xml
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyBlog.Repo.csproj.AssemblyReference.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyBlog.Repo.csproj.CoreCompileInputs.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyBlog.Repo.csproj.CopyComplete
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb

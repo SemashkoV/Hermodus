@@ -1,0 +1,6 @@
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Data\bin\Debug\MyBlog.Data.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Data\bin\Debug\MyBlog.Data.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Data\obj\Debug\MyCMS.Data.csproj.AssemblyReference.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Data\obj\Debug\MyCMS.Data.csproj.CoreCompileInputs.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Data\obj\Debug\MyBlog.Data.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Data\obj\Debug\MyBlog.Data.pdb

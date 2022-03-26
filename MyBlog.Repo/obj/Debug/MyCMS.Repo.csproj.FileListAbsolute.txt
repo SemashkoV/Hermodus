@@ -1,0 +1,16 @@
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll.config
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Repo.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Repo.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Data.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Service.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Data.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\MyBlog.Service.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.xml
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\bin\Debug\EntityFramework.SqlServer.xml
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyCMS.Repo.csproj.AssemblyReference.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyCMS.Repo.csproj.CoreCompileInputs.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyCMS.Repo.csproj.CopyComplete
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyBlog.Repo.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Repo\obj\Debug\MyBlog.Repo.pdb

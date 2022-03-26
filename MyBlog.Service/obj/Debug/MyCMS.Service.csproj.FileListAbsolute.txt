@@ -1,0 +1,9 @@
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\bin\Debug\MyBlog.Service.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\bin\Debug\MyBlog.Service.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\bin\Debug\MyBlog.Data.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\bin\Debug\MyBlog.Data.pdb
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\obj\Debug\MyCMS.Service.csproj.AssemblyReference.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\obj\Debug\MyCMS.Service.csproj.CoreCompileInputs.cache
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\obj\Debug\MyCMS.Service.csproj.CopyComplete
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\obj\Debug\MyBlog.Service.dll
+D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.Service\obj\Debug\MyBlog.Service.pdb
