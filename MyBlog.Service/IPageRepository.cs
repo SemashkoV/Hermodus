@@ -15,6 +15,7 @@ namespace MyBlog.Service
         IEnumerable<Page> PageIEnum { get; }
         List<Page> PageList { get; }
         Page Details(int? Id);
-       
+        Page Delete(int? Id);
+
     }
 }

@@ -15,94 +15,9 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-           <!--Start Show/Hide Widget-->
+          
 
-            <div class="form-group">
-                <div class="col-md-offset-1 col-md-10">
-
-                    <div class="panel-green">
-                        <div class="panel-heading">
-                            <i class="fa fa-fw fa-window-restore"></i>
-                            Show/Hide Widgets
-                        </div>
-                        <div class="panel-body">
-
-                            <div class="row">
-
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-list fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayLastCategory, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Last Category</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayLastCategory, "", new { @class = "text-danger" })
-                                </div>
-
-
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-comment fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayLastPost, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Last Post</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayLastPost, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-facebook-square fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayFBLogin, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Enable FB Login</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayFBLogin, "", new { @class = "text-danger" })
-                                </div>
-
-                            </div>
-                            <div class="row">
-
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-google-plus-official fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayGoogleAdv, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Google Adv</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayGoogleAdv, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-facebook-official fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayFbWidget, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Facebook</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayFbWidget, "", new { @class = "text-danger" })
-                                </div>
-
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-twitter-square fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayTwWidget, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Twitter</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayTwWidget, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-
-                                <div class="col-md-3">
-                                    <img src="https://a.disquscdn.com/dotcom/d-2407bda/img/brand/disqus-social-icon-dark.png" height="37" width="37" />
-                                    @Html.CheckBoxFor(model => model.DisplaydisqusWidget, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>disqus Comment</span>
-                                    @Html.ValidationMessageFor(model => model.DisplaydisqusWidget, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-comments fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayLocalCommentWidget, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Local Comment</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayLocalCommentWidget, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="col-md-3">
-                                    <i class="fa fa-fw fa-user-circle fa-2x"></i>
-                                    @Html.CheckBoxFor(model => model.DisplayRegister, new { htmlAttributes = new { @class = "form-control" } })
-                                    <span>Enable Register</span>
-                                    @Html.ValidationMessageFor(model => model.DisplayRegister, "", new { @class = "text-danger" })
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-           
-
-            <!--End of Show/hide Widget-->
+            
 
             <!--FB Config Start-->
             <div class="form-group">

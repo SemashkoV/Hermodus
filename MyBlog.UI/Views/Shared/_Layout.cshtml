@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Alaeddin Alhamoud</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/Loadme")
     @Styles.Render("~/Content/BootStrap")
 
@@ -80,44 +80,20 @@
                 <footer>
                     <div class="container animatedParent">
                         <div class="row animated fadeInDownShort go">
-                            <div class="col-md-3">
-                                <!-- COLUMN  -->
-
-                                <div class="row margin-bottom-30px" style="display:@_DisplayTwWidget;">
-                                    <div class="col-xs-6">
-                                        <ul class="list-unstyled footer-nav">
-                                            @Html.Action("GetWidget", "Widget", new { Id = 2 })
-                                        </ul>
-                                    </div>
-
-                                </div>
-                                <!-- END COLUMN 1 -->
-                            </div>
-                            <div class="col-md-4">
-                                <!-- COLUMN 2 -->
-
-                                <div class="row margin-bottom-30px">
-                                    <div class="col-xs-6" style="display:@_DisplayFbWidget;">
-                                        <ul class="list-unstyled footer-nav">
-                                            @Html.Action("GetWidget", "Widget", new { Id = 1 })
-                                        </ul>
-                                    </div>
-
-                                </div>
-                                <!-- END COLUMN 2 -->
-                            </div>
+                            
+                            
                             <div class="col-md-5">
                                 <!-- COLUMN 3 -->
 
                                 <div class="social-connect">
                                     <h3 class="footer-heading">GET CONNECTED</h3>
                                     <ul class="list-inline social-icons">
-                                        <li><a href="https://github.com/Alaeddinalhamoud" class="github-bg"><i class="fa fa-github"></i></a></li>
-                                        <li><a href="https://www.facebook.com/alaeddinalhamoud" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="https://twitter.com/aladinhamod" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="https://plus.google.com/+AlaeddinAlhamoud" class="googleplus-bg"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="https://www.youtube.com/channel/UCKjc_Y27mfa253dBfbBlhYA" class="youtube-bg"><i class="fa fa-youtube"></i></a></li>
-                                        <li><a href="https://uk.linkedin.com/in/alaeddin-alhamoud-8ab73333" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://github.com/SemashkoV" class="github-bg"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="https://www.facebook.com" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://plus.google.com" class="googleplus-bg"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="https://www.youtube.com" class="youtube-bg"><i class="fa fa-youtube"></i></a></li>
+                                        <li><a href="https://uk.linkedin.com" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
                                         <li><a href="@_WebsiteRoot/Home/Feed" class="rss-bg"><i class="fa fa-rss"></i></a></li>
                                     </ul>
                                 </div>
@@ -126,11 +102,9 @@
                         </div>
                     </div>
                     <!-- COPYRIGHT -->
-                    <div class="text-center copyright"> ©2016 Alaeddin Alhamoud. All Rights Reserved. </div>
+                    <div class="text-center copyright"> ©2022 SemashkoV. All Rights Reserved. </div>
                     <!-- END COPYRIGHT -->
-                    <!-- OnLineUser -->
-                    <div class="text-center copyright"><i class="fa fa-users" aria-hidden="true"></i> Total Users :@ApplicationInstance.Application["TotalofVisitor"] </div>
-                    <!-- End OnLineUser -->
+            
                 </footer>
             </div>
         </div><!-- END FOOTER -->
@@ -168,9 +142,7 @@
 
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-        <!--google analytics-->
-        @Html.Action("GetWidget", "Widget", new { Id = 5 })
-        <!--google analytics-->
+        
 
     </div>
 </body>

@@ -118,12 +118,7 @@
     </section>
     @*Start - Google Ads *@
 
-    <div style="display:@_DisplayGoogleAdv;">
-
-        @Html.Action("GetWidget", "Widget", new { Id = 3 })
-
-
-    </div>
+    
     @*End - Google Ads *@
     <section class="container">
         @Html.Partial("_CommnetByPost", Model.Comments)
@@ -132,11 +127,6 @@
         <div class="col-md-12">
 
 
-            @*Start disqus.com Commnet*@
-            <div style="display:@_DisplaydisqusWidget;">
-                @Html.Action("GetWidget", "Widget", new { Id = 4 })
-            </div>
-            @*End disqus.comComment*@
             @*Start Local Db Commnet*@
             <div style="display:@_DisplayLocalCommentWidget;">
                 @if (Request.IsAuthenticated)

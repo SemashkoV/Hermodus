@@ -3197,7 +3197,6 @@
     <Compile Include="Controllers\SettingController.cs" />
     <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\WidgetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3254,6 +3253,7 @@
     <Content Include="Views\Chart\_ImageMonthlyChart.cshtml" />
     <Content Include="Views\Shared\_CommnetByPost.cshtml" />
     <Content Include="Views\Comment\SuperUserCommentNeedAprove.cshtml" />
+    <Content Include="Views\Page\Delete.cshtml" />
     <None Include="Views\Post\Index.Old" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -3287,9 +3287,6 @@
     <Content Include="Views\Setting\UpdateSetting.cshtml" />
     <Content Include="Views\Shared\_UploadImage.cshtml" />
     <Content Include="Views\Shared\_UserFormDetails.cshtml" />
-    <Content Include="Views\Widget\UpdateWidget.cshtml" />
-    <Content Include="Views\Shared\_GetWidget.cshtml" />
-    <Content Include="Views\Widget\Index.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Page\Details.cshtml" />
     <Content Include="Views\Page\AddNewPage.cshtml" />

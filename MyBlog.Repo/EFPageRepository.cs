@@ -37,6 +37,16 @@ namespace MyBlog.Repo
                 return context.Pages.OrderByDescending(c => c.Create_Time).Take(20);
             }
         }
+        public Page Delete(int? Id)
+        {
+            Page dbEntry = context.Pages.Find(Id);
+            if (dbEntry != null)
+            {
+                context.Pages.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
         public Page Details(int? Id)
         {
             Page dbEntry = context.Pages.Find(Id);

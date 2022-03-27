@@ -19,7 +19,7 @@ namespace MyBlog.Repo
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Setting> Settings { get; set; }
-        public DbSet<Widget> Widgets { get; set; }
+       
         public DbSet<Page> Pages { get; set; }
         public DbSet<EmailSetting> EmailSettings { get; set; }
 

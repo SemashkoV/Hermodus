@@ -13,16 +13,8 @@ namespace MyBlog.UI.Models
         public bool DisplayLastCategory { get; set; }
         [DisplayName("Last Post")]
         public bool DisplayLastPost { get; set; }
-        [DisplayName("Facebook")]
-        public bool DisplayFbWidget { get; set; }
-        [DisplayName("Twitter")]
-        public bool DisplayTwWidget { get; set; }
-        [DisplayName("Google Adv")]
-        public bool DisplayGoogleAdv { get; set; }
-        [DisplayName("disqus Widget")]
-        public bool DisplaydisqusWidget { get; set; }
-        [DisplayName("Local Comment Widget")]
-        public bool DisplayLocalCommentWidget { get; set; }
+     
+       
         [DisplayName("FB Login")]
         public bool DisplayFBLogin { get; set; }
         [DisplayName("Register")]

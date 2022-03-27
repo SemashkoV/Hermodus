@@ -15,7 +15,7 @@ namespace MyBlog.UI.Models
         public IEnumerable<Category> Categories { get; set; }
         public IEnumerable<Comment> Comments { get; set; }
         public IEnumerable<Page> Pages { get; set; }
-        public IEnumerable<Widget> Widgets { get; set; }
+     
         public Page Page { get; set; }
         public Post Post { get; set; }
        virtual public IEnumerable<User> UserDetails{get;set;}

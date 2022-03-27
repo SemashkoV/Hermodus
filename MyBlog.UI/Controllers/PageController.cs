@@ -136,7 +136,35 @@ namespace MyBlog.UI.Controllers
             return PartialView("_LastPage", Model);
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete(int? Id)
+        {
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadGateway);
+            }
+            Page page = repositoryPage.Details(Id);
 
+            if (page == null)
+            {
+                return HttpNotFound();
+            }
+            return View(page);
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirm(int? Id)
+        {
+            Page page = repositoryPage.Details(Id);
+
+            Page _page = repositoryPage.Delete(Id);
+         
+            if (_page != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted", page.Title);
+            }
+            return RedirectToAction("Index", "Page");
+        }
         private Page GetPageSession()
         {
             if (Session["page"] == null)

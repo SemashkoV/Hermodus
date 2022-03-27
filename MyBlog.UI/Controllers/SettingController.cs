@@ -184,25 +184,6 @@ namespace MyBlog.UI.Controllers
             { _AdvancedSettings.DisplayLastPost = false; }
             else { _AdvancedSettings.DisplayLastPost = true; }
             
-            if (_DisplayFbWidget == "none")
-            { _AdvancedSettings.DisplayFbWidget = false; }
-            else { _AdvancedSettings.DisplayFbWidget = true; }
-            
-            if (_DisplayTwWidget == "none")
-            { _AdvancedSettings.DisplayTwWidget = false; }
-            else { _AdvancedSettings.DisplayTwWidget = true; }
-           
-            if (_DisplayGoogleAdv == "none")
-            {_AdvancedSettings.DisplayGoogleAdv = false; }
-            else { _AdvancedSettings.DisplayGoogleAdv = true; }
-
-            if (_DisplaydisqusWidget == "none")
-            { _AdvancedSettings.DisplaydisqusWidget = false; }
-            else { _AdvancedSettings.DisplaydisqusWidget = true; }
-
-            if (_DisplayLocalCommentWidget == "none")
-            { _AdvancedSettings.DisplayLocalCommentWidget = false; }
-            else { _AdvancedSettings.DisplayLocalCommentWidget = true; }
 
 
             if (_DisplayFBLogin == "none")
@@ -238,26 +219,8 @@ namespace MyBlog.UI.Controllers
             if (obj.DisplayLastPost == false)
             { _DisplayLastPost = "none"; }
             else { _DisplayLastPost = "block"; }
-            string _DisplayFbWidget;
-            if (obj.DisplayFbWidget == false)
-            { _DisplayFbWidget = "none"; }
-            else { _DisplayFbWidget = "block"; }
-            string _DisplayTwWidget;
-            if (obj.DisplayTwWidget == false)
-            { _DisplayTwWidget = "none"; }
-            else { _DisplayTwWidget = "block"; }
-            string _DisplayGoogleAdv;
-            if (obj.DisplayGoogleAdv == false)
-            { _DisplayGoogleAdv = "none"; }
-            else { _DisplayGoogleAdv = "block"; }
-            string _DisplaydisqusWidget;
-            if (obj.DisplaydisqusWidget == false)
-            { _DisplaydisqusWidget = "none"; }
-            else { _DisplaydisqusWidget = "block"; }
-            string _DisplayLocalCommentWidget;
-            if (obj.DisplayLocalCommentWidget == false)
-            { _DisplayLocalCommentWidget = "none"; }
-            else { _DisplayLocalCommentWidget = "block"; }
+        
+           
             string _DisplayFBLogin;
             if (obj.DisplayFBLogin == false)
             { _DisplayFBLogin = "none"; }
@@ -269,11 +232,7 @@ namespace MyBlog.UI.Controllers
             else { _DisplayRegister = "block"; }
 
 
-            if (_DisplaydisqusWidget == _DisplayLocalCommentWidget)
-            {
-                TempData["message"] = string.Format("Please notice , you should Active one of the Comment Widgets.");
-                return View();
-            }
+           
             if ((data.FBAppSecret==null) || (data.GoogleSecretkey == null))
             {
                 TempData["message"] = string.Format("Please Check you FBAppSecret and GoogleSecretkey ");
@@ -284,11 +243,7 @@ namespace MyBlog.UI.Controllers
             //New Key or Update
             AddUpdateAppSettings("DisplayLastCategory", _DisplayLastCategory);
             AddUpdateAppSettings("DisplayLastPost", _DisplayLastPost);
-            AddUpdateAppSettings("DisplayFbWidget", _DisplayFbWidget);
-            AddUpdateAppSettings("DisplayTwWidget", _DisplayTwWidget);
-            AddUpdateAppSettings("DisplayGoogleAdv", _DisplayGoogleAdv);
-            AddUpdateAppSettings("DisplaydisqusWidget", _DisplaydisqusWidget);
-            AddUpdateAppSettings("DisplayLocalCommentWidget", _DisplayLocalCommentWidget);
+
             AddUpdateAppSettings("DisplayFBLogin", _DisplayFBLogin);
             AddUpdateAppSettings("DisplayRegister", _DisplayRegister);
             AddUpdateAppSettings("FBAppID", obj.FBAppID);
