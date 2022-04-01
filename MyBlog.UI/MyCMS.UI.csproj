@@ -175,6 +175,7 @@
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -3190,6 +3191,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\TextController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\PageController.cs" />
@@ -3238,7 +3241,6 @@
     <Content Include="scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Post\Details.cshtml" />
     <Content Include="Views\Post\NewPost.cshtml" />
     <Content Include="Views\Post\Delete.cshtml" />
@@ -3254,6 +3256,11 @@
     <Content Include="Views\Shared\_CommnetByPost.cshtml" />
     <Content Include="Views\Comment\SuperUserCommentNeedAprove.cshtml" />
     <Content Include="Views\Page\Delete.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Text\Delete.cshtml" />
+    <Content Include="Views\Text\Index.cshtml" />
+    <Content Include="Views\Image\NewImage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Views\Post\Index.Old" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -3265,6 +3272,8 @@
     <Content Include="Views\Post\_PostByCategory.cshtml" />
     <Content Include="Views\Post\_PostByTag.cshtml" />
     <Content Include="Views\Shared\_LastPage.cshtml" />
+    <Content Include="Views\Shared\_UploadText.cshtml" />
+    <Content Include="Views\Shared\_InsertImage.cshtml" />
     <None Include="Views\User\Index.old" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
@@ -3294,7 +3303,6 @@
     <Content Include="Views\Post\SuperUserIndex.cshtml" />
     <Content Include="Views\Comment\SuperUserIndex.cshtml" />
     <Content Include="Views\Account\SuperUserIndex.cshtml" />
-    <Content Include="Views\Post\PostByTag.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Setting\UpdateEMailSetting.cshtml" />

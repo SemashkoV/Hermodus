@@ -51,8 +51,7 @@ namespace MyBlog.UI.Controllers
 
 
 
-                HomeImage = _HomePageSetting.HomeImage,
-                HomeImageText = _HomePageSetting.HomeImageText,
+         
                
                 //DisplayLastCategory = _DisplayLastCategory,
                 //DisplayLastPost = _DisplayLastPost,

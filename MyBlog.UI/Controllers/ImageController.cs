@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -85,6 +86,75 @@ namespace MyBlog.UI.Controllers
                 }
             }
             return Json(Convert.ToString(_imgname), JsonRequestBehavior.AllowGet);
+        }
+        [Authorize(Roles = "SuperUser,Admin")]
+        public ActionResult NewImage()
+        {
+            Image model = GetImageSession();
+            model.Id = 0;//Becouse HttpPost NewPost, Need Id to know Edit or AddNew .
+
+            return View(model);
+
+        }
+        [ValidateInput(false)]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperUser,Admin")]
+        public ActionResult NewImage(Image data)
+        {
+            Image obj = GetImageSession();
+
+            if (ModelState.IsValid)
+            {
+
+                var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;
+                int _CurrentUserId = Convert.ToInt32(identity.User.UserId);
+                if (_CurrentUserId == 0)
+                {
+                    //becouse Sometime id = 0 ?????!!!! maybe session die???????
+                    return View(data);
+                }
+
+                obj.Id = data.Id;
+                obj.Imagepath = data.Imagepath;
+                obj.Size = data.Size;
+
+
+                obj.Create_time = DateTime.Now;//Need solution for this field no need any value.
+                obj.UserId = _CurrentUserId;
+                if (data.Id == 0)
+                {
+                    obj.Create_time = DateTime.Now;
+                }
+                else
+                {
+                    obj.Create_time = data.Create_time;
+                }
+                int? Newid = obj.Id;
+                if (obj != null)
+                {
+                    if (data.Id == 0)
+                    {
+                        TempData["message"] = string.Format("Image was Added Successfully");
+                    }
+                    else
+                    {
+                        TempData["message"] = string.Format("Image was Edited Successfully");
+                    }
+                }
+                return RedirectToAction("Details", new { Id = Newid });
+            }
+            return View(data);
+        }
+        
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult InsertImage(int? Id)
+        {
+            Image image = imageRepository.Details(Id);
+            var Temp = "/Upload/"+image.Imagepath;
+
+            return Content(Temp);
         }
 
         [Authorize(Roles = "Admin")]

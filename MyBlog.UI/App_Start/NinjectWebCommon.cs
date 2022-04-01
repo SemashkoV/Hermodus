@@ -69,6 +69,7 @@ namespace MyBlog.UI.App_Start
             kernel.Bind<IUserRepository>().To<EFUserRepository>();
             kernel.Bind<IAuthentication>().To<FormsAuthenticationProvider>();
             kernel.Bind<IImageRepository>().To<EFImageRespository>();
+            kernel.Bind<ITextRepository>().To<EFTextRespository>();
             kernel.Bind<ICategoryRepository>().To<EFCategoryRepository>();
             kernel.Bind<ICommentRepository>().To<EFCommentRepository>();
             kernel.Bind<ISettingRepository>().To<EFSettingRepository>();

@@ -58,6 +58,7 @@
     <Compile Include="EFDbContext.cs" />
     <Compile Include="EFEmailSettingRepository.cs" />
     <Compile Include="EFEncryptionRepository.cs" />
+    <Compile Include="EFTextRespository.cs" />
     <Compile Include="EFImageRespository.cs" />
     <Compile Include="EFMembershipProvider.cs" />
     <Compile Include="EFPageRepository.cs" />

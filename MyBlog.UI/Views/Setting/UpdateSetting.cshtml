@@ -22,51 +22,7 @@
                     @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <i class="fa fa-fw fa-image"></i>
-                            Upload Home Page Image
-                        </div>
-
-
-                        <div class="panel-body">
-
-                           
-
-                                    @Html.Action("UploadImage", "Image")
-
-
-                             
-
-
-                        </div>
-                                <div class="panel-footer">
-                                    <button class="btn btn-primary" type="button" onclick="copytxt();">
-                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i> Publish it
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-            </div>
-            <div class="form-group">
-
-                @Html.LabelFor(model => model.HomeImage, htmlAttributes: new { @class = "control-label col-md-2" })
-
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.HomeImage, new { htmlAttributes = new { @class = "form-control", id = "txtval2", @readonly = "readonly" } })
-                    @Html.ValidationMessageFor(model => model.HomeImage, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.HomeImageText, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.HomeImageText, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.HomeImageText, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            
             <div class="form-group">
                 @Html.LabelFor(model => model.NumberOfLastPost, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">

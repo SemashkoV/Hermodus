@@ -16,7 +16,7 @@
         <table class="table table-hover table-condensed">
             <tr>
                 <th>Image</th>
-                <th>User</th>
+                <th>Id</th>
                 <th>Size</th>
                 <th>Upload date</th>
                 <th>Actions</th>
@@ -35,9 +35,9 @@
 
                     </td>
                     <td class="col-md-2">
-                        <a class="truncateOpt" href="~/User/Details/@item.UserId">
+                        <a class="truncateOpt" href="~/User/Details/@item.Imagepath">
                             <div class="CutlongTitle">
-                               @item.UserDetails.FName @item.UserDetails.LName
+                               @item.Id
 
                             </div>
                         </a>
@@ -73,7 +73,7 @@
 
     </div>
     <div class="panel-footer">
-        @Html.ActionLink("Add a New Image", "NewPost", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Add a New Image", "NewImage", null, new { @class = "btn btn-default" })
 
 
     </div>@*End of Panel Footer*@
