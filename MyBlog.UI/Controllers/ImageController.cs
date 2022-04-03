@@ -152,7 +152,7 @@ namespace MyBlog.UI.Controllers
         public ActionResult InsertImage(int? Id)
         {
             Image image = imageRepository.Details(Id);
-            var Temp = "/Upload/"+image.Imagepath;
+            var Temp = $@"<img src=""/Upload/{image.Imagepath}"" class=""img - responsive""/>;";
 
             return Content(Temp);
         }
