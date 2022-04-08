@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\MyBlog.UI",
-    "\\MyBlog.UI\\Views",
-    "\\MyBlog.UI\\Views\\Shared"
+    ""
   ],
-  "SelectedNode": "\\MyBlog.UI\\Views\\Shared\\_Dashbord.cshtml",
+  "SelectedNode": "\\MyCMS.sln",
   "PreviewInSolutionExplorer": false
 }
