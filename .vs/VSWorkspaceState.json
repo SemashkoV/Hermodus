@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MyBlog.UI",
+    "\\MyBlog.UI\\Views",
+    "\\MyBlog.UI\\Views\\Shared"
   ],
-  "SelectedNode": "\\D:\\My projects\\MyBlog-ASP.NET-MVC5-master",
+  "SelectedNode": "\\MyBlog.UI\\Views\\Shared\\_Dashbord.cshtml",
   "PreviewInSolutionExplorer": false
 }

@@ -13,10 +13,7 @@ namespace MyBlog.Data
         public int Id { get; set; }
         [Required(ErrorMessage = "Home Image is required")]
         [DisplayName("Home Image:")]
-        public string HomeImage { get; set; }
-        [Required(ErrorMessage = "Home Text is required")]
-        [DisplayName("Home Text:")]
-        [DataType(DataType.MultilineText)]
+     
         public string HomeImageText { get; set; }
         [Required(ErrorMessage = "Num. of Last Post is required")]
         [DisplayName("Num. of Last Post:")]

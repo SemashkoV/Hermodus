@@ -3275,6 +3275,7 @@
     <Content Include="Views\Shared\_LastPage.cshtml" />
     <Content Include="Views\Shared\_UploadText.cshtml" />
     <Content Include="Views\Shared\_InsertImage.cshtml" />
+    <Content Include="Views\Text\NewText.cshtml" />
     <None Include="Views\User\Index.old" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />

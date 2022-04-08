@@ -56,7 +56,6 @@ namespace MyBlog.UI.Controllers
             if (ModelState.IsValid)
             {
                 obj.Id = data.Id;
-                obj.HomeImage = data.HomeImage;
                 obj.HomeImageText = data.HomeImageText;
                 obj.NumberOfLastPost = data.NumberOfLastPost;
                 obj.NumberOfCategory = data.NumberOfCategory;

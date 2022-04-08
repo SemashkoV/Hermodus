@@ -80,6 +80,7 @@ namespace MyBlog.Repo
                     dbEntry.Texts = text.Texts;
                     dbEntry.Create_time = text.Create_time;
                     dbEntry.UserId = text.UserId;
+                    //   context.Images.Add(dbEntry);
 
                     if (context.SaveChanges() > 0)
                     {

@@ -23,7 +23,6 @@ namespace MyBlog.UI.Controllers
         }
         [Authorize(Roles = "Admin")]
         public ActionResult Index(int? text)
-
         {
             IEnumerable<Text> model = textRepository.TextList
                 .OrderBy(p => p.Id)
@@ -75,6 +74,65 @@ namespace MyBlog.UI.Controllers
                 }
             }
             return Json(Convert.ToString(_txtname), JsonRequestBehavior.AllowGet);
+        }
+        [Authorize(Roles = "SuperUser,Admin")]
+        public ActionResult NewText()
+        {
+            Text model = GetTextSession();
+            model.Id = 0;//Becouse HttpPost NewPost, Need Id to know Edit or AddNew .
+
+            return View(model);
+
+        }
+        [ValidateInput(false)]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperUser,Admin")]
+        public ActionResult NewText(Text data)
+        {
+            Text obj = GetTextSession();
+
+            if (ModelState.IsValid)
+            {
+
+                var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;
+                int _CurrentUserId = Convert.ToInt32(identity.User.UserId);
+                if (_CurrentUserId == 0)
+                {
+                    //becouse Sometime id = 0 ?????!!!! maybe session die???????
+                    return View(data);
+                }
+
+                obj.Id = data.Id;
+                obj.Texts = data.Texts;
+
+
+                obj.Create_time = DateTime.Now;//Need solution for this field no need any value.
+                obj.UserId = _CurrentUserId;
+                if (data.Id == 0)
+                {
+                    obj.Create_time = DateTime.Now;
+                }
+                else
+                {
+                    obj.Create_time = data.Create_time;
+                }
+                textRepository.Save(obj);
+                int? Newid = obj.Id;
+                if (obj != null)
+                {
+                    if (data.Id == 0)
+                    {
+                        TempData["message"] = string.Format("Text was Added Successfully");
+                    }
+                    else
+                    {
+                        TempData["message"] = string.Format("Text was Edited Successfully");
+                    }
+                }
+                return RedirectToAction("");
+            }
+            return View(data);
         }
 
         [Authorize(Roles = "Admin")]

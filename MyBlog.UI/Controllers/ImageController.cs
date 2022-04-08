@@ -142,7 +142,7 @@ namespace MyBlog.UI.Controllers
                         TempData["message"] = string.Format("Image was Edited Successfully");
                     }
                 }
-                return RedirectToAction("Details", new { Id = Newid });
+                return RedirectToAction("");
             }
             return View(data);
         }

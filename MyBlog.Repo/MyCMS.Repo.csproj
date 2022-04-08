@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeFile1.cs" />
     <Compile Include="EFCategoryRepository.cs" />
     <Compile Include="EFCommentRepository.cs" />
     <Compile Include="EFDbContext.cs" />
