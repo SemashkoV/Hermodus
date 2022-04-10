@@ -1,7 +1,7 @@
 ﻿
 body{
       background-color: #f3f3f5;
-      
+
 }
 /* Set padding to keep content from hitting the edges */
 
@@ -14,10 +14,10 @@ body{
 }
 
 .HomePage-text-box{
-    position: absolute;    
+    position: absolute;
     height: 100%;
-    text-align: center;    
-  
+    text-align: center;
+
 }
 .HomePage-text-box:before {
    content: '';
@@ -29,7 +29,7 @@ body{
 #HomePage-h-text-box-img {
    display: inline-block;
    font-size: 1.5em; /*or whatever you want*/
-   /*color: #FFF;   
+   /*color: #FFF;
    text-align:center;
 }*/
 /*#HomePage-Image_text {
@@ -55,7 +55,7 @@ body{
    width: 100%;
    height: auto;
    color: white;
-   font: bold 24px/45px Helvetica, Sans-Serif; 
+   font: bold 24px/45px Helvetica, Sans-Serif;
 }
 
 .ImagePostTitle {
@@ -73,12 +73,12 @@ body{
    height: auto;
    color: white;
    font-size: 1.6vw;
-   color: white; 
-   font: bold 24px/45px Helvetica, Sans-Serif; 
-   letter-spacing: -1px;  
+   color: white;
+   font: bold 24px/45px Helvetica, Sans-Serif;
+   letter-spacing: -1px;
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
-   padding: 5px; 
+   padding: 5px;
 }
 
 .body-content {
@@ -86,7 +86,7 @@ body{
     padding-bottom: 1px;
     padding-left: 5px;
     padding-right: 5px;
-    
+
 }
 
 .body-content-pages {
@@ -103,7 +103,7 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
     border: 1px solid #000000;
- 
+
 }
 
 a{
@@ -116,27 +116,27 @@ a:hover{
 }
 
 .MainPost{
-   
+
     box-sizing:border-box;
     border-radius:5px;
     margin:0px 10px 10px 10px;
-   
+
     box-shadow:1px 1px 4px #888888;
     background-color:rgba(255,255,255,0.885);
-   
-     
+
+
 }
 
 .post-preview{
    background-color:rgba(255,255,255,0.885);
- 
+
 }
 
 .Sizeimg{
       max-width: 100% !Important;
       height:100px !Important;
 }
- /* Not working with some browsers */ 
+ /* Not working with some browsers */
 .truncateOpt {
   overflow : hidden;
   text-overflow: ellipsis;
@@ -144,7 +144,7 @@ a:hover{
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-  
+
 .truncateOptbak {
     display: table;
     table-layout: fixed;
@@ -152,7 +152,7 @@ a:hover{
     height: 250px;
     white-space: nowrap;
 }
- 
+
 .truncateOptbak > * {
     display: table-cell;
     overflow: hidden;
@@ -160,11 +160,11 @@ a:hover{
 }
 
 
-fieldset { 
+fieldset {
     display: block;
     margin-left: 2px;
     margin-right: 2px;
-  
+
     padding-top: 0.35em;
     padding-bottom: 0.625em;
     padding-left: 0.75em;
@@ -173,7 +173,7 @@ fieldset {
 }
 
 
- /* Login Section */ 
+ /* Login Section */
 .navbar-login
 {
     width: 300px;

@@ -134,7 +134,15 @@ namespace MyBlog.UI.Controllers
             }
             return View(data);
         }
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult InsertText(int? Id)
+        {
+            Text text = textRepository.Details(Id);
+            var Temp = $@"<p>{text.Texts}</p>;";
 
+            return Content(Temp);
+        }
         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? Id)
         {
