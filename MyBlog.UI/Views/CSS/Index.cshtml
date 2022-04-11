@@ -39,7 +39,9 @@
                     
                     <td class="col-md-2">
 
-                        @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "btn btn-danger glyphicon glyphicon glyphicon-trash" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger glyphicon glyphicon glyphicon-trash" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })
                     </td>
                 </tr>
             }

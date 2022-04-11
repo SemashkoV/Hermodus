@@ -3264,6 +3264,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Index - Copy.cshtml" />
     <Content Include="Views\Page\CSSDetails.cshtml" />
+    <Content Include="Views\CSS\Details.cshtml" />
     <None Include="Views\Post\Index.Old" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />

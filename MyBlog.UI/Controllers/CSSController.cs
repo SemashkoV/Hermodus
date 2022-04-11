@@ -31,6 +31,21 @@ namespace MyBlog.UI.Controllers
 
             return View(model);
         }
+        public ActionResult Details(int? Id)
+        {
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CSS model = CSSRepository.Details(Id);
+
+            // model.UserDetails.FName
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+            return View(model);
+        }
         [Authorize(Roles = "SuperUser,Admin")]
         public ActionResult UploadCSS()
         {
@@ -131,6 +146,23 @@ namespace MyBlog.UI.Controllers
             var Temp = $@"<style>{css.Code}</style>;";
 
             return Content(Temp);
+        }
+
+        [Authorize(Roles = "User,SuperUser,Admin")]
+        public ActionResult Edit(int? Id)
+        {
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CSS model = CSSRepository.Details(Id);
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+            //Send you to NewComment page.chtml to save copy same page 
+            return View("NewCSS", model);
         }
         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? Id)
