@@ -17,6 +17,7 @@ namespace MyBlog.Repo
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Text> Texts { get; set; }
+        public DbSet<CSS> CSS { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Setting> Settings { get; set; }
