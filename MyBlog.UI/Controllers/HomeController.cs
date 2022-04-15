@@ -50,7 +50,7 @@ namespace MyBlog.UI.Controllers
 
 
 
-
+                HomeImageText = _HomePageSetting.HomeImageText,
          
                
                 //DisplayLastCategory = _DisplayLastCategory,

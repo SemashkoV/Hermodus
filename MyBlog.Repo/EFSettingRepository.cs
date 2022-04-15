@@ -48,7 +48,7 @@ namespace MyBlog.Repo
                 if (dbEntry != null)
                 {
                     dbEntry.Id = setting.Id;
-               
+                    dbEntry.HomeImageText = setting.HomeImageText;
                     dbEntry.NumberOfLastPost = setting.NumberOfLastPost;
                     dbEntry.NumberOfCategory = setting.NumberOfCategory;
                     dbEntry.PostNumberInPage = setting.PostNumberInPage;

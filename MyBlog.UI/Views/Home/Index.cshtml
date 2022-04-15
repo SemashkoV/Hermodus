@@ -1,12 +1,13 @@
 ﻿
 @model MyBlog.UI.Models.PostViewModel
+
 @using System.Configuration;
 
 @{
     string _DisplayLastCategory = ConfigurationManager.AppSettings["DisplayLastCategory"];
     string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
     string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
-    ViewBag.Title = "My Blog";
+    ViewBag.Title = $"{@Model.HomeImageText}";
 }
 
 
@@ -14,6 +15,9 @@
     @Html.Action("InsertImage", "Image", new { id = 2042 })
 </div>
 @Html.Action("InsertText", "Text", new { id = 1003 })
+<h1 id="HomePage-h-text-box-img">
+    @Model.HomeImageText
+</h1>
 
 
 
@@ -24,12 +28,13 @@
     <script src="~/scripts/jquery.dotdotdot.min.js"></script>
 
 
-    <script>//to resize Images as img-reposive after erase inline css add new
-  $(document).ready(function() {
-      $('img').attr('style', 'max-width: 100%; height:auto;');
-      $('.dot3').dotdotdot();
+    <script>
+    //to resize Images as img-reposive after erase inline css add new
+        $(document).ready(function () {
+            $('img').attr('style', 'max-width: 100%; height:auto;');
+            $('.dot3').dotdotdot();
 
-  });</script>
+        });</script>
 
 
 }

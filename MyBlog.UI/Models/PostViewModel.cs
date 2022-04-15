@@ -24,6 +24,8 @@ namespace MyBlog.UI.Models
         public PagingInfo PagingInfo { get; set; }
         public int? CurrentCategory { get; set; }
         public string CurrentTag { get; set; }
+        public string HomeImageText { get; set; }
+
         public string DisplayLastCategory { get; set; }
         public string DisplayLastPost { get; set; }
         public string DisplayGoogleAdv { get; set; }
