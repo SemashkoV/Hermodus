@@ -3192,7 +3192,7 @@
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\CSSController.cs" />
-    <Compile Include="Controllers\TextController.cs" />
+    <Compile Include="Controllers\WatchController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
@@ -3258,8 +3258,8 @@
     <Content Include="Views\Comment\SuperUserCommentNeedAprove.cshtml" />
     <Content Include="Views\Page\Delete.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\Text\Delete.cshtml" />
-    <Content Include="Views\Text\Index.cshtml" />
+    <Content Include="Views\Watch\Delete.cshtml" />
+    <Content Include="Views\Watch\Index.cshtml" />
     <Content Include="Views\Image\NewImage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Index - Copy.cshtml" />
@@ -3278,7 +3278,7 @@
     <Content Include="Views\Shared\_LastPage.cshtml" />
     <Content Include="Views\Shared\_UploadText.cshtml" />
     <Content Include="Views\Shared\_InsertImage.cshtml" />
-    <Content Include="Views\Text\NewText.cshtml" />
+    <Content Include="Views\Watch\NewWatch.cshtml" />
     <Content Include="Views\CSS\Delete.cshtml" />
     <Content Include="Views\CSS\Index.cshtml" />
     <Content Include="Views\CSS\NewCSS.cshtml" />
@@ -3324,6 +3324,7 @@
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Watch\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

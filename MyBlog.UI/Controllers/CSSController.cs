@@ -46,7 +46,8 @@ namespace MyBlog.UI.Controllers
             }
             return View(model);
         }
-        [Authorize(Roles = "SuperUser,Admin")]
+        [AllowAnonymous]
+        [ChildActionOnly]
         public ActionResult UploadCSS()
         {
             return PartialView("_UploadCSS");

@@ -1,4 +1,4 @@
-﻿@model MyBlog.Data.Page
+﻿@model MyBlog.Data.Watch
 @{
     ViewBag.Title = Model.Title;
 
@@ -17,7 +17,22 @@
                 </header>
                 <hr />
                 <p class="post-subtitle">
-                    @Html.Raw(Model.PagesContent)
+                    @Model.Content
+                </p>
+                <p class="post-subtitle">
+                    @Model.Article
+                </p>
+                <p class="post-subtitle">
+                    @Model.Country
+                </p>
+                <p class="post-subtitle">
+                    @Model.Movement
+                </p>
+                <p class="post-subtitle">
+                    @Model.Frame
+                </p>
+                <p class="post-subtitle">
+                    @Model.Face
                 </p>
                 <hr />
                 <footer class="post-meta">

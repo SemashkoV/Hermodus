@@ -14,20 +14,34 @@ using X.PagedList;
 
 namespace MyBlog.UI.Controllers
 {
-    public class TextController : Controller
+    public class WatchController : Controller
     {
-        private readonly ITextRepository textRepository;
-        public TextController(ITextRepository repo)
+        private readonly IWatchRepository textRepository;
+        public WatchController(IWatchRepository repo)
         {
             textRepository=repo  ;
         }
         [Authorize(Roles = "Admin")]
         public ActionResult Index(int? text)
         {
-            IEnumerable<Text> model = textRepository.TextList
+            IEnumerable<Watch> model = textRepository.WatchList
                 .OrderBy(p => p.Id)
-                .OrderByDescending(p => p.Create_time)
                 .ToPagedList(text ?? 1, 5); 
+            return View(model);
+        }
+        public ActionResult Details(int? Id)
+        {
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Watch model = textRepository.Details(Id);
+
+            // model.UserDetails.FName
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
             return View(model);
         }
         [Authorize(Roles = "SuperUser,Admin")]
@@ -49,7 +63,7 @@ namespace MyBlog.UI.Controllers
                     var _ext = Path.GetExtension(pic.FileName);
 
                     _txtname = Guid.NewGuid().ToString();
-                  
+                   
                     var _comPath = Server.MapPath("/Upload/Id_") + _txtname + _ext;
                     _txtname = "Id_" + _txtname + _ext;
                   
@@ -60,13 +74,13 @@ namespace MyBlog.UI.Controllers
                     pic.SaveAs(path);
                     var _lenght = new FileInfo(path).Length;
                     //here to add Image Path to You Database ,
-                    Text data = new Text();
-                    data.Texts = _txtname;
-                    data.Create_time = DateTime.Now;
+                    Watch data = new Watch();
+                    data.Title = _txtname;
+                    
 
                      
                     bool result;
-                    result= AddText(data);
+                    result= AddWatch(data);
                     if (result==true)
                     {
                         TempData["message"] = string.Format("Text was Added Successfully");
@@ -76,9 +90,9 @@ namespace MyBlog.UI.Controllers
             return Json(Convert.ToString(_txtname), JsonRequestBehavior.AllowGet);
         }
         [Authorize(Roles = "SuperUser,Admin")]
-        public ActionResult NewText()
+        public ActionResult NewWatch()
         {
-            Text model = GetTextSession();
+            Watch model = GetWatchSession();
             model.Id = 0;//Becouse HttpPost NewPost, Need Id to know Edit or AddNew .
 
             return View(model);
@@ -88,9 +102,9 @@ namespace MyBlog.UI.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "SuperUser,Admin")]
-        public ActionResult NewText(Text data)
+        public ActionResult NewWatch(Watch data)
         {
-            Text obj = GetTextSession();
+            Watch obj = GetWatchSession();
 
             if (ModelState.IsValid)
             {
@@ -104,42 +118,64 @@ namespace MyBlog.UI.Controllers
                 }
 
                 obj.Id = data.Id;
-                obj.Texts = data.Texts;
+                obj.Title = data.Title;
+                obj.Content = data.Content;
+                obj.Image = data.Image;
+                obj.Article = data.Article;
+                obj.Country = data.Country;
+                obj.Movement = data.Movement;
+                obj.Frame = data.Frame;
+                obj.Face = data.Face;
+                obj.Bracelet = data.Bracelet;
+                obj.Protection = data.Protection;
+                obj.Backlight = data.Backlight;
+                obj.Glass = data.Glass;
+                obj.Calendar = data.Calendar;
+                obj.Size = data.Size;
 
 
-                obj.Create_time = DateTime.Now;//Need solution for this field no need any value.
-                obj.UserId = _CurrentUserId;
-                if (data.Id == 0)
-                {
-                    obj.Create_time = DateTime.Now;
-                }
-                else
-                {
-                    obj.Create_time = data.Create_time;
-                }
+
                 textRepository.Save(obj);
                 int? Newid = obj.Id;
                 if (obj != null)
                 {
                     if (data.Id == 0)
                     {
-                        TempData["message"] = string.Format("Text was Added Successfully");
+                        TempData["message"] = string.Format("Watch was Added Successfully");
                     }
                     else
                     {
-                        TempData["message"] = string.Format("Text was Edited Successfully");
+                        TempData["message"] = string.Format("Watch was Edited Successfully");
                     }
                 }
                 return RedirectToAction("");
             }
             return View(data);
         }
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit(int? Id)
+        {
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Watch model = textRepository.Details(Id);
+
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+            //Send you to NewPost.chtml to save copy same page 
+            return View("NewWatch", model);
+        }
+
         [AllowAnonymous]
         [ChildActionOnly]
-        public ActionResult InsertText(int? Id)
+        public ActionResult InsertWatch(int? Id)
         {
-            Text text = textRepository.Details(Id);
-            var Temp = $@"<p>{text.Texts}</p>;";
+            Watch text = textRepository.Details(Id);
+            var Temp = $@"<p>{text.Title}</p>;";
 
             return Content(Temp);
         }
@@ -150,7 +186,7 @@ namespace MyBlog.UI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadGateway);
             }
-            Text text = textRepository.Details(Id);
+            Watch text = textRepository.Details(Id);
             if (text == null)
             {
                 return HttpNotFound();
@@ -162,15 +198,15 @@ namespace MyBlog.UI.Controllers
         public ActionResult DeleteConfirm(int? Id)
         {
 
-            Text text = textRepository.Delete(Id);
+            Watch text = textRepository.Delete(Id);
             if (text != null)
             {
                 TempData["message"] = string.Format("deleted");
             }
-            return RedirectToAction("Index", "Text");
+            return RedirectToAction("Index", "Watch");
         }
         [Authorize(Roles = "Admin,SuperUser")]
-        public bool AddText(Text data)
+        public bool AddWatch(Watch data)
         {
             var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;
             int _CurrentUserId = Convert.ToInt32(identity.User.UserId);
@@ -181,11 +217,24 @@ namespace MyBlog.UI.Controllers
 
             if (data != null)
             {
-                Text obj = GetTextSession();
+                Watch obj = GetWatchSession();
+
                 obj.Id = data.Id;
-                obj.Texts = data.Texts;
-                obj.Create_time = data.Create_time;
-                obj.UserId = _CurrentUserId;
+                obj.Title = data.Title;
+                obj.Content = data.Content;
+                obj.Image = data.Image;
+                obj.Article = data.Article;
+                obj.Country = data.Country;
+                obj.Movement = data.Movement;
+                obj.Frame = data.Frame;
+                obj.Face = data.Face;
+                obj.Bracelet = data.Bracelet;
+                obj.Protection = data.Protection;
+                obj.Backlight = data.Backlight;
+                obj.Glass = data.Glass;
+                obj.Calendar = data.Calendar;
+                obj.Size = data.Size;
+
                 textRepository.Save(obj);
                 int? Newid = obj.Id;
                
@@ -203,13 +252,13 @@ namespace MyBlog.UI.Controllers
         ///Sessions
         ///
 
-        private Text GetTextSession()
+        private Watch GetWatchSession()
         {
-            if (Session["text"] == null)
+            if (Session["watch"] == null)
             {
-                Session["text"] = new Text();
+                Session["watch"] = new Watch();
             }
-            return (Text)Session["text"];
+            return (Watch)Session["watch"];
         }
 
 

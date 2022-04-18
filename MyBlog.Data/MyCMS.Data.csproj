@@ -45,7 +45,7 @@
     <Compile Include="Comment.cs" />
     <Compile Include="EmailSetting.cs" />
     <Compile Include="CSS.cs" />
-    <Compile Include="Text.cs" />
+    <Compile Include="Watch.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Post.cs" />

@@ -1,0 +1,246 @@
+﻿@model MyBlog.Data.Watch
+
+@{
+    ViewBag.Title = "New Watch";
+
+}
+<link href="~/Content/bootstrap-tagsinput-typeahead.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-tagsinput.css" rel="stylesheet" />
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet">
+<div class="container body-content-pages">
+    <h2> New Watch</h2>
+    <hr />
+
+    @using (Html.BeginForm("NewWatch", "Watch", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.HiddenFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @* <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <i class="fa fa-fw fa-image"></i>
+                                    Upload Image
+                                </div>
+                                <div class="panel-body">
+
+                                    @Html.Action("UploadImage", "Image")
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-primary" type="submit" onclick="copytxt();">
+                                        <i class="fa fa-cloud-upload" aria-hidden="true"></i> Publish it
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    <h2>Фирма</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Title, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Описание</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Content, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Изображение</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Image, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Артикул</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Article, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Article, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Страна производства</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Country, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Тип механизма</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Movement, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Movement, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Корпус</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Frame, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Frame, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Циферблат</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Face, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Face, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Браслет</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Bracelet, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Bracelet, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Защита</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Protection, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Protection, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Подсветка</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Backlight, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Backlight, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Стекло</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Glass, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Glass, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Календарь</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Calendar, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Calendar, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h2>Габаритные размеры</h2>
+                    <div class="col-md-12">
+                        @Html.TextAreaFor(model => model.Size, new { @class = "ckeditor" })
+                        @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+       
+                <div class="form-group">
+                    <div class="col-md-12 input-group">
+                        <button type="submit" class="btn btn-primary" aria-label="Left Align">
+                            <span class="fa fa fa-pencil-square-o" aria-hidden="true"> </span> Publish
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            }
+
+
+
+
+        @*{
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.HiddenFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.HiddenFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-md-12">
+                            @Html.TextAreaFor(model => model.Texts, new { @class = "ckeditor" })
+                            @Html.ValidationMessageFor(model => model.Texts, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+
+                            @Html.HiddenFor(model => model.Create_time, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 input-group">
+                            <button type="submit" class="btn btn-primary" aria-label="Left Align">
+                                <span class="fa fa fa-pencil-square-o" aria-hidden="true"> </span> Publish
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            }*@
+
+
+
+
+
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/clipboard.min.js"></script>
+    <script src="~/Scripts/imagehideblock.js"></script>
+    <script src="~/Scripts/clipborad.js"></script>
+
+    <script src="~/scripts/bootstrap-tagsinput.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+
+
+ CKEDITOR.env.isCompatible = true;
+
+
+    </script>
+
+<script>
+         $(function() {
+            $( "#dialog-1" ).dialog({
+               autoOpen: false,
+            });
+            $( "#opener" ).click(function() {
+               $( "#dialog-1" ).dialog( "open" );
+            });
+         });
+</script>
+
+}
