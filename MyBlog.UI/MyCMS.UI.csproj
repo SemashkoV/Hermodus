@@ -3192,6 +3192,7 @@
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\CSSController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\WatchController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -3248,6 +3249,9 @@
     <Content Include="Views\Shared\_PostLayout.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Company\Delete.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\NewCompany.cshtml" />
     <None Include="Views\Chart\GetChart.cshtml.bak" />
     <None Include="Views\Chart\GetChartDataPostMonthly.cshtml.bak" />
     <Content Include="Views\Chart\_PostCommentChart.cshtml" />
@@ -3283,6 +3287,7 @@
     <Content Include="Views\CSS\Index.cshtml" />
     <Content Include="Views\CSS\NewCSS.cshtml" />
     <Content Include="Views\Shared\_UploadCSS.cshtml" />
+    <Content Include="Views\Shared\_MainPageWatch.cshtml" />
     <None Include="Views\User\Index.old" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />

@@ -46,6 +46,7 @@
     <Compile Include="IDEncryptionRepository.cs" />
     <Compile Include="IEmailSettingRepository.cs" />
     <Compile Include="ICSSRepository.cs" />
+    <Compile Include="ICompanyRepository.cs" />
     <Compile Include="IWatchRepository.cs" />
     <Compile Include="IImageRepository.cs" />
     <Compile Include="IPageRepository.cs" />

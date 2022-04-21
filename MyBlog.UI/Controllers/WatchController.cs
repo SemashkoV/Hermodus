@@ -17,9 +17,12 @@ namespace MyBlog.UI.Controllers
     public class WatchController : Controller
     {
         private readonly IWatchRepository textRepository;
-        public WatchController(IWatchRepository repo)
+        private readonly ICompanyRepository companyRepository;
+        public WatchController(IWatchRepository repo, ICompanyRepository comprepo)
         {
             textRepository=repo  ;
+            companyRepository=comprepo ;
+            
         }
         [Authorize(Roles = "Admin")]
         public ActionResult Index(int? text)
@@ -29,6 +32,7 @@ namespace MyBlog.UI.Controllers
                 .ToPagedList(text ?? 1, 5); 
             return View(model);
         }
+        [AllowAnonymous]
         public ActionResult Details(int? Id)
         {
             if (Id == null)
@@ -44,6 +48,7 @@ namespace MyBlog.UI.Controllers
             }
             return View(model);
         }
+
         [Authorize(Roles = "SuperUser,Admin")]
         public ActionResult UploadText()
         {
@@ -94,7 +99,7 @@ namespace MyBlog.UI.Controllers
         {
             Watch model = GetWatchSession();
             model.Id = 0;//Becouse HttpPost NewPost, Need Id to know Edit or AddNew .
-
+            model.CompanyDetails = companyRepository.CompanyIEnum;
             return View(model);
 
         }
@@ -118,7 +123,9 @@ namespace MyBlog.UI.Controllers
                 }
 
                 obj.Id = data.Id;
-                obj.Title = data.Title;
+                obj.CompanyId = data.CompanyId;
+             
+                obj.Model = data.Model;
                 obj.Content = data.Content;
                 obj.Image = data.Image;
                 obj.Article = data.Article;
@@ -133,7 +140,7 @@ namespace MyBlog.UI.Controllers
                 obj.Calendar = data.Calendar;
                 obj.Size = data.Size;
 
-
+                obj.Title = data.CompanyId+data.Model;
 
                 textRepository.Save(obj);
                 int? Newid = obj.Id;
@@ -150,6 +157,7 @@ namespace MyBlog.UI.Controllers
                 }
                 return RedirectToAction("");
             }
+            data.CompanyDetails = companyRepository.CompanyIEnum;
             return View(data);
         }
         [Authorize(Roles = "Admin")]
@@ -160,7 +168,7 @@ namespace MyBlog.UI.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Watch model = textRepository.Details(Id);
-
+            model.CompanyDetails = companyRepository.CompanyIEnum;
 
             if (model == null)
             {

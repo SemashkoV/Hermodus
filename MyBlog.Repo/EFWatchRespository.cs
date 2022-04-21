@@ -77,7 +77,9 @@ namespace MyBlog.Repo
                 if (dbEntry != null)
                 {
                     dbEntry.Id = watch.Id;
+                    dbEntry.CompanyId = watch.CompanyId;
                     dbEntry.Title = watch.Title;
+                    dbEntry.Model = watch.Model;
                     dbEntry.Content = watch.Content;
                     dbEntry.Image = watch.Image;
                     dbEntry.Article = watch.Article;

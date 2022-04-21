@@ -16,7 +16,9 @@ namespace MyBlog.Data
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Title is required")]
+        public string CompanyId { get; set; }
         public string Title { get; set; }
+        public string Model { get; set; }
 
         [Required(ErrorMessage = "Post is required")]
         public string Content { get; set; }
@@ -37,12 +39,15 @@ namespace MyBlog.Data
         public string Calendar { get; set; }
         public string Size { get; set; }
 
+       
+        public virtual IEnumerable<Company> CompanyDetails { get; set; }
+
 
 
         // Slug generation taken from http://stackoverflow.com/questions/2920744/url-slugify-algorithm-in-c
         public string GenerateSlug()
         {
-            string phrase = string.Format("{0}-{1}", Id, Title);
+            string phrase = string.Format("{0}-{1}", Id, Model);
 
             string str = RemoveAccent(phrase).ToLower();
             // invalid chars           

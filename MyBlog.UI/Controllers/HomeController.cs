@@ -14,12 +14,14 @@ namespace MyBlog.UI.Controllers
     public class HomeController : Controller
     {
         private readonly IPostRepository postRepository;
+        private readonly IWatchRepository watchRepository;
         private readonly ISettingRepository repositorySetting;
 
-        public HomeController(IPostRepository PostRepo,ISettingRepository repoSetting)
+        public HomeController(IPostRepository PostRepo,ISettingRepository repoSetting, IWatchRepository WatchRepo)
         {
                postRepository=PostRepo;
-            repositorySetting = repoSetting;
+               repositorySetting = repoSetting;
+               watchRepository=WatchRepo;
         }
         // GET: Home
         public ActionResult Index(int? page)
@@ -48,7 +50,9 @@ namespace MyBlog.UI.Controllers
                 .OrderByDescending(p => p.Create_time)
                 .ToPagedList(page ?? 1, PageSize),
 
-
+                Watches = watchRepository.WatchList
+                .OrderBy(p => p.Id)
+                .ToPagedList(page ?? 1, PageSize),
 
                 HomeImageText = _HomePageSetting.HomeImageText,
          

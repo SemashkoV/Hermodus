@@ -11,14 +11,15 @@
 }
 
 
-<div class="Bannerimage">
-    @Html.Action("InsertImage", "Image", new { id = 2042 })
-</div>
+        <div class="Bannerimage">
+            @Html.Action("InsertImage", "Image", new { id = 2042 })
+        </div>
 
-<h1 id="HomePage-h-text-box-img">
-    @Model.HomeImageText
-</h1>
-
+        <h1 id="HomePage-h-text-box-img">
+            @Model.HomeImageText
+        </h1>
+        
+            @Html.Partial("_MainPageWatch", Model.Watches)
 
 
 

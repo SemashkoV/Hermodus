@@ -1,0 +1,70 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+@using System.Configuration;
+
+@model IPagedList<MyBlog.Data.Watch>
+
+<style type="text/css" media="all">
+    div.box {
+        height: 50px;
+        /* 				overflow: hidden; */
+    }
+</style>
+<div class="catalog-items">
+@foreach (var item in Model)
+{
+    <div class="catalog-item">
+        <div class="row MainPost">
+            <div class="ImagePostTitle">
+                <img src="@item.Image" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                @* <div class="Bannertext">@Model.Title</div>*@
+                <a class="BannerPostTitle truncateOpt" href="@Url.Action("Details", "Watch", new { id = item.Id })">@item.Title</a>
+
+            </div>
+            @*
+                            <h3> old befor change link seo
+                <a class="PostTitle truncateOpt" href="~/Post/Details/@Model.PostId">
+                    @Model.Title
+                </a><a class="truncateOpt" href="@Url.Action("Details", "Post", new { id = Model.GenerateSlug() })">@Model.Title</a>
+                           </h3>*@
+            <article style="padding:5px 5px 5px 5px">
+
+                @*For Cutting long Post Countent*@
+                <div class="watch-content">
+                    <p>@item.Content</p>
+                </div>
+
+
+
+            </article>
+
+            @* End of Post row *@
+        </div>
+    </div>
+    @*End of Image and Post Row*@
+        @*
+            <article class="row col-md-12">
+                    <div class="panel panel-default">
+                        <header class="panel-heading">
+                             @p.Title
+                        </header>
+
+                        <div class="panel-body">
+                            <p>@Html.Raw(p.Post_Content)</p>
+                        </div>
+                        <div class="panel-footer">
+                            Posted @p.Create_time.ToShortDateString()
+                        </div>
+                    </div>
+
+                 </article>*@
+
+
+
+
+        }
+    </div>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+
