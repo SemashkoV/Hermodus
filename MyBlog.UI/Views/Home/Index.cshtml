@@ -12,20 +12,39 @@
 
 
         <div class="Bannerimage">
-            @Html.Action("InsertImage", "Image", new { id = 2042 })
+            @Html.Action("InsertImage", "Image", new { id = 14041 })
         </div>
-
-        <h1 id="HomePage-h-text-box-img">
+        <div class="benefits">
+            <ul>
+                <li>
+                    <img src="~/Images/benefits_03.png" class="" />
+                    <p>Международная гарантия</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_04.png" class="" />
+                    <p>Работаем более 10 лет</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_02.png" class="" />
+                    <p>Рассрочка под 0%</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_01.png" class="" />
+                    <p>Бесплатная доставка</p>
+                </li>
+            </ul>
+        </div>
+        @*<h1 id="HomePage-h-text-box-img">
             @Model.HomeImageText
-        </h1>
+        </h1>*@
         
             @Html.Partial("_MainPageWatch", Model.Watches)
 
-
+  
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 
+    
     <script src="~/scripts/jquery.dotdotdot.min.js"></script>
 
 

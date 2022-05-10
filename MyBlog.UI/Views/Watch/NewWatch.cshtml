@@ -103,10 +103,24 @@
                 </div>
             </div>*@
              <div class="form-group">
+                <h2>Стоимость</h2>
+                <div class="col-md-12">
+                    @Html.TextAreaFor(model => model.Price, new { @class = "textarea-input" })
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+             <div class="form-group">
                 <h2>Модель</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Model, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Model, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <h2>Заглавие</h2>
+                <div class="col-md-12">
+                    @Html.TextAreaFor(model => model.Title, new { @class = "textarea-input" })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
@@ -132,14 +146,6 @@
                     </div>
                 </div>*@
 
-            
-            <div class="form-group">
-                <h2>Артикул</h2>
-                <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Article, new { @class = "ckeditor" })
-                    @Html.ValidationMessageFor(model => model.Article, "", new { @class = "text-danger" })
-                </div>
-            </div>
           @*  <div class="form-group">
                 <h2>Страна производства</h2>
                 <div class="col-md-12">
@@ -150,63 +156,63 @@
             <div class="form-group">
                 <h2>Тип механизма</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Movement, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Movement, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Movement, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Корпус</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Frame, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Frame, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Frame, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Циферблат</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Face, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Face, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Face, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Браслет</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Bracelet, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Bracelet, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Bracelet, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Защита</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Protection, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Protection, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Protection, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Подсветка</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Backlight, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Backlight, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Backlight, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Стекло</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Glass, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Glass, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Glass, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Календарь</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Calendar, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Calendar, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Calendar, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <h2>Габаритные размеры</h2>
                 <div class="col-md-12">
-                    @Html.TextAreaFor(model => model.Size, new { @class = "ckeditor" })
+                    @Html.TextAreaFor(model => model.Size, new { @class = "textarea-input" })
                     @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
                 </div>
             </div>

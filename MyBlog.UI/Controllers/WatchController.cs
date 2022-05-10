@@ -25,11 +25,11 @@ namespace MyBlog.UI.Controllers
             
         }
         [Authorize(Roles = "Admin")]
-        public ActionResult Index(int? text)
+        public ActionResult Index(int? page)
         {
             IEnumerable<Watch> model = textRepository.WatchList
                 .OrderBy(p => p.Id)
-                .ToPagedList(text ?? 1, 5); 
+                .ToPagedList(page ?? 1, 10); 
             return View(model);
         }
         [AllowAnonymous]
@@ -128,7 +128,7 @@ namespace MyBlog.UI.Controllers
                 obj.Model = data.Model;
                 obj.Content = data.Content;
                 obj.Image = data.Image;
-                obj.Article = data.Article;
+                obj.Article = Convert.ToString(data.Id);
                 obj.Country = data.Country;
                 obj.Movement = data.Movement;
                 obj.Frame = data.Frame;
@@ -139,8 +139,8 @@ namespace MyBlog.UI.Controllers
                 obj.Glass = data.Glass;
                 obj.Calendar = data.Calendar;
                 obj.Size = data.Size;
-
-                obj.Title = data.CompanyId+data.Model;
+                obj.Price = data.Price;
+                obj.Title = data.Title;
 
                 textRepository.Save(obj);
                 int? Newid = obj.Id;
@@ -231,7 +231,7 @@ namespace MyBlog.UI.Controllers
                 obj.Title = data.Title;
                 obj.Content = data.Content;
                 obj.Image = data.Image;
-                obj.Article = data.Article;
+                obj.Article = Convert.ToString(data.Id);
                 obj.Country = data.Country;
                 obj.Movement = data.Movement;
                 obj.Frame = data.Frame;
@@ -242,6 +242,7 @@ namespace MyBlog.UI.Controllers
                 obj.Glass = data.Glass;
                 obj.Calendar = data.Calendar;
                 obj.Size = data.Size;
+                obj.Price = data.Price;
 
                 textRepository.Save(obj);
                 int? Newid = obj.Id;

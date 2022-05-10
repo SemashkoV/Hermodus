@@ -15,30 +15,30 @@
 {
     <div class="catalog-item">
         <div class="row MainPost">
-            <div class="ImagePostTitle">
-                <img src="@item.Image" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+            <a href="@Url.Action("Details", "Watch", new { id = item.Id })">
+                <div class="ImagePostTitle">
+                    <img src="@item.Image" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
 
-                @* <div class="Bannertext">@Model.Title</div>*@
-                <a class="BannerPostTitle truncateOpt" href="@Url.Action("Details", "Watch", new { id = item.Id })">@item.Title</a>
+                    @* <div class="Bannertext">@Model.Title</div>*@
+                    <p class="BannerPostTitle truncateOpt")">@item.CompanyId @item.Model</p>
 
-            </div>
-            @*
-                            <h3> old befor change link seo
-                <a class="PostTitle truncateOpt" href="~/Post/Details/@Model.PostId">
-                    @Model.Title
-                </a><a class="truncateOpt" href="@Url.Action("Details", "Post", new { id = Model.GenerateSlug() })">@Model.Title</a>
-                           </h3>*@
-            <article style="padding:5px 5px 5px 5px">
-
-                @*For Cutting long Post Countent*@
-                <div class="watch-content">
-                    <p>@item.Content</p>
                 </div>
+                @*
+                    <h3> old befor change link seo
+        <a class="PostTitle truncateOpt" href="~/Post/Details/@Model.PostId">
+            @Model.Title
+        </a><a class="truncateOpt" href="@Url.Action("Details", "Post", new { id = Model.GenerateSlug() })">@Model.Title</a>
+                   </h3>*@
+                
 
-
-
-            </article>
-
+                    @*For Cutting long Post Countent*@
+                    <div class="watch-content">
+                        <p>@item.Price USD</p>
+                    </div>
+                    <div class="product-cut-button">
+                        <a href="@Url.Action("Details", "Watch", new { id = item.Id })" class="watch-btn btn">Подробнее</a>
+                    </div>
+            </a>
             @* End of Post row *@
         </div>
     </div>

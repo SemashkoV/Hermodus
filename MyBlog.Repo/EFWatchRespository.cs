@@ -93,8 +93,9 @@ namespace MyBlog.Repo
                     dbEntry.Glass = watch.Glass;
                     dbEntry.Calendar = watch.Calendar;
                     dbEntry.Size = watch.Size;
+                    dbEntry.Price = watch.Price;
 
-             
+
 
                     if (context.SaveChanges() > 0)
                     {
