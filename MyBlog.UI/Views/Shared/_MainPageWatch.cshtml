@@ -1,6 +1,8 @@
 ﻿@using X.PagedList.Mvc;
 @using X.PagedList;
 @using System.Configuration;
+@using Microsoft.AspNetCore.Mvc.TagHelpers;
+@using Microsoft.AspNetCore.Razor.TagHelpers;
 
 @model IPagedList<MyBlog.Data.Watch>
 
@@ -10,26 +12,42 @@
         /* 				overflow: hidden; */
     }
 </style>
+<div class="filter-wrapper">
+    <div class="filter-inner">
+        <div class="filter-inner-content">
+            <div class="">Стоимость</div>
+            <div class="">Бренд</div>
+            <div class="">Страна</div>
+        </div>
+        <div class="filter-inner-content">
+            <a asp-route="book" class="filter-inner-sort">По названию</a>
+            <ul class="filter-inner-sortlist">
+                <li><a asp-controller="Home" asp-action="Index" asp-route-sortOrder="@ViewBag.AgeSort" href="/?sortOrder=@ViewBag.AgeSort">По стоимости</a></li>
+                <li><a asp-controller="Home" asp-action="Index" asp-route-sortOrder="@ViewBag.CompSort" href="/?sortOrder=@ViewBag.CompSort">По бренду</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div class="catalog-items">
-@foreach (var item in Model)
-{
-    <div class="catalog-item">
-        <div class="row MainPost">
-            <a href="@Url.Action("Details", "Watch", new { id = item.Id })">
-                <div class="ImagePostTitle">
-                    <img src="@item.Image" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+    @foreach (var item in Model)
+    {
+        <div class="catalog-item">
+            <div class="row MainPost">
+                <a href="@Url.Action("Details", "Watch", new { id = item.Id })">
+                    <div class="ImagePostTitle">
+                        <img src="@item.Image" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
 
-                    @* <div class="Bannertext">@Model.Title</div>*@
-                    <p class="BannerPostTitle truncateOpt")">@item.CompanyId @item.Model</p>
+                        @* <div class="Bannertext">@Model.Title</div>*@
+                        <p class="BannerPostTitle truncateOpt" )">@item.CompanyId @item.Model</p>
 
-                </div>
-                @*
-                    <h3> old befor change link seo
-        <a class="PostTitle truncateOpt" href="~/Post/Details/@Model.PostId">
-            @Model.Title
-        </a><a class="truncateOpt" href="@Url.Action("Details", "Post", new { id = Model.GenerateSlug() })">@Model.Title</a>
-                   </h3>*@
-                
+                    </div>
+                    @*
+                                    <h3> old befor change link seo
+                        <a class="PostTitle truncateOpt" href="~/Post/Details/@Model.PostId">
+                            @Model.Title
+                        </a><a class="truncateOpt" href="@Url.Action("Details", "Post", new { id = Model.GenerateSlug() })">@Model.Title</a>
+                                   </h3>*@
+
 
                     @*For Cutting long Post Countent*@
                     <div class="watch-content">
@@ -38,11 +56,11 @@
                     <div class="product-cut-button">
                         <a href="@Url.Action("Details", "Watch", new { id = item.Id })" class="watch-btn btn">Подробнее</a>
                     </div>
-            </a>
-            @* End of Post row *@
+                </a>
+                @* End of Post row *@
+            </div>
         </div>
-    </div>
-    @*End of Image and Post Row*@
+        @*End of Image and Post Row*@
         @*
             <article class="row col-md-12">
                     <div class="panel panel-default">
@@ -63,8 +81,8 @@
 
 
 
-        }
-    </div>
-        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    }
+</div>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
 

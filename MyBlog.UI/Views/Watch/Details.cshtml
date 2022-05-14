@@ -9,12 +9,20 @@
         </div>
         <div class="product-info">
             <h3>@Model.Title @Model.CompanyId @Model.Model</h3>
-            <h3>@Model.Price</h3>
-            <div class="product-buy">
-                <a href="#" class="btn buy-btn buy">Добавить в корзину</a>
-                <a href="#" class="btn buy-btn instant-buy">Купить сейчас</a>
+            <h3>@Model.Price USD</h3>
+            @using (Html.BeginForm("AddToCart", "Cart"))
+            {
+                <div class="product-buy">
+                    
+                    @*<a href="#" class="btn buy-btn buy">Добавить в корзину</a>
+                    <a href="#" class="btn buy-btn instant-buy">Купить сейчас</a>*@
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                     <input type="submit" class="btn buy-btn buy" value="Добавить в корзину" />
+                     <input type="submit" class="btn buy-btn instant-buy" value="Купить сейчас" />
+                </div>
+            }
             </div>
-        </div>
     </div>
     <div class="product-content">
         <div class="product-content-about">

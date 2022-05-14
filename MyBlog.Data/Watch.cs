@@ -38,7 +38,7 @@ namespace MyBlog.Data
         public string Glass { get; set; }
         public string Calendar { get; set; }
         public string Size { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
 
 
         public virtual IEnumerable<Company> CompanyDetails { get; set; }

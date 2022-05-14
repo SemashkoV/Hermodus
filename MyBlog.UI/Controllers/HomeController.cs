@@ -1,5 +1,4 @@
-﻿
-using MyBlog.Data;
+﻿using MyBlog.Data;
 using MyBlog.Service;
 using MyBlog.UI.Models;
 using System;
@@ -8,6 +7,11 @@ using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Web.Mvc;
 using X.PagedList;
+using Microsoft.AspNet;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+
 
 namespace MyBlog.UI.Controllers
 {
@@ -20,53 +24,92 @@ namespace MyBlog.UI.Controllers
         public HomeController(IPostRepository PostRepo,ISettingRepository repoSetting, IWatchRepository WatchRepo)
         {
                postRepository=PostRepo;
+            
                repositorySetting = repoSetting;
                watchRepository=WatchRepo;
         }
         // GET: Home
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, SortState? sortOrder)
         {
             Setting _HomePageSetting;
             _HomePageSetting = repositorySetting.GetSetting;
-            //Setting to Show and Hiden Widgets
-            //string _DisplayLastCategory;
-            //if (_HomePageSetting.DisplayLastCategory == false)
-            //     { _DisplayLastCategory = "none"; }
-            //else { _DisplayLastCategory = "block"; }
-            //string _DisplayLastPost;
-            //if (_HomePageSetting.DisplayLastPost== false)
-            //     { _DisplayLastPost = "none"; }
-            //else { _DisplayLastPost = "block"; }
-            //string _GoogleAdvWidget;
-            //if (_HomePageSetting.DisplayGoogleWidget == false)
-            //     { _GoogleAdvWidget = "none"; }
-            //else { _GoogleAdvWidget = "block"; }
+
+            ViewBag.NameSort = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
+            ViewBag.AgeSort = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
+            ViewBag.CompSort = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
 
             int PageSize = _HomePageSetting.PostNumberInPage;
-            PostViewModel model = new PostViewModel
+            switch (sortOrder)
             {
-                Posts = postRepository.PostList
-                .OrderBy(p => p.PostId)
-                .OrderByDescending(p => p.Create_time)
-                .ToPagedList(page ?? 1, PageSize),
+                case SortState.NameDesc:
+                    PostViewModel model = new PostViewModel
+                    {
+                        Watches = watchRepository.WatchList
+                        .OrderBy(p => p.Id)
+                        .ToPagedList(page ?? 1, PageSize),
 
-                Watches = watchRepository.WatchList
-                .OrderBy(p => p.Id)
-                .ToPagedList(page ?? 1, PageSize),
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model);
+                case SortState.AgeAsc:
+                    PostViewModel model1 = new PostViewModel
+                    {
+                        Watches = watchRepository.WatchList
+                        .OrderBy(p => p.Price)
+                        .ToPagedList(page ?? 1, PageSize),
 
-                HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model1);
+                case SortState.AgeDesc:
+                    PostViewModel model2 = new PostViewModel
+                    {
+                        Watches = watchRepository.WatchList
+                        .OrderByDescending(p => p.Price)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model2);
+                case SortState.CompanyAsc:
+                    PostViewModel model3 = new PostViewModel
+                    {
+                        Watches = watchRepository.WatchList
+                        .OrderBy(p => p.CompanyId)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model3);
+                case SortState.CompanyDesc:
+                    PostViewModel model4 = new PostViewModel
+                    {
+                        Watches = watchRepository.WatchList
+                        .OrderByDescending(p => p.CompanyId)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model4);
+                default:
+                    PostViewModel model5 = new PostViewModel
+                    {
+                        Watches = watchRepository.WatchList
+                        .OrderByDescending(p => p.Id)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model5);
+            }
+
+            
          
-               
-                //DisplayLastCategory = _DisplayLastCategory,
-                //DisplayLastPost = _DisplayLastPost,
-                //DisplayGoogleAdv= _GoogleAdvWidget
+            
+    }
 
-            };
-            return View(model);
-        }
 
-        
-        public ActionResult Feed()
+    public ActionResult Feed()
         {
             IEnumerable<Post> posts = postRepository.PostIEnum.OrderByDescending(c => c.Create_time).Take(10);
             string websiteRoot = Request.Url.GetLeftPart(UriPartial.Authority);//Full Website address with protocol
@@ -103,5 +146,5 @@ namespace MyBlog.UI.Controllers
             feed.Items = items;
             return new RssActionResult { Feed = feed };
         }
-    }
+}
 }

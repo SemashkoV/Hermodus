@@ -1,8 +1,7 @@
-﻿
-@model MyBlog.UI.Models.PostViewModel
+﻿@model MyBlog.UI.Models.PostViewModel
 
 @using System.Configuration;
-
+@using Microsoft.AspNetCore.Mvc.TagHelpers;
 @{
     string _DisplayLastCategory = ConfigurationManager.AppSettings["DisplayLastCategory"];
     string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
