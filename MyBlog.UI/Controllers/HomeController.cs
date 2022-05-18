@@ -38,6 +38,115 @@ namespace MyBlog.UI.Controllers
             ViewBag.AgeSort = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
             ViewBag.CompSort = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
 
+            int PageSize = 4;
+               // _HomePageSetting.PostNumberInPage;
+            switch (sortOrder)
+            {
+                case SortState.NameDesc:
+                    PostViewModel model = new PostViewModel
+                    {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        Watches = watchRepository.WatchList
+                        .OrderBy(p => p.Id)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model);
+                case SortState.AgeAsc:
+                    PostViewModel model1 = new PostViewModel
+                    {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        Watches = watchRepository.WatchList
+                        .OrderBy(p => p.Price)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model1);
+                case SortState.AgeDesc:
+                    PostViewModel model2 = new PostViewModel
+                    {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        Watches = watchRepository.WatchList
+                        .OrderByDescending(p => p.Price)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model2);
+                case SortState.CompanyAsc:
+                    PostViewModel model3 = new PostViewModel
+                    {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        Watches = watchRepository.WatchList
+                        .OrderBy(p => p.CompanyId)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model3);
+                case SortState.CompanyDesc:
+                    PostViewModel model4 = new PostViewModel
+                    {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        Watches = watchRepository.WatchList
+                        .OrderByDescending(p => p.CompanyId)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model4);
+                default:
+                    PostViewModel model5 = new PostViewModel
+                    {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        Watches = watchRepository.WatchList
+                        .OrderByDescending(p => p.Id)
+                        .ToPagedList(page ?? 1, PageSize),
+
+                        HomeImageText = _HomePageSetting.HomeImageText,
+                    };
+                    return View(model5);
+            }
+
+            
+         
+            
+    }
+        public ActionResult Catalog(int? page, SortState? sortOrder)
+        {
+            Setting _HomePageSetting;
+            _HomePageSetting = repositorySetting.GetSetting;
+
+            ViewBag.NameSort = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
+            ViewBag.AgeSort = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
+            ViewBag.CompSort = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
+
             int PageSize = _HomePageSetting.PostNumberInPage;
             switch (sortOrder)
             {

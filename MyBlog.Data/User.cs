@@ -13,27 +13,27 @@ namespace MyBlog.Data
     public class User
     {
         public int UserId { get; set; }
-        [DisplayName("First Name")]
+        [DisplayName("Имя")]
         public string FName { get; set; }
-        [DisplayName("Second Name")]
+        [DisplayName("Фамилия")]
         public string LName { get; set; }
      //   [Index(IsUnique = true)]
-        [DisplayName("Email")]
+        [DisplayName("Почта")]
         [DataType(DataType.EmailAddress)]
        
         public string Email { get; set; }
 
 
-        [DisplayName("Password")]
+        [DisplayName("Пароль")]
         [DataType(DataType.Password)]
         public string Password {get;set;}
-        [DisplayName("Create Time")]
+        [DisplayName("Дата создания")]
         public DateTime Create_time { get; set; }
-        [DisplayName("Update Time")]
+        [DisplayName("Дата изменения")]
         public DateTime Update_Time{get;set;}
-        [DisplayName("Last Login")]
+        [DisplayName("Последний вход")]
         public DateTime Last_Login { get; set; }
-        [DisplayName("Role")]
+        [DisplayName("Статус")]
         public int RoleId { get; set; }
 
         virtual public Role RoleDetails { get; set; }

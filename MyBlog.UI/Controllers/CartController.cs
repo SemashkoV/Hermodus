@@ -30,7 +30,18 @@ namespace MyBlog.UI.Controllers
                 ReturnUrl = returnUrl
             });
         }
-        public RedirectToRouteResult AddToCart(int Id, string returnUrl)
+        public RedirectToRouteResult AddToCart(int Id)
+        {
+            Watch watch = repository.WatchList
+                .FirstOrDefault(g => g.Id == Id);
+
+            if (watch != null)
+            {
+                GetCart().AddItem(watch, 1);
+            }
+            return RedirectToAction("Details/"+Id, "Watch");
+        }
+        public RedirectToRouteResult Buy(int Id, string returnUrl)
         {
             Watch watch = repository.WatchList
                 .FirstOrDefault(g => g.Id == Id);

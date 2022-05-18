@@ -80,8 +80,8 @@
                             <h1>Личный кабинет</h1>
                         </div>
                         <div class="lk-left-middle">
-                            <div><a href="#">Мой кабинет</a></div>
-                            <div><a href="~/User/Personal/@_Id">Личные данные</a></div>
+                            <div><a href="~/User/Details/@_Id">Мой кабинет</a></div>
+                            <div><a href="#">Личные данные</a></div>
                             <div><a href="~/Cart">Корзина</a></div>
                         </div>
                         <div class="lk-left-bottom">
@@ -90,16 +90,54 @@
                     </div>
                     <div class="lk-right">
                         <div class="lk-right-inner">
-                            <a href="~/User/Personal/@_Id">
-                                <div class="lk-item">
-                                    <h1>Личные данные</h1>
-                                </div>
-                            </a>
-                            <a href="~/Cart">
-                                <div class="lk-item">
-                                    <h1>Корзина</h1>
-                                </div>
-                            </a>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.FName)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.FName)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.LName)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.LName)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+
+
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Create_time)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Create_time)
+                                </dd>
+
+                              
+                                @if (Model.RoleDetails.RoleName == "Admin")
+                                {
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.RoleId)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.RoleDetails.RoleName)
+                                    </dd>
+                                }
+                            </dl>
+                            <a href="~/Account/ResetPassword/@_Id">Поменять пароль</a>
                         </div>
                     </div>
                 </div>

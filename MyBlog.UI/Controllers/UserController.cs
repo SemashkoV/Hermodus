@@ -83,6 +83,24 @@ namespace MyBlog.UI.Controllers
             return View(model);
            
         }
+        [Authorize(Roles = "User,SuperUser,Admin")]
+        public ActionResult Personal(int? Id)
+        {
+
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var model = repositoryUser.Details(Id);
+
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+            return View(model);
+
+        }
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? Id)
         {

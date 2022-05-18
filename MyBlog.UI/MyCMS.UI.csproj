@@ -3580,9 +3580,9 @@
     <Content Include="Views\Watch\Index.cshtml" />
     <Content Include="Views\Image\NewImage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Index - Copy.cshtml" />
     <Content Include="Views\Page\CSSDetails.cshtml" />
     <Content Include="Views\CSS\Details.cshtml" />
+    <Content Include="Views\Home\Catalog.cshtml" />
     <None Include="Views\Post\Index.Old" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -3602,6 +3602,8 @@
     <Content Include="Views\CSS\NewCSS.cshtml" />
     <Content Include="Views\Shared\_UploadCSS.cshtml" />
     <Content Include="Views\Shared\_MainPageWatch.cshtml" />
+    <Content Include="Views\User\Personal.cshtml" />
+    <Content Include="Views\Shared\_CatalogPageWatch.cshtml" />
     <None Include="Views\User\Index.old" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
