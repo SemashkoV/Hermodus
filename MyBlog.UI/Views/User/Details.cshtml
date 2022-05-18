@@ -58,6 +58,7 @@
                     <dd>
                         @Html.DisplayFor(model => model.Update_Time)
                     </dd>
+                    @if(Model.RoleDetails.RoleName == "Admin") {
                     <dt>
                         @Html.DisplayNameFor(model => model.RoleId)
                     </dt>
@@ -65,7 +66,7 @@
                     <dd>
                         @Html.DisplayFor(model => model.RoleDetails.RoleName)
                     </dd>
-
+                    }
                 </dl>
                 <a href="~/Account/ResetPassword/@_Id">Change Your Password</a>
 

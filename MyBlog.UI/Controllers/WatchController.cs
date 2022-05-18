@@ -177,13 +177,39 @@ namespace MyBlog.UI.Controllers
             //Send you to NewPost.chtml to save copy same page 
             return View("NewWatch", model);
         }
-
         [AllowAnonymous]
         [ChildActionOnly]
-        public ActionResult InsertWatch(int? Id)
+        public ActionResult InsertWatchModel(int? Id)
         {
             Watch text = textRepository.Details(Id);
-            var Temp = $@"<p>{text.Title}</p>;";
+            var Temp = text.Model;
+
+            return Content(Temp);
+        }
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult InsertWatchCompany(int? Id)
+        {
+            Watch text = textRepository.Details(Id);
+            var Temp = $"{text.CompanyId}";
+
+            return Content(Temp);
+        }
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult InsertWatchImg(int? Id)
+        {
+            Watch text = textRepository.Details(Id);
+            var Temp = text.Image;
+
+            return Content(Temp);
+        }
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult InsertWatchPrice(int? Id)
+        {
+            Watch text = textRepository.Details(Id);
+            var Temp = text.Price.ToString();
 
             return Content(Temp);
         }

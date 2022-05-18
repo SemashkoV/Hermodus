@@ -3,9 +3,9 @@
 @using System.Configuration;
 @using Microsoft.AspNetCore.Mvc.TagHelpers;
 @using Microsoft.AspNetCore.Razor.TagHelpers;
+@using MyBlog.Data;
 
 @model IPagedList<MyBlog.Data.Watch>
-
 <style type="text/css" media="all">
     div.box {
         height: 50px;
@@ -15,22 +15,227 @@
 <div class="filter-wrapper">
     <div class="filter-inner">
         <div class="filter-inner-content">
-            <div class="">Стоимость</div>
-            <div class="">Бренд</div>
-            <div class="">Страна</div>
+            <div class=""><p>Стоимость</p></div>
+            <div class=""><p>Бренд</p></div>
+            <div class=""><p>Страна</p></div>
         </div>
-        <div class="filter-inner-content">
-            <a asp-route="book" class="filter-inner-sort">По названию</a>
+        <div class="filter-inner-content-rt">
+            <a class="filter-inner-sort" href="/?sortOrder=@ViewBag.NameSort">По названию</a>
             <ul class="filter-inner-sortlist">
-                <li><a asp-controller="Home" asp-action="Index" asp-route-sortOrder="@ViewBag.AgeSort" href="/?sortOrder=@ViewBag.AgeSort">По стоимости</a></li>
-                <li><a asp-controller="Home" asp-action="Index" asp-route-sortOrder="@ViewBag.CompSort" href="/?sortOrder=@ViewBag.CompSort">По бренду</a></li>
+                <li><a href="/?sortOrder=@ViewBag.AgeSort">По стоимости</a></li>
+                <li><a href="/?sortOrder=@ViewBag.CompSort">По бренду</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="catalog-items">
-    @foreach (var item in Model)
-    {
+    <div class="catalog-items-inner">
+        <div class="col-06">
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 6009 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 6009 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt" >@Html.Action("InsertWatchCompany", "Watch", new { id = 6009 }) @Html.Action("InsertWatchModel", "Watch", new { id = 6009 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 6009 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 6009 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 6010 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 6010 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt" >@Html.Action("InsertWatchCompany", "Watch", new { id = 6010 }) @Html.Action("InsertWatchModel", "Watch", new { id = 6010 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 6010 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 6010 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 6011 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 6011 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt" >@Html.Action("InsertWatchCompany", "Watch", new { id = 6011 }) @Html.Action("InsertWatchModel", "Watch", new { id = 6011 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 6011 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 6011 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 6012 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 6012 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt" >@Html.Action("InsertWatchCompany", "Watch", new { id = 6012 }) @Html.Action("InsertWatchModel", "Watch", new { id = 6012 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 6012 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 6012 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+        </div>
+        <div class="col-06">
+            <div class="catalog-cut-rgh">
+                @Html.Action("InsertImage", "Image", new { id = 19043 })
+                <div class="catalog-cut-info">
+                    <h2>Стиль</h2>
+                    <a href="" class="cut-btn btn">Каталог</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="catalog-items-inner">
+        <div class="col-06">
+            <div class="catalog-cut-rgh">
+                @Html.Action("InsertImage", "Image", new { id = 19044 })
+                <div class="catalog-cut-info">
+                    <h2>Власть</h2>
+                    <a href="" class="cut-btn btn">Каталог</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-06">
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 6013 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 6013 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt" >@Html.Action("InsertWatchCompany", "Watch", new { id = 6013 }) @Html.Action("InsertWatchModel", "Watch", new { id = 6013 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 6013 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 6013 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 6014 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 6014 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt" >@Html.Action("InsertWatchCompany", "Watch", new { id = 6014 }) @Html.Action("InsertWatchModel", "Watch", new { id = 6014 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 6014 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 6014 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 6015 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 6015 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt" >@Html.Action("InsertWatchCompany", "Watch", new { id = 6015 }) @Html.Action("InsertWatchModel", "Watch", new { id = 6015 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 6015 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 6015 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = 7009 })">
+                        <div class="ImagePostTitle">
+                            <img src="@Html.Action("InsertWatchImg", "Watch", new { id = 7009 })" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt">@Html.Action("InsertWatchCompany", "Watch", new { id = 7009 }) @Html.Action("InsertWatchModel", "Watch", new { id = 7009 })</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@Html.Action("InsertWatchPrice", "Watch", new { id = 7009 }) USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = 7009 })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="catalog-new">
+    <h1>Новинки</h1>
+    <div class="catalog-new-inner">
+        @foreach (var item in Model) { 
         <div class="catalog-item">
             <div class="row MainPost">
                 <a href="@Url.Action("Details", "Watch", new { id = item.Id })">
@@ -38,18 +243,11 @@
                         <img src="@item.Image" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
 
                         @* <div class="Bannertext">@Model.Title</div>*@
-                        <p class="BannerPostTitle truncateOpt" )">@item.CompanyId @item.Model</p>
+                        <p class="BannerPostTitle truncateOpt">@item.CompanyId @item.Model</p>
 
                     </div>
-                    @*
-                                    <h3> old befor change link seo
-                        <a class="PostTitle truncateOpt" href="~/Post/Details/@Model.PostId">
-                            @Model.Title
-                        </a><a class="truncateOpt" href="@Url.Action("Details", "Post", new { id = Model.GenerateSlug() })">@Model.Title</a>
-                                   </h3>*@
 
 
-                    @*For Cutting long Post Countent*@
                     <div class="watch-content">
                         <p>@item.Price USD</p>
                     </div>
@@ -59,30 +257,17 @@
                 </a>
                 @* End of Post row *@
             </div>
-        </div>
-        @*End of Image and Post Row*@
-        @*
-            <article class="row col-md-12">
-                    <div class="panel panel-default">
-                        <header class="panel-heading">
-                             @p.Title
-                        </header>
-
-                        <div class="panel-body">
-                            <p>@Html.Raw(p.Post_Content)</p>
-                        </div>
-                        <div class="panel-footer">
-                            Posted @p.Create_time.ToShortDateString()
-                        </div>
-                    </div>
-
-                 </article>*@
-
-
-
-
-    }
+        </div> 
+        }
+    </div>
 </div>
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+
+
+
+
+
+
+@*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@
 
 

@@ -44,6 +44,11 @@ namespace MyBlog.UI.Controllers
                 case SortState.NameDesc:
                     PostViewModel model = new PostViewModel
                     {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
                         Watches = watchRepository.WatchList
                         .OrderBy(p => p.Id)
                         .ToPagedList(page ?? 1, PageSize),
@@ -54,6 +59,11 @@ namespace MyBlog.UI.Controllers
                 case SortState.AgeAsc:
                     PostViewModel model1 = new PostViewModel
                     {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
                         Watches = watchRepository.WatchList
                         .OrderBy(p => p.Price)
                         .ToPagedList(page ?? 1, PageSize),
@@ -64,6 +74,11 @@ namespace MyBlog.UI.Controllers
                 case SortState.AgeDesc:
                     PostViewModel model2 = new PostViewModel
                     {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
                         Watches = watchRepository.WatchList
                         .OrderByDescending(p => p.Price)
                         .ToPagedList(page ?? 1, PageSize),
@@ -74,6 +89,11 @@ namespace MyBlog.UI.Controllers
                 case SortState.CompanyAsc:
                     PostViewModel model3 = new PostViewModel
                     {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
                         Watches = watchRepository.WatchList
                         .OrderBy(p => p.CompanyId)
                         .ToPagedList(page ?? 1, PageSize),
@@ -84,6 +104,11 @@ namespace MyBlog.UI.Controllers
                 case SortState.CompanyDesc:
                     PostViewModel model4 = new PostViewModel
                     {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
                         Watches = watchRepository.WatchList
                         .OrderByDescending(p => p.CompanyId)
                         .ToPagedList(page ?? 1, PageSize),
@@ -94,6 +119,11 @@ namespace MyBlog.UI.Controllers
                 default:
                     PostViewModel model5 = new PostViewModel
                     {
+                        Posts = postRepository.PostList
+                        .OrderBy(p => p.PostId)
+                        .OrderByDescending(p => p.Create_time)
+                        .ToPagedList(page ?? 1, PageSize),
+
                         Watches = watchRepository.WatchList
                         .OrderByDescending(p => p.Id)
                         .ToPagedList(page ?? 1, PageSize),
