@@ -1,6 +1,54 @@
 
 /*========= This is Footer 1 style =========*/
- 
+.myf h3{
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.myf a{
+  font-size: 16px !important;
+  transition: .15s linear;
+}
+.foot-shop-list li{
+  margin-bottom: 10px;
+}
+.foot-top{
+  display: flex;
+  justify-content: space-between;
+}
+.foot-top-left{
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+.foot-top-right{
+  width: 20%;
+}
+.foot-cust{
+  padding-left: 50px;
+}
+.foot-shop-list{
+  list-style: none;
+  padding-left: 0;
+}
+.foot-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.foot-bottom-txt{
+  margin-top: 30px;
+}
+.foot-list{
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+.foot-list i{
+  font-size: 36px;
+  margin-right: 10px;
+}
 .myf a {
 	color: #f0f0f0;
 }
@@ -25,11 +73,11 @@
 .myf .footer-corner
 {
 	background: url("../images/corner-bottom.png") no-repeat left bottom,url("../images/corner-upper.png") no-repeat right top;
-	
+
 }
 /*== Footer texture color ==*/
 .myf .bg-texture {
-	background: url('../images/texture-4.png') repeat center center fixed;
+	background-color: #f8f8f8;
 	width:100%;
 	height:auto;
 	display:block;
@@ -76,7 +124,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#800080', end
 
 .myf footer {
 	font-weight: 500;
-	color: #eaeaea;
+	color: #000;
 }
 .myf .bg-gradient footer {
 	border-top: 5px solid #9F0A9F;
@@ -85,11 +133,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#800080', end
 	border-top: 5px solid #2D6774;
 }
 .myf footer a {
- color: #f0f0f0;
+ color: #000;
 }
 .myf footer a:hover, .myf footer a:focus {
-	color: #f0f0f0;
-	text-decoration: underline;
+
+
 }
 .myf footer .container {
 	padding-top: 30px;

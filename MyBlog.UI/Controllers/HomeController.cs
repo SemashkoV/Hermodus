@@ -146,7 +146,7 @@ namespace MyBlog.UI.Controllers
             ViewBag.NameSort = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
             ViewBag.AgeSort = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
             ViewBag.CompSort = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
-
+            ViewBag.SortOrder = sortOrder;
             int PageSize = _HomePageSetting.PostNumberInPage;
             switch (sortOrder)
             {

@@ -13,6 +13,9 @@ strong{
   top:1px;
   font-size: 14px;
 }
+.rememb{
+  margin-left: 7px;
+}
 .dropdown img{
   margin-top: -5px;
 }
@@ -43,7 +46,7 @@ strong{
   color: #123!important;
 }
 .navbar-right img{
-  margin-right: 6ypx;
+  margin-right: 6px;
   margin-top: -3px;
 }
 .navbar-brand{

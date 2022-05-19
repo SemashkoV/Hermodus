@@ -62,7 +62,6 @@
 
 
 
-
-@Html.PagedListPager(Model, page => Url.Action("Catalog", new { page }))
+@Html.PagedListPager(Model, page => Url.Action("Catalog", new { page, ViewBag.SortOrder }))
 
 

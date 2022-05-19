@@ -136,7 +136,7 @@ a:hover{
 .watch-img{
   z-index: 0;
   max-height: 325px;
-  max-width: 200px !important;
+/*  max-width: 200px !important;*/
   margin-left: auto;
   margin-right: auto;
   height: 325px!important;
