@@ -37,9 +37,11 @@ namespace MyBlog.UI.Controllers
             ViewBag.NameSort = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
             ViewBag.AgeSort = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
             ViewBag.CompSort = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
-
+         
             int PageSize = 4;
-               // _HomePageSetting.PostNumberInPage;
+            int PagePostSize = 3;
+            // _HomePageSetting.PostNumberInPage;
+
             switch (sortOrder)
             {
                 case SortState.NameDesc:
@@ -48,13 +50,16 @@ namespace MyBlog.UI.Controllers
                         Posts = postRepository.PostList
                         .OrderBy(p => p.PostId)
                         .OrderByDescending(p => p.Create_time)
-                        .ToPagedList(page ?? 1, PageSize),
+                        .ToPagedList(page ?? 1, PagePostSize),
 
                         Watches = watchRepository.WatchList
                         .OrderBy(p => p.Id)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model);
                 case SortState.AgeAsc:
@@ -63,13 +68,16 @@ namespace MyBlog.UI.Controllers
                         Posts = postRepository.PostList
                         .OrderBy(p => p.PostId)
                         .OrderByDescending(p => p.Create_time)
-                        .ToPagedList(page ?? 1, PageSize),
+                        .ToPagedList(page ?? 1, PagePostSize),
 
                         Watches = watchRepository.WatchList
                         .OrderBy(p => p.Price)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model1);
                 case SortState.AgeDesc:
@@ -78,13 +86,16 @@ namespace MyBlog.UI.Controllers
                         Posts = postRepository.PostList
                         .OrderBy(p => p.PostId)
                         .OrderByDescending(p => p.Create_time)
-                        .ToPagedList(page ?? 1, PageSize),
+                        .ToPagedList(page ?? 1, PagePostSize),
 
                         Watches = watchRepository.WatchList
                         .OrderByDescending(p => p.Price)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model2);
                 case SortState.CompanyAsc:
@@ -93,13 +104,16 @@ namespace MyBlog.UI.Controllers
                         Posts = postRepository.PostList
                         .OrderBy(p => p.PostId)
                         .OrderByDescending(p => p.Create_time)
-                        .ToPagedList(page ?? 1, PageSize),
+                        .ToPagedList(page ?? 1, PagePostSize),
 
                         Watches = watchRepository.WatchList
                         .OrderBy(p => p.CompanyId)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model3);
                 case SortState.CompanyDesc:
@@ -108,13 +122,16 @@ namespace MyBlog.UI.Controllers
                         Posts = postRepository.PostList
                         .OrderBy(p => p.PostId)
                         .OrderByDescending(p => p.Create_time)
-                        .ToPagedList(page ?? 1, PageSize),
+                        .ToPagedList(page ?? 1, PagePostSize),
 
                         Watches = watchRepository.WatchList
                         .OrderByDescending(p => p.CompanyId)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model4);
                 default:
@@ -123,13 +140,16 @@ namespace MyBlog.UI.Controllers
                         Posts = postRepository.PostList
                         .OrderBy(p => p.PostId)
                         .OrderByDescending(p => p.Create_time)
-                        .ToPagedList(page ?? 1, PageSize),
+                        .ToPagedList(page ?? 1, PagePostSize),
 
                         Watches = watchRepository.WatchList
                         .OrderByDescending(p => p.Id)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model5);
             }
@@ -138,7 +158,7 @@ namespace MyBlog.UI.Controllers
          
             
     }
-        public ActionResult Catalog(int? page, SortState? sortOrder)
+        public ActionResult Catalog(int? page, SortState? sortOrder, string name="")
         {
             Setting _HomePageSetting;
             _HomePageSetting = repositorySetting.GetSetting;
@@ -159,10 +179,14 @@ namespace MyBlog.UI.Controllers
                         .ToPagedList(page ?? 1, PageSize),
 
                         Watches = watchRepository.WatchList
+                        .Where(p => p.CompanyId.Contains(name))
                         .OrderBy(p => p.Id)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model);
                 case SortState.AgeAsc:
@@ -174,10 +198,14 @@ namespace MyBlog.UI.Controllers
                         .ToPagedList(page ?? 1, PageSize),
 
                         Watches = watchRepository.WatchList
+                        .Where(p => p.CompanyId.Contains(name))
                         .OrderBy(p => p.Price)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model1);
                 case SortState.AgeDesc:
@@ -189,10 +217,14 @@ namespace MyBlog.UI.Controllers
                         .ToPagedList(page ?? 1, PageSize),
 
                         Watches = watchRepository.WatchList
+                        .Where(p => p.CompanyId.Contains(name))
                         .OrderByDescending(p => p.Price)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model2);
                 case SortState.CompanyAsc:
@@ -204,10 +236,14 @@ namespace MyBlog.UI.Controllers
                         .ToPagedList(page ?? 1, PageSize),
 
                         Watches = watchRepository.WatchList
+                        .Where(p => p.CompanyId.Contains(name))
                         .OrderBy(p => p.CompanyId)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model3);
                 case SortState.CompanyDesc:
@@ -219,10 +255,14 @@ namespace MyBlog.UI.Controllers
                         .ToPagedList(page ?? 1, PageSize),
 
                         Watches = watchRepository.WatchList
+                        .Where(p => p.CompanyId.Contains(name))
                         .OrderByDescending(p => p.CompanyId)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model4);
                 default:
@@ -234,10 +274,14 @@ namespace MyBlog.UI.Controllers
                         .ToPagedList(page ?? 1, PageSize),
 
                         Watches = watchRepository.WatchList
+                        .Where(p => p.CompanyId.Contains(name))
                         .OrderByDescending(p => p.Id)
                         .ToPagedList(page ?? 1, PageSize),
 
                         HomeImageText = _HomePageSetting.HomeImageText,
+                        HomeImage1 = _HomePageSetting.HomeImage1,
+                        HomeImage2 = _HomePageSetting.HomeImage2,
+                        HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model5);
             }

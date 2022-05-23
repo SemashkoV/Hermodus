@@ -11,11 +11,15 @@ $(document).ready(function () {
         $('ul li a').removeClass('selected');
         $(this).addClass('selected');
     });
-
+    $('.single-item').slick({
+      dots:true,
+      dotsClass: "my-dots",
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });
 
 
 });
-
 
 function shorten(text, maxLength, delimiter, overflow) {
   delimiter = delimiter || "…";
@@ -27,4 +31,3 @@ function shorten(text, maxLength, delimiter, overflow) {
   }
   return ret;
 }
-

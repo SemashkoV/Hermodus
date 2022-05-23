@@ -11,13 +11,13 @@
         /* 				overflow: hidden; */
     }
 </style>
-<div class="news-wrapper">
-    <h1 class="news-title">Новости</h1>
-    <div class="news-inner">
+<div class="news-wrapper blog-wrapper">
+    <h1 class="news-title blog-title">Новости</h1>
+    <div class="blog-inner">
         @foreach (var item in Model)
         {
             <a href="@Url.Action("Details", "Post", new { id = item.GenerateSlug() })">
-                <div class="row MainPost-news">
+                <div class="row MainPost-news blog-news">
                     <div class="ImagePostTitle">
                         <img src="@item.FeaturedImage" class="img-responsive" />
 
@@ -45,6 +45,6 @@
         }
     </div>
 </div>
-@*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
 

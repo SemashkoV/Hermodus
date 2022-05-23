@@ -11,10 +11,19 @@ namespace MyBlog.Data
     public class Setting
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Home Image is required")]
-        [DisplayName("Home Image:")]
+        [Required(ErrorMessage = "Home Text is required")]
+        [DisplayName("Home Text:")]
      
         public string HomeImageText { get; set; }
+        [Required(ErrorMessage = "Home Image is required")]
+        [DisplayName("Home Image:")]
+        public int HomeImage1 { get; set; }
+        [Required(ErrorMessage = "Home Image is required")]
+        [DisplayName("Home Image:")]
+        public int HomeImage2 { get; set; }
+        [Required(ErrorMessage = "Home Image is required")]
+        [DisplayName("Home Image:")]
+        public int HomeImage3 { get; set; }
         [Required(ErrorMessage = "Num. of Last Post is required")]
         [DisplayName("Num. of Last Post:")]
         public int NumberOfLastPost { get; set; }

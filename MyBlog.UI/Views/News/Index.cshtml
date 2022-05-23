@@ -6,7 +6,7 @@
     string _DisplayLastCategory = ConfigurationManager.AppSettings["DisplayLastCategory"];
     string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
     string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
-    ViewBag.Title = "News";
+    ViewBag.Title = "Новости";
 }
 
 
@@ -20,7 +20,7 @@
 </div>*@
 
 
-    <div class="container-fluid" style="margin-top:10px;" >@*body-content*@
+    <div class="container-fluid" style="margin-top:80px;" >@*body-content*@
         <div class="col-md-2" >
             <aside>
 
@@ -34,10 +34,10 @@
                
             </aside>
         </div>@*End of aside row 2 Lift*@
-        <div class="col-md-8" >
+        <div class="col-md-10" >
             <section>
 
-                @Html.Partial("_MainPagePost", Model.Posts)
+                @Html.Partial("_NewsPagePost", Model.Posts)
              
 
             </section>

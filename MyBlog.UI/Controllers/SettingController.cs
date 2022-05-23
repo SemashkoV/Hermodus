@@ -57,6 +57,9 @@ namespace MyBlog.UI.Controllers
             {
                 obj.Id = data.Id;
                 obj.HomeImageText = data.HomeImageText;
+                obj.HomeImage1 = data.HomeImage1;
+                obj.HomeImage2 = data.HomeImage2;
+                obj.HomeImage3 = data.HomeImage3;
                 obj.NumberOfLastPost = data.NumberOfLastPost;
                 obj.NumberOfCategory = data.NumberOfCategory;
                 obj.PostNumberInPage = data.PostNumberInPage;

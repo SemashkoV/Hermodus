@@ -3604,6 +3604,7 @@
     <Content Include="Views\Shared\_MainPageWatch.cshtml" />
     <Content Include="Views\User\Personal.cshtml" />
     <Content Include="Views\Shared\_CatalogPageWatch.cshtml" />
+    <Content Include="Views\Shared\_NewsPagePost.cshtml" />
     <None Include="Views\User\Index.old" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />

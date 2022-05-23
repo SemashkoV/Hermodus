@@ -6,11 +6,20 @@
     string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
     string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
     ViewBag.Title = $"{@Model.HomeImageText}";
+    ViewBag.Image1 = $"{@Model.HomeImage1}";
+    ViewBag.Image2 = $"{@Model.HomeImage2}";
+    ViewBag.Image3 = $"{@Model.HomeImage3}";
 }
 
 
         <div class="Bannerimage">
-            @Html.Action("InsertImage", "Image", new { id = 19042 })
+            <a href="~/Home/Catalog">
+            <div class="slider single-item">
+                <div>@Html.Action("InsertImage", "Image", new { id = @ViewBag.Image1 })</div>
+                <div>@Html.Action("InsertImage", "Image", new { id = @ViewBag.Image2 })</div>
+                <div>@Html.Action("InsertImage", "Image", new { id = @ViewBag.Image3 })</div>
+            </div>
+            </a>
         </div>
         <div class="benefits">
             <ul>

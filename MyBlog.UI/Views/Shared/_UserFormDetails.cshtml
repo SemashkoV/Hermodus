@@ -1,16 +1,31 @@
 ﻿@model MyBlog.UI.Models.DashbordVM
+@using System.Configuration;
+@{
+    string _DisplayRegister = ConfigurationManager.AppSettings["DisplayRegister"];
+}
+@{
+    string _DisplayFbWidget = ConfigurationManager.AppSettings["DisplayFbWidget"];
+    string _DisplayTwWidget = ConfigurationManager.AppSettings["DisplayTwWidget"];
+    string _WebsiteRoot = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
+}
 <ul class="nav navbar-nav navbar-right">
     @{if (Model.User.RoleId == 1)
         {
-            
+
             <li><a href="~/Post/NewPost"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Новый пост</a></li>
             <li><a href="~/Comment/CommentNeedAprove"><i class="fa fa-comments" aria-hidden="true"></i> Комментарии <span class="badge">@Model.NumberOfCommentNeedApprove</span></a></li>
             <li><a href="~/Account/index"><i class="fa fa-fw fa-dashboard"></i> Панель управления</a></li>
         }
+        else if (Model.User.RoleId == 2)
+        {
+
+        }
         else if (Model.User.RoleId == 3)
         {
+          //  <li><div class="search-inner">@Html.Action("InsertImage", "Image", new { id = 21041 })<input id="su" class="search-in" value="Ввести" onfocus="if (value == 'Ввести') {value = ''}"><input type="submit" class="search-put" value="⟵" onclick="location.href = '@_WebsiteRoot/Home/Catalog?name='+su.value" /></div></li>
+
             <li><a href="~/Post/NewPost"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> New Post</a></li>
-        <li><a href="~/Account/SuperUserindex"><i class="fa fa-fw fa-dashboard"></i> SuperUser Dashboard</a></li>
+            <li><a href="~/Account/SuperUserindex"><i class="fa fa-fw fa-dashboard"></i> SuperUser Dashboard</a></li>
         }
     }
     <li class="dropdown">
@@ -43,9 +58,9 @@
                 <div class="navbar-login navbar-login-session">
                     <div class="row">
                         <div class="col-lg-12">
-                            
-                                <a href="~/Account/Logout" class="btn btn-danger btn-block">Выйти</a>
-                            
+
+                            <a href="~/Account/Logout" class="btn btn-danger btn-block">Выйти</a>
+
                         </div>
                     </div>
                 </div>
