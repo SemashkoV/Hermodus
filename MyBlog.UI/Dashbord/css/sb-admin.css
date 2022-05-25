@@ -16,7 +16,9 @@ body {
         margin-top: 50px;
     }
 }
-
+.search-inner-aut{
+  display: none;
+}
 #wrapper {
     padding-left: 0;
 }
@@ -225,5 +227,3 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
-
- 

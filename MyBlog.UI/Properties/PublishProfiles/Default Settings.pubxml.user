@@ -8,5 +8,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAk8iTyOTYMk6TCO0xSBSL5QAAAAACAAAAAAAQZgAAAAEAACAAAADkiWlKH9C03ZAf9ZCpUWzW5wIZBouWCm4OQGCWTFMaIwAAAAAOgAAAAAIAACAAAAB/oxFYUKRlyDwrfXpZ7qzwpaAhy3u6YX7CwA9YnQjZsyAAAACRVyrA6cbGxYxkdd0/JKjtFuNohNknyTCo7I/VcbIi+0AAAABEJn+8Of7MD0c9j/bc6bMKl+T+JNxdQeEjKM8F+TqBrUJud7nt+FpdTqDCoIRF+Sb9wF8q1VAfg9/3RydB2mFn</EncryptedPassword>
     <_PublishTargetUrl>ftp:// ftp.Smarterasp.net/ site1</_PublishTargetUrl>
+    <History>False|2022-05-25T21:37:56.2288145Z;False|2022-05-26T00:32:34.5204072+03:00;False|2022-05-26T00:30:09.3253524+03:00;</History>
   </PropertyGroup>
 </Project>

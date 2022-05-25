@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                <i class="fa fa-dashboard"></i> Dashboard <small>Statistics Overview</small>
+                <i class="fa fa-dashboard"></i> Панель управления <small>Обзор статистики за 24 часа</small>
             </h1>
        </div>
     </div>
@@ -33,7 +33,7 @@
                                         @Model.NumberOfNewPost
                                
                                         </div>
-                                <div>Posts!</div>
+                                <div>Новых постов</div>
                             </div>
                         </div>
                     </div>
@@ -49,13 +49,13 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">@Model.NumberOfNewComment</div>
-                            <div>New Comments!</div>
+                            <div>Новых комментариев</div>
                         </div>
                     </div>
                 </div>
                 <a href="~/Comment/CommentNeedAprove">
                     <div class="panel-footer">
-                        <span class="pull-left">Need to Approve it</span>
+                        <span class="pull-left">На проверку</span>
                         <span class="badge pull-right">@Model.NumberOfCommentNeedApprove</span>
                         <div class="clearfix"></div>
                     </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">@Model.NumberOfNewUser</div>
-                            <div>New Users!</div>
+                            <div>Новых пользователей</div>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge">@Model.NumberOfNewCategory</div>
-                            <div>Category!</div>
+                            <div>Новых категорий</div>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-sort-numeric-asc fa-fw"></i> TOP ARTICLES</h3>
+                    <h3 class="panel-title"><i class="fa fa-sort-numeric-asc fa-fw"></i> ПОСЛЕДНИЕ СТАТЬИ</h3>
                 </div>
                 <div class="panel-body">
                     @Html.Action("TopPost", "Post")

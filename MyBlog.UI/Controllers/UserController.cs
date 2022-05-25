@@ -194,7 +194,16 @@ namespace MyBlog.UI.Controllers
             }
             return PartialView("_UserFormDetails", UserAndCommment);
         }
+        [AllowAnonymous]
+        [ChildActionOnly]
 
+        public ActionResult UserFName()
+        {
+            IEnumerable<User> Model;
+            Model = repositoryUser.UserIEmum.Distinct(); ;
+
+            return PartialView("_UserFName", Model);
+        }
         private User GetUserSession()
         {
             if (Session["user"] == null)

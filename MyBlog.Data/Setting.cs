@@ -12,26 +12,26 @@ namespace MyBlog.Data
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Home Text is required")]
-        [DisplayName("Home Text:")]
+        [DisplayName("Титульный текст:")]
      
         public string HomeImageText { get; set; }
         [Required(ErrorMessage = "Home Image is required")]
-        [DisplayName("Home Image:")]
+        [DisplayName("Изображение слайдера 1:")]
         public int HomeImage1 { get; set; }
         [Required(ErrorMessage = "Home Image is required")]
-        [DisplayName("Home Image:")]
+        [DisplayName("Изображение слайдера 2:")]
         public int HomeImage2 { get; set; }
         [Required(ErrorMessage = "Home Image is required")]
-        [DisplayName("Home Image:")]
+        [DisplayName("Изображение слайдера 3:")]
         public int HomeImage3 { get; set; }
         [Required(ErrorMessage = "Num. of Last Post is required")]
-        [DisplayName("Num. of Last Post:")]
+        [DisplayName("Кол-во последних постов:")]
         public int NumberOfLastPost { get; set; }
         [Required(ErrorMessage = "Num. of Category is required")]
-        [DisplayName("Num. of Category:")]
+        [DisplayName("Кол-во категорий:")]
         public int NumberOfCategory { get; set; }
         [Required(ErrorMessage = "Post Num. in Page is required")]
-        [DisplayName("Post Num. in Page:")]
+        [DisplayName("Кол-во часов на странице:")]
         public int PostNumberInPage { get; set; }
         [Required(ErrorMessage = "Num. of Top Post is required")]
         [DisplayName("Num. of Top Post:")]

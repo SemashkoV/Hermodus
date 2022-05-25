@@ -69,6 +69,34 @@
                 <p>@Model.Cart.ComputeTotalValue().ToString("# USD")</p>
             </div>
         </div>
+        <div class="cart-info-delivery">
+            <div class="cart-info-delivery-inner">
+                <div class="cart-info-delivery-block">
+                    <h1>1. Контактные данные</h1>
+                </div>
+                <div class="cart-info-delivery-block">
+                    <div class="cart-info-delivery-block-double">
+                        <p>@Html.Action("UserFName", "User")</p>
+                        <input class="cart-inp" value=""onfocus="if (value == 'Ввести') {value = ''}"/>
+                    </div>
+                    <div class="cart-info-delivery-block-double">
+
+                    </div>
+                    <div class="cart-info-delivery-block-double">
+
+                    </div>
+                </div>
+                <div class="cart-info-delivery-block">
+
+                </div>
+                <div class="cart-info-delivery-block">
+
+                </div>
+                <div class="cart-info-delivery-block">
+
+                </div>
+            </div>
+        </div>
         
     </div>
 </div>
