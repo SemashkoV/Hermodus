@@ -1,0 +1,65 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+
+@model IPagedList<MyBlog.Data.CSS>
+
+@{
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div><span class="fa fa-text fa-2x" aria-hidden="true"></span> All CSS</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-condensed">
+            <tr>
+                <th>Id</th>
+                <th>CSS</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                     <td class="col-md-1">
+                                <p>@item.Id</p>
+                    </td>
+                    
+                    <td class="col-md-3">
+                        <p class="truncateOpt" href="/Upload/@item.Code">
+                            <div class="CutlongTitle">
+                                <p>@item.Code</p>
+
+                            </div>
+                        </p>
+
+                    </td>
+                    
+                    
+                    <td class="col-md-2">
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger glyphicon glyphicon glyphicon-trash" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+
+
+
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a New CSS", "NewCSS", null, new { @class = "btn btn-default" })
+
+
+    </div>@*End of Panel Footer*@
+</div>
+<div>
+ @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>@*end of paging*@
+
+

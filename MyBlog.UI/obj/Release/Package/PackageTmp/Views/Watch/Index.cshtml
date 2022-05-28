@@ -1,0 +1,79 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+
+@model IPagedList <MyBlog.Data.Watch>
+
+@{
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div><span class="fa fa-text fa-2x" aria-hidden="true"></span> All Watches</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-condensed">
+            <tr>
+                <th>Model</th>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-md-3">
+                        <p class="truncateOpt" href="/Upload/@item.Title">
+                            <div class="CutlongTitle">
+                                <p>@item.Title</p>
+
+                            </div>
+                        </p>
+
+                    </td>
+                    <td class="col-md-3">
+                        <p class="truncateOpt" href="/Upload/@item.Title">
+                            <div class="CutlongTitle">
+                                <p>@item.Id</p>
+
+                            </div>
+                        </p>
+
+                    </td>
+                    <td class="col-md-3">
+                        <a class="truncateOpt" href="@item.Image">
+                            <div class="CutlongTitle">
+                                <img src="@item.Image" alt="Image"  height="150"/>
+                              
+                            </div>
+                        </a>
+
+                    </td>
+                   
+                    
+                    <td class="col-md-2">
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger glyphicon glyphicon glyphicon-trash" })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+
+
+
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a New Model", "NewWatch", null, new { @class = "btn btn-default" })
+
+
+    </div>@*End of Panel Footer*@
+</div>
+<div>
+ @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>@*end of paging*@
+
+

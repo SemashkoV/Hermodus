@@ -1,0 +1,155 @@
+﻿@model MyBlog.Data.Watch
+@{
+    ViewBag.Title = Model.Title;
+}
+<div class="product-wrap">
+    <div class="product-inner">
+        <div class="product-photo">
+            <img src="@Model.Image" alt="Image" />
+        </div>
+        <div class="product-info">
+            <h3>@Model.Title @Model.CompanyId @Model.Model</h3>
+            <h3>@Model.Price USD</h3>
+            
+                <div class="product-buy">
+                    
+                    @*<a href="#" class="btn buy-btn buy">Добавить в корзину</a>
+                    <a href="#" class="btn buy-btn instant-buy">Купить сейчас</a>*@
+                    @using (Html.BeginForm("AddToCart", "Cart"))
+            { 
+                    @Html.HiddenFor(x => x.Id)
+                     <input type="submit" class="btn buy-btn buy" value="Добавить в корзину" />
+                    }
+                    @using (Html.BeginForm("Buy", "Cart"))
+                    {
+                        @Html.HiddenFor(x => x.Id)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                     <input type="submit" class="btn buy-btn instant-buy" value="Купить сейчас" />
+                    }
+                </div>
+            
+            </div>
+    </div>
+    <div class="product-content">
+        <div class="product-content-about">
+            <p>@Model.Content</p>
+        </div>
+        <div class="product-content-feature">
+            <ul>
+                <li>
+                    <p>Модель</p>
+                    <p>@Model.CompanyId @Model.Model</p>
+                </li>
+                <li>
+                    <p>Артикул</p>
+                    <p>@Model.Article</p>
+                </li>
+                <li>
+                    <p>Страна</p>
+                    <p>@Model.Country</p>
+                </li>
+                <li>
+                    <p>Механизм</p>
+                    <p>@Model.Movement</p>
+                </li>
+                <li>
+                    <p>Корпус</p>
+                    <p>@Model.Frame</p>
+                </li>
+                <li>
+                    <p>Циферблат</p>
+                    <p>@Model.Face</p>
+                </li>
+                <li>
+                    <p>Браслет</p>
+                    <p>@Model.Bracelet</p>
+                </li>
+                <li>
+                    <p>Водозащита</p>
+                    <p>@Model.Protection</p>
+                </li>
+                <li>
+                    <p>Подсветка</p>
+                    <p>@Model.Backlight</p>
+                </li>
+                <li>
+                    <p>Стекло</p>
+                    <p>@Model.Glass</p>
+                </li>
+                <li>
+                    <p>Календарь</p>
+                    <p>@Model.Calendar</p>
+                </li>
+                <li>
+                    <p>Размер</p>
+                    <p>@Model.Size</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="container-fluid body-content-pages">
+    <section class="container">
+        <div class="col-md-12">
+            <article class="post-preview">-->
+
+               <!-- <header class="modal-title" style="margin-top:50px">
+                    <h1>  @Model.Title </h1>
+                </header>
+                <hr />
+                <p class="post-subtitle">
+                    @Model.CompanyId
+                </p>
+                <p class="post-subtitle">
+                    @Model.Price
+                </p>
+                <p class="post-subtitle">
+                    @Model.Content
+                </p>
+                <p class="post-subtitle">
+                    @Model.Article
+                </p>
+                <p class="post-subtitle">
+                    @Model.Country
+                </p>
+                <p class="post-subtitle">
+                    @Model.Movement
+                </p>
+                <p class="post-subtitle">
+                    @Model.Frame
+                </p>
+                <p class="post-subtitle">
+                    @Model.Face
+                </p>
+                <hr />
+                <footer class="post-meta">
+                    
+                   
+
+                </footer>-->
+            <!--</article>
+            <hr>
+        </div>
+      
+    </section>
+   
+
+</div>-->
+

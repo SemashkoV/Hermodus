@@ -1,0 +1,37 @@
+﻿@model MyBlog.Data.CSS
+@{
+    ViewBag.Title = "CSS";
+
+
+}
+
+
+
+
+<div class="container-fluid body-content-pages">
+    <section class="container">
+        <div class="col-md-12">
+            <article class="post-preview">
+
+                <header class="modal-title">
+                    <h1>  @Model.Id </h1>
+                </header>
+                <hr />
+                <p class="post-subtitle">
+                    @Html.Raw(Model.Code)
+                </p>
+                <hr />
+                <footer class="post-meta">
+                    
+                   
+
+                </footer>
+            </article>
+            <hr>
+        </div>
+      
+    </section>
+   
+
+</div>
+

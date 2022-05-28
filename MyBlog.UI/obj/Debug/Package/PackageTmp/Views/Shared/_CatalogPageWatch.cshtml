@@ -1,0 +1,67 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+@using System.Configuration;
+@using Microsoft.AspNetCore.Mvc.TagHelpers;
+@using Microsoft.AspNetCore.Razor.TagHelpers;
+@using MyBlog.Data;
+
+@model IPagedList<MyBlog.Data.Watch>
+<style type="text/css" media="all">
+    div.box {
+        height: 50px;
+        /* 				overflow: hidden; */
+    }
+</style>
+<div class="filter-wrapper">
+    <h1 class="filter-title">Каталог</h1>
+    <div class="filter-inner">
+
+        <div class="filter-inner-content">
+
+        </div>
+        <div class="filter-inner-content-rt">
+            <a class="filter-inner-sort" href="/Home/Catalog/?sortOrder=@ViewBag.NameSort">По названию</a>
+            <ul class="filter-inner-sortlist">
+                <li><a href="/Home/Catalog/?sortOrder=@ViewBag.AgeSort">По стоимости</a></li>
+                <li><a href="/Home/Catalog/?sortOrder=@ViewBag.CompSort">По бренду</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="catalog-items catalog">
+        @foreach (var item in Model)
+        {
+            <div class="catalog-item">
+                <div class="row MainPost">
+                    <a href="@Url.Action("Details", "Watch", new { id = item.Id })">
+                        <div class="ImagePostTitle">
+                            <img src="@item.Image" class="img-responsive watch-img" style="max-height: 325px; max-width: 260px; margin-left: auto; margin-right: auto;" />
+
+                            @* <div class="Bannertext">@Model.Title</div>*@
+                            <p class="BannerPostTitle truncateOpt">@item.CompanyId @item.Model</p>
+
+                        </div>
+
+
+                        <div class="watch-content">
+                            <p>@item.Price USD</p>
+                        </div>
+                        <div class="product-cut-button">
+                            <a href="@Url.Action("Details", "Watch", new { id = item.Id })" class="watch-btn btn">Подробнее</a>
+                        </div>
+                    </a>
+                    @* End of Post row *@
+                </div>
+            </div>
+        }
+</div>
+
+
+
+
+
+
+
+@Html.PagedListPager(Model, page => Url.Action("Catalog", new { page, ViewBag.SortOrder }))
+
+

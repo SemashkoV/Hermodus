@@ -1,0 +1,61 @@
+﻿@model MyBlog.UI.Models.PostViewModel
+
+@using System.Configuration;
+@{
+    string _DisplayLastCategory = ConfigurationManager.AppSettings["DisplayLastCategory"];
+    string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
+    string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
+    ViewBag.Title = $"{@Model.HomeImageText}";
+}
+
+
+ 
+        <div class="benefits">
+            <ul>
+                <li>
+                    <img src="~/Images/benefits_03.png" class="" />
+                    <p>Международная гарантия</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_04.png" class="" />
+                    <p>Работаем более 10 лет</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_02.png" class="" />
+                    <p>Рассрочка под 0%</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_01.png" class="" />
+                    <p>Бесплатная доставка</p>
+                </li>
+            </ul>
+        </div>
+        @*<h1 id="HomePage-h-text-box-img">
+            @Model.HomeImageText
+        </h1>*@
+        
+            @Html.Partial("_CatalogPageWatch", Model.Watches)
+
+            
+  
+
+@section Scripts {
+
+    
+    <script src="~/scripts/jquery.dotdotdot.min.js"></script>
+
+
+    <script>
+    //to resize Images as img-reposive after erase inline css add new
+        $(document).ready(function () {
+            $('img').attr('style', 'max-width: 100%; height:auto;');
+            $('.dot3').dotdotdot();
+
+        });</script>
+
+
+}
+
+
+
+
