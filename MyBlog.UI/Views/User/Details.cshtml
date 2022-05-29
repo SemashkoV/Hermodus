@@ -111,77 +111,7 @@
 
 
         }
-        else if (_RoleId == 3)//SuperUser roleid=3
-        {
-            Layout = "~/Views/Shared/_SuperUserDashbord.cshtml";
-
-            <h2>Details</h2>
-
-            <div>
-
-                <hr />
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.FName)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.FName)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.LName)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.LName)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Email)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Email)
-                    </dd>
-
-
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Create_time)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Create_time)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Last_Login)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Last_Login)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Update_Time)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Update_Time)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.RoleId)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.RoleDetails.RoleName)
-                    </dd>
-
-                </dl>
-            </div>
-
-
-        }
+       
         else if (_RoleId == 1)//Admin roleid=1
         {
             Layout = "~/Views/Shared/_Dashbord.cshtml";

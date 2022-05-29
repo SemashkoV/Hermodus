@@ -33,7 +33,7 @@ namespace MyBlog.UI.Controllers
                 .ToPagedList(page ?? 1, 5); 
             return View(model);
         }
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult UploadImage()
         {
             return PartialView("_UploadImage");
@@ -87,7 +87,7 @@ namespace MyBlog.UI.Controllers
             }
             return Json(Convert.ToString(_imgname), JsonRequestBehavior.AllowGet);
         }
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult NewImage()
         {
             Image model = GetImageSession();
@@ -99,7 +99,7 @@ namespace MyBlog.UI.Controllers
         [ValidateInput(false)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult NewImage(Image data)
         {
             Image obj = GetImageSession();
@@ -183,7 +183,7 @@ namespace MyBlog.UI.Controllers
             }
             return RedirectToAction("Index", "Image");
         }
-        [Authorize(Roles = "Admin,SuperUser")]
+        [Authorize(Roles = "Admin")]
         public bool AddImage(Image data)
         {
             var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;

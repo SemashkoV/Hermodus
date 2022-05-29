@@ -5,7 +5,6 @@ D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\MyBlog.UI.pdb
 D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\Antlr3.Runtime.dll
 D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\EntityFramework.dll
 D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\EntityFramework.SqlServer.dll
-D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\Facebook.dll
 D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\GridMvc.dll
 D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\Microsoft.AI.Agent.Intercept.dll
 D:\My projects\MyBlog-ASP.NET-MVC5-master\MyBlog.UI\bin\Microsoft.AI.DependencyCollector.dll

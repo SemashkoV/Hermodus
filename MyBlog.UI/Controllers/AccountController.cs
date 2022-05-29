@@ -62,19 +62,7 @@ namespace MyBlog.UI.Controllers
             model.NumberOfCommentNeedApprove = repositoryComment.CommentList.Where(p => p.Publish == false).Count();
             return View(model);
         }
-        [Authorize(Roles = "SuperUser,Admin")]
-        public ActionResult SuperUserIndex()
-        {
-            DateTime Last24Hours = DateTime.Now.Date.AddHours(-24);
-
-            DashbordVM model = new DashbordVM();
-            model.NumberOfNewUser = repositoryUser.UserList.Where(p => p.Create_time.Date >= Last24Hours).Count();// >= 24H to get all users added last 24h
-            model.NumberOfNewPost = repositoryPost.PostList.Where(p => p.Create_time.Date >= Last24Hours).Count();
-            model.NumberOfNewCategory = repositoryCategory.CategoryIList.Where(p => p.Create_time.Date >= Last24Hours).Count();
-            model.NumberOfNewComment = repositoryComment.CommentList.Where(p => p.Create_time.Date >= Last24Hours).Count();
-            model.NumberOfCommentNeedApprove = repositoryComment.CommentList.Where(p => p.Publish == false).Count();
-            return View(model);
-        }
+       
         // GET: Account
         public ActionResult Logout()
         {
@@ -136,10 +124,7 @@ namespace MyBlog.UI.Controllers
                         {
                             return Redirect(returnUrl ?? Url.Action("Index", "Account"));//Admin dash
                         }
-                        else if (_User.RoleId == 3)//SuperUser
-                        {
-                            return Redirect(returnUrl ?? Url.Action("SuperUserIndex", "Account"));//SuperUser Dash
-                        }
+
                         return Redirect(returnUrl ?? Url.Action("Index", "Home"));//User HomePage
                     }
 
@@ -273,7 +258,7 @@ namespace MyBlog.UI.Controllers
         }
 
         // GET: /Account/ResetPassword
-        [Authorize(Roles = "User,Admin,SuperUser")]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult ResetPassword(int? Id)
         {
             var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;
@@ -298,7 +283,7 @@ namespace MyBlog.UI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User,Admin,SuperUser")]
+        [Authorize(Roles = "User,Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult ResetPassword(ResetPasswordViewModel model)
         {
@@ -339,6 +324,7 @@ namespace MyBlog.UI.Controllers
 
 
         //Email Sender 
+        [AllowAnonymous]
         public void  EMailPasswordSender(string receiver,string Password)
         {
             EmailSetting _emailsetting = repositoryEmailSetting.GetEmailSetting;
@@ -348,7 +334,7 @@ namespace MyBlog.UI.Controllers
 
             mail.From = new MailAddress(_emailsetting.Sender);
             mail.To.Add(receiver);
-            mail.Subject = "Your Password";
+            mail.Subject = "Ваш пароль";
             string HashUserPassword = repositoryDEncryption.Decrypt(Password);
             mail.Body = HashUserPassword;
             SmtpServer.UseDefaultCredentials = false;
@@ -364,140 +350,7 @@ namespace MyBlog.UI.Controllers
 
             SmtpServer.Send(mail);
         }
-        //FaceBook login///
-        private Uri RediredtUri
-        {
-            get
-            {
-                var uriBuilder = new UriBuilder(Request.Url);
-                uriBuilder.Query = null;
-                uriBuilder.Fragment = null;
-                uriBuilder.Path = Url.Action("FacebookCallback");
-                return uriBuilder.Uri;
-            }
-        }
-
-        [AllowAnonymous]
-        public ActionResult Facebook()
-        {
-          //  Setting _Setting = repositorySetting.GetSetting;
-            var fb = new FacebookClient();
-            var loginUrl = fb.GetLoginUrl(new
-            {
-
-
-                client_id = ConfigurationManager.AppSettings["FBAppID"],
-                client_secret = ConfigurationManager.AppSettings["FBAppSecret"],
-                redirect_uri = RediredtUri.AbsoluteUri,
-                response_type = "code",
-                scope = "email"
-
-            });
-            return Redirect(loginUrl.AbsoluteUri);
-        }
-
-        public ActionResult FacebookCallback(string code)
-        {
-            Setting _Setting = repositorySetting.GetSetting;
-            var fb = new FacebookClient();
-            dynamic result = fb.Post("oauth/access_token", new
-            {
-                client_id = ConfigurationManager.AppSettings["FBAppID"],
-                client_secret = ConfigurationManager.AppSettings["FBAppSecret"],
-                redirect_uri = RediredtUri.AbsoluteUri,
-                code = code
-
-            });
-            var accessToken = result.access_token;
-            Session["AccessToken"] = accessToken;
-            fb.AccessToken = accessToken;
-            dynamic FbData = fb.Get("me?fields=link,first_name,currency,last_name,email,gender,locale,timezone,verified,picture,age_range");
-
-            User obj = GetUserSession();
-            bool EmailUniqe = repositoryUser.UniqueEmail(FbData.email);
-
-           if (EmailUniqe == true)
-            {//Exsisit User
-             /// login
-                //need user details
-                obj = repositoryUser.UserIEmum.Where(a => a.Email.Equals(FbData.email)).FirstOrDefault();
-                ///Last Login///
-                ///
-                obj.Last_Login = DateTime.Now;
-                repositoryUser.Save(obj);
-                ///
-
-
-            }
-            else { //New User  register data
-                   //  obj.UserId = FbData.id;
-                
-              //  string testid = FbData.id;
-              //  int idddd = Convert.ToInt32(testid);
-            obj.FName = FbData.first_name;
-            obj.LName = FbData.last_name;
-            obj.Email = FbData.email;
-
-
-           string EncryptedPW = repositoryDEncryption.Encrypt("123456");//Defulte for test 
-          
-           obj.Password = EncryptedPW;
-            obj.Create_time = DateTime.Now;
-            obj.Update_Time = DateTime.Now;
-            obj.Last_Login = DateTime.Now;
-            obj.RoleId = 2;//TO be normal user Role
-            repositoryUser.Save(obj);
-
-             
-
-            }
-           // To get current user data
-          User _User = repositoryUser.UserIEmum.Where(a => a.Email.Equals(obj.Email)).FirstOrDefault();
-            
-
-            //   string encryptedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(data.Password, "SHA1");
-            if (_User != null)
-            {
-                JavaScriptSerializer js = new JavaScriptSerializer();
-                string data = js.Serialize(_User);
-                FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, _User.Email, DateTime.Now, DateTime.Now.AddMinutes(30), false, data);
-                string encToken = FormsAuthentication.Encrypt(ticket);
-                HttpCookie authoCookies = new HttpCookie(FormsAuthentication.FormsCookieName, encToken);
-                Response.Cookies.Add(authoCookies);
-               
-              
-            }
-            ////
-
-
-
-
-                   return Redirect( Url.Action("Index", "Home"));//User HomePage
-
-
-          
-
-        }
-        [AllowAnonymous]
-        public  bool ValidateCaptcha(string response)
-        {
-          //  Setting _Setting = repositorySetting.GetSetting;
-
-            //secret that was generated in key value pair  
-           string secret = ConfigurationManager.AppSettings["GoogleSecretkey"]; //WebConfigurationManager.AppSettings["recaptchaPrivateKey"];
-
-            var client = new WebClient();
-            var reply = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
-
-            var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
-
-            return Convert.ToBoolean(captchaResponse.Success);
-
-        }
-
-
-
+     
     }
-
 
 }

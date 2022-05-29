@@ -87,7 +87,7 @@ namespace MyBlog.UI.Controllers
             }
             return Json(Convert.ToString(_txtname), JsonRequestBehavior.AllowGet);
         }
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult NewCompany()
         {
             Company model = GetCompanySession();
@@ -99,7 +99,7 @@ namespace MyBlog.UI.Controllers
         [ValidateInput(false)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult NewCompany(Company data)
         {
             Company obj = GetCompanySession();
@@ -191,7 +191,7 @@ namespace MyBlog.UI.Controllers
             }
             return RedirectToAction("Index", "Company");
         }
-        [Authorize(Roles = "Admin,SuperUser")]
+        [Authorize(Roles = "Admin")]
         public bool AddCompany(Company data)
         {
             var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;

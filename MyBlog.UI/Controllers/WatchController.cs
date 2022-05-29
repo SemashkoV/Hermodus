@@ -49,7 +49,7 @@ namespace MyBlog.UI.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult UploadText()
         {
             return PartialView("_UploadText");
@@ -94,7 +94,7 @@ namespace MyBlog.UI.Controllers
             }
             return Json(Convert.ToString(_txtname), JsonRequestBehavior.AllowGet);
         }
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult NewWatch()
         {
             Watch model = GetWatchSession();
@@ -106,7 +106,7 @@ namespace MyBlog.UI.Controllers
         [ValidateInput(false)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult NewWatch(Watch data)
         {
             Watch obj = GetWatchSession();
@@ -239,7 +239,7 @@ namespace MyBlog.UI.Controllers
             }
             return RedirectToAction("Index", "Watch");
         }
-        [Authorize(Roles = "Admin,SuperUser")]
+        [Authorize(Roles = "Admin")]
         public bool AddWatch(Watch data)
         {
             var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;

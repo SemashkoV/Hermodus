@@ -33,14 +33,14 @@ namespace MyBlog.UI.Controllers
             repositoryImage = repoImage;
         }
         // GET: Chart
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View();
           
         }
 
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public JsonResult GetChartAllData(string aYear)
@@ -211,7 +211,7 @@ namespace MyBlog.UI.Controllers
         //    // return chartData;
         //    return Json(chartData, JsonRequestBehavior.AllowGet);
         //}
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public JsonResult GetChartDataPostComments(string aYear)

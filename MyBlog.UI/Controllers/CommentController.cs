@@ -38,18 +38,9 @@ namespace MyBlog.UI.Controllers
 
             return View(model);
         }
-        [Authorize(Roles = "Admin,SuperUser")]
-        public ActionResult SuperUserIndex(int? page)
-        {
-
-            IEnumerable<Comment> model = repositoryCommment.CommentList.OrderBy(p => p.CommentId)
-            .OrderByDescending(p => p.Create_time).ToPagedList(page ?? 1, 5);//5 is pagesize
-
-            return View(model);
-            
-        }
+     
       
-        [Authorize(Roles = "User,SuperUser,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult AddNewComment()
         {
             return View();
@@ -57,7 +48,7 @@ namespace MyBlog.UI.Controllers
         [ValidateInput(false)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "User,SuperUser,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult AddNewComment(int? Id,Comment data)
         {
 
@@ -120,7 +111,7 @@ namespace MyBlog.UI.Controllers
                 return RedirectToAction("Details","Post", new { Id = obj.PostId });
            
         }
-        [Authorize(Roles = "User,SuperUser,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult Edit(int? Id)
         {
             if (Id == null)
@@ -175,7 +166,7 @@ namespace MyBlog.UI.Controllers
             
             return View(model); 
         }
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult SuperUserCommentNeedAprove(int? page)
         {
             IEnumerable<Comment> model = repositoryCommment.CommentList
@@ -187,7 +178,7 @@ namespace MyBlog.UI.Controllers
 
         }
         [ValidateInput(false)]
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult PublishComment(int? Id)
         {
             var identity = (HttpContext.User as MyPrincipal).Identity as MyIdentity;
@@ -203,8 +194,8 @@ namespace MyBlog.UI.Controllers
              return RedirectToAction("CommentNeedAprove", "Comment");
             }
             else
-            {//SuperUser Role Page
-                return RedirectToAction("SuperUserCommentNeedAprove", "Comment");
+            {
+                return RedirectToAction("CommentNeedAprove", "Comment");
             }
         }
               

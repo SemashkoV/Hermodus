@@ -65,7 +65,7 @@ namespace MyBlog.UI.Controllers
         //    IEnumerable<User> Model = repositoryUser.UserList;
         //    return View(Model);
         //}
-        [Authorize(Roles = "User,SuperUser,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult Details(int? Id)
         {
 
@@ -83,7 +83,7 @@ namespace MyBlog.UI.Controllers
             return View(model);
            
         }
-        [Authorize(Roles = "User,SuperUser,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult Personal(int? Id)
         {
 
@@ -176,7 +176,7 @@ namespace MyBlog.UI.Controllers
             }
             return RedirectToAction("Index", "User");
         }
-        [Authorize(Roles = "User,SuperUser,Admin")]
+        [Authorize(Roles = "User,Admin")]
         //UserControl For User Details
         public ActionResult UserFormDetails(int? Id)
         {

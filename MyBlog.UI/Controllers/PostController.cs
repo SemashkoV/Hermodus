@@ -73,15 +73,7 @@ namespace MyBlog.UI.Controllers
         ////    .Take(20).ToList();
         //    return View(model);
         //}
-        [Authorize(Roles = "SuperUser,Admin")]
-        public ActionResult SuperUserIndex(int page = 1)
-        {
-
-            IEnumerable<Post> model = repositoryPost.PostList.OrderBy(p => p.PostId)
-           .OrderByDescending(p => p.Create_time);
-            // List<Post> model = repositoryPost.PostList.ToList();
-            return View(model);
-        }
+     
         [AllowAnonymous]
         [ValidateInput(false)]
         public ActionResult PostByCategory(int? category, int? page)
@@ -99,7 +91,7 @@ namespace MyBlog.UI.Controllers
            
             return View(model);
         }
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult NewPost()
         {
             Post model = GetPostSession();
@@ -112,7 +104,7 @@ namespace MyBlog.UI.Controllers
         [ValidateInput(false)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "SuperUser,Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> NewPost(Post data)
         {
             Post obj = GetPostSession();
@@ -192,7 +184,7 @@ namespace MyBlog.UI.Controllers
         }
 
 
-        [Authorize(Roles = "Admin,SuperUser")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int ?Id)
         {
             if (Id == null)

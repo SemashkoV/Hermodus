@@ -157,108 +157,7 @@ namespace MyBlog.UI.Controllers
 
             return View(data);
         }
-        //Advance Setting For External Apps
-        public ActionResult AdvancedSettings()
-        {
-            //AdvancedSettings _AdvancedSettings=new AdvancedSettings();
-            AdvancedSettings _AdvancedSettings = GetAdvanceSettingSession();
-
-            //Read setting 
-            string _DisplayLastCategory = ReadSetting("DisplayLastCategory");
-            string _DisplayLastPost= ReadSetting("DisplayLastPost");
-            string _DisplayFbWidget = ReadSetting("DisplayFbWidget");
-            string _DisplayTwWidget = ReadSetting("DisplayTwWidget");
-            string _DisplayGoogleAdv = ReadSetting("DisplayGoogleAdv");
-            string _DisplaydisqusWidget = ReadSetting("DisplaydisqusWidget");
-            string _DisplayLocalCommentWidget = ReadSetting("DisplayLocalCommentWidget");
-            string _DisplayFBLogin = ReadSetting("DisplayFBLogin");
-            string _DisplayRegister = ReadSetting("DisplayRegister");
-
-
-            //Send it to to model
-            //  Setting to Show and Hiden Widgets
-
-            if (_DisplayLastCategory == "none")
-            { _AdvancedSettings.DisplayLastCategory = false; }
-            else { _AdvancedSettings.DisplayLastCategory = true; }
-           
-            if (_DisplayLastPost == "none")
-            { _AdvancedSettings.DisplayLastPost = false; }
-            else { _AdvancedSettings.DisplayLastPost = true; }
-            
-
-
-            if (_DisplayFBLogin == "none")
-            { _AdvancedSettings.DisplayFBLogin = false; }
-            else { _AdvancedSettings.DisplayFBLogin = true; }
-
-            if(_DisplayRegister=="none")
-            { _AdvancedSettings.DisplayRegister = false; }
-            else { _AdvancedSettings.DisplayRegister = true; }
-            ///
-
-            _AdvancedSettings.FBAppID = ReadSetting("FBAppID");
-            _AdvancedSettings.FBAppSecret = ReadSetting("FBAppSecret");
-            _AdvancedSettings.GoogleSitekey = ReadSetting("GoogleSitekey");
-            _AdvancedSettings.GoogleSecretkey = ReadSetting("GoogleSecretkey");
-
-
-           return View(_AdvancedSettings);
-        }
-        [HttpPost]
-        public ActionResult AdvancedSettings(AdvancedSettings data)
-        {
-
-
-            AdvancedSettings obj = GetAdvanceSettingSession();
-            obj = data;
-            //  Setting to Show and Hiden Widgets
-            string _DisplayLastCategory;
-            if (obj.DisplayLastCategory == false)
-            { _DisplayLastCategory = "none"; }
-            else { _DisplayLastCategory = "block"; }
-            string _DisplayLastPost;
-            if (obj.DisplayLastPost == false)
-            { _DisplayLastPost = "none"; }
-            else { _DisplayLastPost = "block"; }
         
-           
-            string _DisplayFBLogin;
-            if (obj.DisplayFBLogin == false)
-            { _DisplayFBLogin = "none"; }
-            else { _DisplayFBLogin = "block"; }
-
-            string _DisplayRegister;
-            if (obj.DisplayRegister == false)
-            { _DisplayRegister = "none"; }
-            else { _DisplayRegister = "block"; }
-
-
-           
-            if ((data.FBAppSecret==null) || (data.GoogleSecretkey == null))
-            {
-                TempData["message"] = string.Format("Please Check you FBAppSecret and GoogleSecretkey ");
-                return View();
-            }
-
-
-            //New Key or Update
-            AddUpdateAppSettings("DisplayLastCategory", _DisplayLastCategory);
-            AddUpdateAppSettings("DisplayLastPost", _DisplayLastPost);
-
-            AddUpdateAppSettings("DisplayFBLogin", _DisplayFBLogin);
-            AddUpdateAppSettings("DisplayRegister", _DisplayRegister);
-            AddUpdateAppSettings("FBAppID", obj.FBAppID);
-            AddUpdateAppSettings("FBAppSecret", obj.FBAppSecret);
-            AddUpdateAppSettings("GoogleSitekey", obj.GoogleSitekey);
-            AddUpdateAppSettings("GoogleSecretkey", obj.GoogleSecretkey);
-          
-
-            TempData["message"] = string.Format("Updated Successfully");
-
-
-            return View();
-        }
         //ReadSetting From  webconfig
         public string  ReadSetting(string key)
         {
@@ -324,14 +223,7 @@ namespace MyBlog.UI.Controllers
             return (EmailSetting)Session["Emailsetting"];
         }
 
-        private AdvancedSettings GetAdvanceSettingSession()
-        {
-            if (Session["advancesetting"] == null)
-            {
-                Session["advancesetting"] = new AdvancedSettings();
-            }
-            return (AdvancedSettings)Session["advancesetting"];
-        }
+ 
 
     }
 }

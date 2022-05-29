@@ -3512,15 +3512,12 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\SettingController.cs" />
-    <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AdvancedSettings.cs" />
-    <Compile Include="Models\CaptchaResponse.cs" />
     <Compile Include="Models\PageLVM.cs" />
     <Compile Include="Models\CategoryLVM.cs" />
     <Compile Include="Models\ChartMVL.cs" />
@@ -3542,18 +3539,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SEO\Ensure.cs" />
-    <Compile Include="SEO\ISitemapGenerator.cs" />
-    <Compile Include="SEO\ISitemapItem.cs" />
-    <Compile Include="SEO\PathUtils.cs" />
-    <Compile Include="SEO\RegexUtils.cs" />
-    <Compile Include="SEO\SeoFriendlyRoute.cs" />
-    <Compile Include="SEO\SitemapChangeFrequency.cs" />
-    <Compile Include="SEO\SitemapGenerator.cs" />
-    <Compile Include="SEO\SitemapItem.cs" />
-    <Compile Include="SEO\SitemapResult.cs" />
-    <Compile Include="SEO\StringExtensions.cs" />
-    <Compile Include="SEO\UrlHelperExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -3582,7 +3567,6 @@
     <Content Include="Views\Chart\_UserMonthlyChart.cshtml" />
     <Content Include="Views\Chart\_ImageMonthlyChart.cshtml" />
     <Content Include="Views\Shared\_CommnetByPost.cshtml" />
-    <Content Include="Views\Comment\SuperUserCommentNeedAprove.cshtml" />
     <Content Include="Views\Page\Delete.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Watch\Delete.cshtml" />
@@ -3640,10 +3624,6 @@
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Page\Details.cshtml" />
     <Content Include="Views\Page\AddNewPage.cshtml" />
-    <Content Include="Views\Shared\_SuperUserDashbord.cshtml" />
-    <Content Include="Views\Post\SuperUserIndex.cshtml" />
-    <Content Include="Views\Comment\SuperUserIndex.cshtml" />
-    <Content Include="Views\Account\SuperUserIndex.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Setting\UpdateEMailSetting.cshtml" />
@@ -3652,7 +3632,6 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Comment\CommentNeedAprove.cshtml" />
     <Content Include="Views\Comment\Delete.cshtml" />
-    <Content Include="Views\Setting\AdvancedSettings.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
