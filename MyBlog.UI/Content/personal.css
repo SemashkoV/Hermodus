@@ -597,6 +597,95 @@ strong{
 .cart-info-bottom p{
  width: 200px;
 }
+.cart-info-delivery-block{
+  display: flex;
+  justify-content: space-between;
+}
+.cart-info-delivery-block h1{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.cart-info-delivery-block-double p{
+  margin-bottom: 5px;
+  color: #000;
+  font-weight: 300;
+}
+.cart-info-delivery-block-double{
+  max-width: 280px;
+  width: 100%;
+  font: 300 18px/22px "Source Sans Pro",sans-serif,helvetica,arial;
+  }
+
+.cart-inp{
+  max-width: 300px;
+  width: 100%;
+  padding: 10px 14px 9px 14px;
+  border: 1px solid #e1e1e1;
+}
+.cart-inp:focus{
+  padding: 10px 14px 9px 14px;
+    border: 1px solid #e1e1e1;
+}
+.cart-inp:hover{
+  padding: 10px 14px 9px 14px;
+    border: 1px solid #e1e1e1;
+}
+.cart-info-del-block{
+  display: block;
+}
+.cart-info-del-block-double{
+  margin-bottom: 20px;
+  font: 300 18px/22px "Source Sans Pro",sans-serif,helvetica,arial;
+}
+.cart-info-del-block-double p{
+  margin-bottom: 5px;
+  color: #000;
+  font-weight: 300;
+}
+.cart-inp-del{
+  max-width: 520px;
+  width: 100%;
+  padding: 10px 14px 9px 14px;
+  border: 1px solid #e1e1e1;
+}
+.cart-inp-del:focus{
+  padding: 10px 14px 9px 14px;
+    border: 1px solid #e1e1e1;
+}
+.cart-inp-del:hover{
+  padding: 10px 14px 9px 14px;
+    border: 1px solid #e1e1e1;
+}
+.cart-inp-del:focus-visible{
+  outline: none;
+}
+.btn-black{
+  border-radius: 0;
+  background-color: #121212;
+  border: 1px solid #121212;
+  color: #fff;
+  -webkit-transition: 0.3s background-color cubic-bezier(0.25, 0.46, 0.45, 0.94), 0.3s border-color cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: 0.3s background-color cubic-bezier(0.25, 0.46, 0.45, 0.94), 0.3s border-color cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: 0.3s background-color cubic-bezier(0.25, 0.46, 0.45, 0.94), 0.3s border-color cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: 0.3s background-color cubic-bezier(0.25, 0.46, 0.45, 0.94), 0.3s border-color cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 0.3s background-color cubic-bezier(0.25, 0.46, 0.45, 0.94), 0.3s border-color cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  min-width: 266px;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.btn-black:hover, .btn-black:focus {
+   color: #fff;
+    background-color: rgba(18,18,18,0.75);
+    border-color: rgba(18,18,18,0.75);
+}
+.form-policy{
+  margin-top: 5px;
+  font-style: 10px;
+}
+.link-black{
+  text-decoration: underline;
+}
 /*         ACCOUNT START           */
 .lk-wrapper{
   max-width: 1120px;
