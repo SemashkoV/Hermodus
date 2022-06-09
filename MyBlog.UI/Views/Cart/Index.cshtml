@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Корзина";
+    string ord = "";
 }
 @*
     <h2>Корзина</h2>
@@ -47,12 +48,12 @@
         <a href="~/Home/Catalog">Продолжить покупки</a>
     </div>
     <div class="cart-info">
-        
+
         <div class="cart-info-inner">
             @foreach (var item in Model.Cart.Lines)
             {
                 <div class="cart-info-top">
-                    <img src="@item.Watch.Image"/>
+                    <img src="@item.Watch.Image" />
                     <p>@item.Watch.CompanyId @item.Watch.Model</p>
                     <div class="cart-info-top-double">
                         <p>Количество</p>
@@ -62,51 +63,25 @@
                         <p>Итого</p>
                         @((item.Quantity * item.Watch.Price).ToString("# USD"))
                     </div>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                    {
+                        @Html.Hidden("Id", item.Watch.Id)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
+                    }
                 </div>
+                ord += item.Watch.CompanyId + " " + item.Watch.Model + "\n";
             }
             <div class="cart-info-bottom">
                 <p>Всего:</p>
                 <p>@Model.Cart.ComputeTotalValue().ToString("# USD")</p>
             </div>
         </div>
-        <div class="cart-info-delivery">
-            <div class="cart-info-delivery-inner">
-                <div class="cart-info-delivery-block">
-                    <h1>1. Контактные данные</h1>
-                </div>
-                <div class="cart-info-delivery-block">
-                    <div class="cart-info-delivery-block-double">
-                        <p>Имя</p>
-                        <input class="cart-inp" value="Ввести" onfocus="if (value == 'Ввести') {value = ''}" />
-                    </div>
-                    <div class="cart-info-delivery-block-double">
-                        <p>Телефон</p>
-                        <input class="cart-inp" value="Ввести" onfocus="if (value == 'Ввести') {value = ''}" />
-                    </div>
-                    <div class="cart-info-delivery-block-double">
-                        <p>Почта</p>
-                        <input class="cart-inp" value="Ввести" onfocus="if (value == 'Ввести') {value = ''}" />
-                    </div>
-                </div>
-                <div class="cart-info-delivery-block">
-                    <h1>2. Доставка</h1>
-                </div>
-                <div class="cart-info-del-block">
-                    <div class="cart-info-del-block-double">
-                        <p>Адрес</p>
-                        <input class="cart-inp-del" value="Ввести" onfocus="if (value == 'Ввести') {value = ''}" />
-                    </div>
-                    <div class="cart-info-del-block-double">
-                        <p>Комментарий</p>
-                        <textarea class="cart-inp-del cart-inp-comment" ></textarea>
-                    </div>
-                </div>
-                <div class="cart-info-delivery-block">
-                    <button type="submit" class="btn btn-black btn-large"><span>Оформить заказ</span></button>
-                </div>
-                <div class="form-policy">Нажимая на кнопку «Оформить заказ» вы соглашаетесь <br>с условиями оферты и <a href="/Page/Details/9004" target="_blank" class="link-black"><span>политикой конфиденциальности</span></a>.</div>
-            </div>
-        </div>
-        
+        @using (Html.BeginForm("AddNewOrder", "ShippingDetail", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+
+            @Html.Action("CartShipping")
+            @Html.HiddenFor(x => x.Cart = ord, htmlAttributes: new { @class = "control-label col-md-2" })
+        } 
     </div>
 </div>

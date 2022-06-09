@@ -30,7 +30,6 @@ namespace MyBlog.Data
         [DisplayName("Aproved By")]
         
         virtual public User UserDetails { get; set; }
-       
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿
 using MyBlog.Data;
+using MyBlog.Service;
 using MyBlog.UI.App_Start;
 using MyBlog.UI.Models;
 using System;
@@ -21,6 +22,7 @@ namespace MyBlog.UI
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+       
             //App Sessions , Number Of Visitor
             Application["TotalofVisitor"] = 0;
            

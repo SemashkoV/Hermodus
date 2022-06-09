@@ -74,6 +74,7 @@ namespace MyBlog.UI.App_Start
             kernel.Bind<ICSSRepository>().To<EFCSSRespository>();
             kernel.Bind<ICategoryRepository>().To<EFCategoryRepository>();
             kernel.Bind<ICommentRepository>().To<EFCommentRepository>();
+            kernel.Bind<IShippingDetailRepository>().To<EFShippingDetailRepository>();
             kernel.Bind<ISettingRepository>().To<EFSettingRepository>();
            
             kernel.Bind<IPageRepository>().To<EFPageRepository>();

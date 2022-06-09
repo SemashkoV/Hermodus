@@ -21,6 +21,7 @@ namespace MyBlog.Repo
         public DbSet<CSS> CSS { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<ShippingDetail> ShippingDetailses { get; set; }
         public DbSet<Setting> Settings { get; set; }
        
         public DbSet<Page> Pages { get; set; }

@@ -202,36 +202,6 @@ namespace MyBlog.UI.Controllers
             return View("NewPost",model);
         }
 
-        /// <summary>
-        /// No Need This Method Becosue HttpPost NewPost do same  job . with same NewPost.chtml
-        /// 
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <returns></returns>
-        //[ValidateInput(false)]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(Post data)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        Post obj = GetPostSession();
-        //        obj.PostId = data.PostId;
-        //        obj.Title = data.Title;
-        //        obj.Post_Content = data.Post_Content;
-        //        obj.Create_time = data.Create_time;
-        //        obj.Update_time = DateTime.Now;//Need solution for this field no need any value
-        //        obj.Tages = data.Tages;
-        //        repositoryPost.SavePost(obj);
-        //        int? Newid = obj.PostId;
-        //        if (obj != null)
-        //        {
-        //            TempData["message"] = string.Format("{0} was Edited Successfully", obj.Title);
-        //        }
-        //        return RedirectToAction("Details", new { Id = Newid });
-        //    }
-        //    return View();
-        //}
         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? Id)
         {

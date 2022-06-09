@@ -16,13 +16,13 @@
     <div class="blog-inner">
         @foreach (var item in Model)
         {
-            <a href="@Url.Action("Details", "Post", new { id = item.GenerateSlug() })">
+            <a href="@Url.Action("Details", "Post", new { id = item.PostId })">
                 <div class="row MainPost-news blog-news">
                     <div class="ImagePostTitle">
                         <img src="@item.FeaturedImage" class="img-responsive" />
 
                         @* <div class="Bannertext">@Model.Title</div>*@
-                        <a class="BannerPostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = item.GenerateSlug() })">@item.Title</a>
+                        <a class="BannerPostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = item.PostId })">@item.Title</a>
 
                     </div>
 
@@ -33,7 +33,7 @@
                             @Html.Raw(item.Post_Content)
                         </div>
 
-                        <a class="btn btn-default navbar-btn" href="@Url.Action("Details", "Post", new { id = item.GenerateSlug() })">Подробнее...</a>
+                        <a class="btn btn-default navbar-btn" href="@Url.Action("Details", "Post", new { id = item.PostId })">Подробнее...</a>
                         <footer>
                             @* <i class="fa fa-calendar" aria-hidden="true"></i>*@
                             <time><small>  @item.Create_time.ToShortDateString() </small></time>

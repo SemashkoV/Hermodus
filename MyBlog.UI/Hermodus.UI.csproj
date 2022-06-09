@@ -3500,6 +3500,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\ShippingDetailController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\CSSController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
@@ -3559,6 +3560,8 @@
     <Content Include="Views\Company\Index.cshtml" />
     <Content Include="Views\Company\NewCompany.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
     <None Include="Views\Chart\GetChart.cshtml.bak" />
     <None Include="Views\Chart\GetChartDataPostMonthly.cshtml.bak" />
     <Content Include="Views\Chart\_PostCommentChart.cshtml" />
@@ -3575,6 +3578,11 @@
     <Content Include="Views\Page\CSSDetails.cshtml" />
     <Content Include="Views\CSS\Details.cshtml" />
     <Content Include="Views\Home\Catalog.cshtml" />
+    <Content Include="Views\ShippingDetail\AddNewComment.cshtml" />
+    <Content Include="Views\ShippingDetail\OrderNeedAprove.cshtml" />
+    <Content Include="Views\ShippingDetail\CommnetByPost.cshtml.old" />
+    <Content Include="Views\ShippingDetail\Delete.cshtml" />
+    <Content Include="Views\ShippingDetail\Index.cshtml" />
     <None Include="Views\Post\Index.Old" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -3598,6 +3606,7 @@
     <Content Include="Views\Shared\_CatalogPageWatch.cshtml" />
     <Content Include="Views\Shared\_NewsPagePost.cshtml" />
     <Content Include="Views\Shared\_UserFName.cshtml" />
+    <Content Include="Views\Shared\_CartShipping.cshtml" />
     <None Include="Views\User\Index.old" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
@@ -3670,6 +3679,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

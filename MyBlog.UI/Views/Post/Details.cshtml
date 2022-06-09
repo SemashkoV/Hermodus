@@ -4,6 +4,7 @@
 
 @{
     ViewBag.Title = Model.Post.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
     string _DisplayFBLogin = ConfigurationManager.AppSettings["DisplayFBLogin"];
     string _DisplaydisqusWidget = ConfigurationManager.AppSettings["DisplaydisqusWidget"];
     string _DisplayLocalCommentWidget = ConfigurationManager.AppSettings["DisplayLocalCommentWidget"];
@@ -64,21 +65,9 @@
             
             <hr>
         </div>
-        <p>Share</p>
-        <!-- AddToAny BEGIN -->
-        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-            <a class="a2a_button_facebook"></a>
-            <a class="a2a_button_twitter"></a>
-            <a class="a2a_button_reddit"></a>
-            <a class="a2a_button_linkedin"></a>
-        </div>
-        <script async src="https://static.addtoany.com/menu/page.js"></script>
-        <!-- AddToAny END -->
+        
     </section>
-    @*Start - Google Ads *@
 
-    
-    @*End - Google Ads *@
     <section class="container">
         @Html.Partial("_CommnetByPost", Model.Comments)
     </section>
@@ -113,6 +102,7 @@
       $('img').attr('style', 'max-width: 100%; height:auto;');
 
   });
+        
     </script>
 
 

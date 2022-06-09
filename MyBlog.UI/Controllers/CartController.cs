@@ -64,9 +64,26 @@ namespace MyBlog.UI.Controllers
             }
             return RedirectToAction("Index", new { returnUrl });
         }
+        public ViewResult Checkout(ShippingDetail shippingDetail)
+        {
+            return View(new ShippingDetail());
+        }
+        public ActionResult CartShipping()
+        {
+            ShippingDetail Model;
+            Model = new ShippingDetail();
 
+            return PartialView("_CartShipping", Model);
+        }
+        public ActionResult CartInfo()
+        {
+            string a = GetCart().Lines.ToString();
+
+            return Content(a);
+        }
         public Cart GetCart()
         {
+            
             Cart cart = (Cart)Session["Cart"];
             if (cart == null)
             {
