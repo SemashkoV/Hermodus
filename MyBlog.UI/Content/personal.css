@@ -416,6 +416,9 @@ strong{
 .blog-news{
   display: inline-block;
 }
+.table-news{
+  margin-top: 10px;
+}
 /*     BRAND START     */
 .main-collab h1{
   text-align: center;

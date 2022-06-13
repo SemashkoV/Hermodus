@@ -95,7 +95,12 @@
                                     <h1>Личные данные</h1>
                                 </div>
                             </a>
-                            @Html.Action("Summary", "Cart")
+                            <a href="~/Cart">
+                                <div class="lk-item">
+                                    <h1>Корзина</h1>
+                               
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +117,7 @@
         {
             Layout = "~/Views/Shared/_Dashbord.cshtml";
 
-            <h2>Details</h2>
+            <h2>Данные пользователя</h2>
 
             <div>
 
@@ -152,13 +157,7 @@
                         @Html.DisplayFor(model => model.Create_time)
                     </dd>
 
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Update_Time)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Update_Time)
-                    </dd>
+                  
                     <dt>
                         @Html.DisplayNameFor(model => model.Last_Login)
                     </dt>
@@ -184,11 +183,13 @@
         {
             Layout = "~/Views/Shared/_Layout.cshtml";
             <div class="container body-content-pages center-block">
-                <h4>Error</h4>
+                <h4>Ошибка</h4>
                 <hr />
                 <br />
 
-                <h1>Access Denied</h1>
+                <h1>
+                    В доступе отказано
+                </h1>
                 <br />
                 <br />
             </div>

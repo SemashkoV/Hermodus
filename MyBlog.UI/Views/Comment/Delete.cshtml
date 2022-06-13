@@ -1,13 +1,13 @@
 ﻿@model MyBlog.Data.Comment
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Удалить комментарий";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container body-content-pages ">
-    <h2>Delete</h2>
+    <h2>Удалить</h2>
 
-    <h3>Are you sure you want to delete</h3>
+    <h3>Вы уверены, что хотите улалить этот комментарий?</h3>
     <div>
 
 
@@ -15,8 +15,8 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-danger glyphicon glyphicon glyphicon-trash" />
+            <div class="form-actions no-color" style="margin-bottom:50px;">
+                <input type="submit" value="Удалить" class="btn btn-danger glyphicon glyphicon glyphicon-trash" />
 
             </div>
         }

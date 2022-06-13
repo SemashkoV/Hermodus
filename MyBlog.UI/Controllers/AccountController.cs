@@ -27,6 +27,7 @@ namespace MyBlog.UI.Controllers
         private readonly IDEncryptionRepository repositoryDEncryption;
         private readonly IEmailSettingRepository repositoryEmailSetting;
         private readonly ISettingRepository repositorySetting;
+        private readonly IShippingDetailRepository repositoryOrder;
         public AccountController(IUserRepository repoUser,
                                  IAuthentication repoIAuthentication,
                                  IPostRepository repoPost,
@@ -35,7 +36,8 @@ namespace MyBlog.UI.Controllers
                                  MembershipProvider repoMemberShipProvider,
                                  IDEncryptionRepository repoDEncryption,
                                  IEmailSettingRepository repoEmailSetting,
-                                 ISettingRepository repoSetting)
+                                 ISettingRepository repoSetting,
+                                 IShippingDetailRepository repoOrder)
         {
             repositoryUser = repoUser;
             repositoryIAuthentication = repoIAuthentication;
@@ -46,6 +48,7 @@ namespace MyBlog.UI.Controllers
             repositoryDEncryption = repoDEncryption;
             repositoryEmailSetting = repoEmailSetting;
             repositorySetting = repoSetting;
+            repositoryOrder = repoOrder;
         }
 
         [Authorize(Roles = "Admin")]
@@ -58,6 +61,7 @@ namespace MyBlog.UI.Controllers
             model.NumberOfNewUser = repositoryUser.UserList.Where(p=>p.Create_time >= Last24Hours).Count();// >= 24H to get all users added last 24h
             model.NumberOfNewPost = repositoryPost.PostList.Where(p => p.Create_time >= Last24Hours).Count();
             model.NumberOfNewCategory = repositoryCategory.CategoryIList.Where(p => p.Create_time >= Last24Hours).Count();
+            model.NumberOfNewOrder = repositoryOrder.OrdersList.Where(p => p.Create_time >= Last24Hours).Count();
             model.NumberOfNewComment = repositoryComment.CommentList.Where(p => p.Create_time >= Last24Hours).Count();
             model.NumberOfCommentNeedApprove = repositoryComment.CommentList.Where(p => p.Publish == false).Count();
             return View(model);

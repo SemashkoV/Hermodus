@@ -14,7 +14,7 @@ namespace MyBlog.Data
         public string Imagepath { get; set; }
         public int Size { get; set; }
 
-        [DisplayName("Create Time:")]
+        [DisplayName("Дата создания:")]
         [Column(TypeName = "DateTime2")]
         public  DateTime  Create_time { get; set; }
       

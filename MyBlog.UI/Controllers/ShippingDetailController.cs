@@ -86,17 +86,7 @@ namespace MyBlog.UI.Controllers
                 
                 repositoryCommment.Save(obj);
                 int? Newid = obj.Id;
-                if (obj != null)
-                {
-                    if (data.Id == 0)
-                    {
-                        TempData["message"] = string.Format(" Added Successfully , it's on Waiting list to aprove it.");
-                    }
-                    else
-                    {
-                        TempData["message"] = string.Format(" Edited Successfully, it's on Waiting list to aprove it.");
-                    }
-                }
+                
                 return RedirectToAction("Index","Cart");
            
         }

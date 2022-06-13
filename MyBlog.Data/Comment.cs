@@ -14,20 +14,20 @@ namespace MyBlog.Data
     {
         public int CommentId { get; set; }
         [Required]
-        [DisplayName("Comment:")]
+        [DisplayName("Комментарий:")]
         public string Comment_Content { get; set; }
-        [DisplayName("Create Time:")]
+        [DisplayName("Дата создания:")]
         [Column(TypeName = "DateTime2")]
         public DateTime Create_time { get; set; }
 
-        [DisplayName("Last Update:")]
+        [DisplayName("Дата создания:")]
         [Column(TypeName = "DateTime2")]
         public Nullable<DateTime> Update_time { get; set; }
         public int UserId { get; set; }
         public int PostId { get; set; }
-        [DisplayName("Published")]
+        [DisplayName("Публикация")]
         public bool Publish { get; set; }
-        [DisplayName("Aproved By")]
+        [DisplayName("Одобрено")]
         
         virtual public User UserDetails { get; set; }
 

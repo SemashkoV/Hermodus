@@ -19,7 +19,7 @@ namespace MyBlog.Data
         public string Address { get; set; }
         public string Comment { get; set; }
         public string Cart { get; set; }
-        [DisplayName("Published")]
+        [DisplayName("Состояние")]
         public bool Publish { get; set; }
         [DisplayName("Create Time:")]
         [Column(TypeName = "DateTime2")]

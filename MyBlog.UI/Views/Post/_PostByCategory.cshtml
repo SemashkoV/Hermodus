@@ -2,45 +2,64 @@
 @using X.PagedList;
 @using System.Configuration;
 @{ string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];}
-@model  IEnumerable <MyBlog.Data.Post>
+@model  IEnumerable<MyBlog.Data.Post>
+<style type="text/css" media="all">
+    div.box {
+        height: 50px;
+        /* 				overflow: hidden; */
+    }
+</style>
+<div class="news-wrapper blog-wrapper">
+    <h1 class="news-title blog-title">Новости</h1>
+    <div class="blog-inner">
+        @foreach (var item in Model)
 
-@foreach (var p in Model)
+        {
+            <a href="@Url.Action("Details", "Post", new { id = item.PostId })">
+                <div class="row MainPost-news blog-news">
+                    <div class="ImagePostTitle">
+                        <img src="@item.FeaturedImage" class="img-responsive" />
 
-            {
-    <div class="row MainPost">
+                        @* <div class="Bannertext">@Model.Title</div>*@
+                        <a class="BannerPostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = item.PostId })">@item.Title</a>
 
-        <div class="col-md-12">
-            <article>
-                <header>
-                    <h3>
-                        @*
-                            <a class="PostTitle truncateOpt" href="~/Post/Details/@p.PostId">
-                                @p.Title
-                            </a>
-                        *@
-                        <a class="PostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = p.GenerateSlug() })">@p.Title</a>
+                    </div>
 
-                    </h3>
-                    <h6 style="font-style:italic;">
-                        by <a href="~/User/Details/@p.UserId">
-                            @Html.Label(p.UserDetails.FName + " " + p.UserDetails.LName)
-                        </a>
-                    </h6>
-                </header>
+                    <article style="padding:5px 5px 5px 5px">
 
-                <p>
-                    @Html.Raw(p.Post_Content)
-                </p>
+                        @*For Cutting long Post Countent*@
+                        <div class="box dot3">
+                            @Html.Raw(item.Post_Content)
+                        </div>
+
+                        <a class="btn btn-default navbar-btn" href="@Url.Action("Details", "Post", new { id = item.PostId })">Подробнее...</a>
+                        <footer>
+                            @* <i class="fa fa-calendar" aria-hidden="true"></i>*@
+                            <time><small>  @item.Create_time.ToShortDateString() </small></time>
+                        </footer>
+                    </article>
+                </div>
+            </a>
 
 
-                <footer>
-                    <time>  @p.Create_time </time>
-                </footer>
-            </article>
+        }
+    </div>
+</div>
 
-        </div>@* End of Post row *@
-    </div>@*End of Image and Post Row*@
+@section Scripts {
 
-  
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/jquery.dotdotdot.min.js")
+
+    <script src="~/scripts/jquery.dotdotdot.min.js"></script>
+
+
+    <script>//to resize Images as img-reposive after erase inline css add new
+  $(document).ready(function() {
+      $('img').attr('style', 'max-width: 100%; height:auto;');
+      $('.dot3').dotdotdot();
+
+  });</script>
+
+
 }
- 

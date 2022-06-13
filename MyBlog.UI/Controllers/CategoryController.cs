@@ -84,11 +84,11 @@ namespace MyBlog.UI.Controllers
                 {
                     if (data.CategoryId == 0)
                     {
-                        TempData["message"] = string.Format("{0} was Added Successfully", obj.CategoryName);
+                        TempData["message"] = string.Format("{0} добавлено успешно", obj.CategoryName);
                     }
                     else
                     {
-                        TempData["message"] = string.Format("{0} was Edited Successfully", obj.CategoryName);
+                        TempData["message"] = string.Format("{0} редактировано успешно", obj.CategoryName);
                     }
                 }
                 return RedirectToAction("Index", "Category");

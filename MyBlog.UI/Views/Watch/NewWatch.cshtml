@@ -1,19 +1,19 @@
 ﻿@model MyBlog.Data.Watch
 
 @{
-    ViewBag.Title = "New Watch";
+    ViewBag.Title = "Добавление модели";
 }
 <link href="~/Content/bootstrap-tagsinput-typeahead.css" rel="stylesheet" />
 <link href="~/Content/bootstrap-tagsinput.css" rel="stylesheet" />
 <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
       rel="stylesheet">
 <div class="container body-content-pages">
-    <h2> New Watch</h2>
+    <h2> Новая модель</h2>
     <hr /> 
-    <div id="dialog-1" title="Image Uploder...">
+    <div id="dialog-1" title="Добавить изображение...">
         @Html.Action("UploadImage", "Image")
     </div>
-    <button id="opener" class="btn btn-info fa fa-image"> Image Uploader</button>
+    <button id="opener" class="btn btn-info fa fa-image"> Добавить изображение</button>
     @using (Html.BeginForm("NewWatch", "Watch", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()

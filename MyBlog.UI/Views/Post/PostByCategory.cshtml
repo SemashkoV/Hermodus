@@ -1,7 +1,7 @@
-﻿ @using X.PagedList.Mvc;
+﻿@using X.PagedList.Mvc;
 @using X.PagedList;
 
- 
+
 @model MyBlog.UI.Models.PostViewModel
 @{
     ViewBag.Title = "Category";
@@ -23,15 +23,15 @@
     </div>
     <div class="col-md-9">
         <section>
-            @Html.Partial("_PostByCategory", Model.Posts) 
- 
+            @Html.Partial("_PostByCategory", Model.Posts)
+
 
         </section>
 
         <div class="pagination text-center">
 
             @Html.PagedListPager((IPagedList)Model.Posts, page => Url.Action("PostByCategory", new { category = Model.CurrentCategory, page }))
-           
+
         </div>@*End of paging*@
     </div>@*End of section row 1*@
 
@@ -40,13 +40,14 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/scripts/jquery.dotdotdot.min.js"></script>
 
     <script>
-     //to resize Images as img-reposive after erase inline css add new
-  $(document).ready(function() {
-      $('img').attr('style', 'max-width: 100%; height:auto;');
+        //to resize Images as img-reposive after erase inline css add new
+        $(document).ready(function () {
+            $('img').attr('style', 'max-width: 100%; height:auto;');
 
-  });
+        });
     </script>
 
 

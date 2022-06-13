@@ -13,6 +13,7 @@ namespace MyBlog.UI.Models
         public int NumberOfNewPost { get; set; }
         public int NumberOfNewComment { get; set; }
         public int NumberOfNewCategory { get; set; }
+        public int NumberOfNewOrder { get; set; }
         public int NumberOfNewUser { get; set; }
         public int NumberOfCommentNeedApprove { get; set; }
     }

@@ -10,13 +10,13 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <div><span class="fa fa-comments-o fa-2x" aria-hidden="true"></span> Comments</div>
+        <div><span class="fa fa-comments-o fa-2x" aria-hidden="true"></span> Комментарии</div>
     </div>
     <div class="panel-body">
         <table class="table table-hover table-responsive">
             <tr>
-                <th>Author</th>
-                <th>Comment</th>
+                <th>Автор</th>
+                <th>Комментарий</th>
 
             </tr>
 
@@ -45,7 +45,7 @@
                     <td class="col-md-8">
 
                         <div>
-                            <small>Submitted on </small>@item.Create_time
+                            <small>Комментарий от </small>@item.Create_time
                         </div>
                         <a class="truncateOpt" href="~/Post/Details/@item.PostId">
                             <div>
@@ -53,9 +53,9 @@
                             </div>
                         </a>
                         <div>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.CommentId }) |
+                            @Html.ActionLink("Редактировать", "Edit", new { id = item.CommentId }) |
 
-                            @Html.ActionLink("Delete", "Delete", new { id = item.CommentId })
+                            @Html.ActionLink("Удалить", "Delete", new { id = item.CommentId })
                         </div>
 
 

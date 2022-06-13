@@ -10,20 +10,20 @@
 <div class="panel panel-default">
     <div class="panel-heading">
 
-        <div><span class="fa fa-file-text-o fa-2x" aria-hidden="true"></span> Pages</div>
+        <div><span class="fa fa-file-text-o fa-2x" aria-hidden="true"></span> Страницы</div>
     </div>
     <div class="panel-body">
         <table class="table table-hover table-responsive">
             <tr>
                 <th>
-                    Title
+                    Заглавие
                 </th>
 
                 <th>
-                    Last Update
+                    Последнее обновление
                 </th>
                 <th>
-                    Updated By
+                    Выпущено
                 </th>
                 <th></th>
             </tr>
@@ -44,9 +44,9 @@
                     </td>
                     <td>
 
-                        @Html.ActionLink("Details", "Details", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
-                        @Html.ActionLink("Edit", "Edit", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })
+                        @Html.ActionLink("Просмотреть", "Details", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
+                        @Html.ActionLink("Редактировать", "Edit", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })
 
                     </td>
                 </tr>
@@ -56,7 +56,7 @@
 
     </div>
     <div class="panel-footer">
-        @Html.ActionLink("New Page", "AddNewPage", null, new { @class = "btn btn-primary fa fa-plus" })
+        @Html.ActionLink(" Новая страница", "AddNewPage", null, new { @class = "btn btn-primary fa fa-plus" })
 
     </div>
 

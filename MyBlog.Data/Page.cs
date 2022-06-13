@@ -12,20 +12,20 @@ namespace MyBlog.Data
     {
         [Key]
       public  int PageId { get; set; }
-        [Required(ErrorMessage = "Title is required")]
+        [Required(ErrorMessage = "Заглавие обязательно")]
         [DisplayName("Title")]
         public string Title { get; set; }
-        [Required(ErrorMessage = "Content is required")]
+        [Required(ErrorMessage = "Содержание обязательно")]
         [DisplayName("Content")]
         public string PagesContent { get; set; }
-        [Required(ErrorMessage = "Create Time is required")]
+        [Required(ErrorMessage = "Дата создания обязательна")]
         [DisplayName("Create Time")]
         public DateTime Create_Time { get; set; }
-        [Required(ErrorMessage = "Update time is required")]
+        [Required(ErrorMessage = "Дата создания обязательна")]
         [DisplayName("Update time")]
         public DateTime Update_Time { get; set; }
      
-        [DisplayName("Updated By")]
+        [DisplayName("Выпущено")]
         public int UserId { get; set; }
 
         public virtual User UserDetail { get; set; }

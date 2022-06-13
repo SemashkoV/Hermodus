@@ -93,7 +93,7 @@ namespace MyBlog.UI.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Подтвердите пароль")]
         [Compare("Password", ErrorMessage = "Пароль не совпадает")]
         public string ConfirmPassword { get; set; }
 

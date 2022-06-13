@@ -17,13 +17,41 @@
     <div class="filter-inner">
 
         <div class="filter-inner-content">
-
+            
         </div>
         <div class="filter-inner-content-rt">
-            <a class="filter-inner-sort" href="/Home/Catalog/?sortOrder=@ViewBag.NameSort">По названию</a>
+            @{
+                if (@ViewBag.NameSort == SortState.NameAsc)
+                {
+                  <a class="filter-inner-sort" href="/Home/Catalog/?sortOrder=NameAsc">По названию <span class="sortup">˅</span></a>
+                }
+
+                else
+                {
+                  <a class="filter-inner-sort" href="/Home/Catalog/?sortOrder=NameDesc">По названию <span class="sortdown">˄</span></a>
+                }
+            }
             <ul class="filter-inner-sortlist">
-                <li><a href="/Home/Catalog/?sortOrder=@ViewBag.AgeSort">По стоимости</a></li>
-                <li><a href="/Home/Catalog/?sortOrder=@ViewBag.CompSort">По бренду</a></li>
+                @{
+                    if (@ViewBag.AgeSort == SortState.PriceAsc)
+                    {
+                      <li><a href="/Home/Catalog/?sortOrder=PriceAsc">По стоимости <span class="sortup">˅</span></a></li>
+                    }
+                    else
+                    {
+                      <li><a href="/Home/Catalog/?sortOrder=PriceDesc">По стоимости <span class="sortdown">˄</span></a></li>
+                    }
+                 }
+                @{
+                    if (@ViewBag.CompSort == SortState.CompanyAsc)
+                    {
+                        <li><a href="/Home/Catalog/?sortOrder=CompanyAsc">По бренду <span class="sortup">˅</span></a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Home/Catalog/?sortOrder=CompanyDesc">По бренду <span class="sortdown">˄</span></a></li>
+                    }
+                 }
             </ul>
         </div>
     </div>

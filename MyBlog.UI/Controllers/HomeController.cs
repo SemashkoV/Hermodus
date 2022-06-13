@@ -35,7 +35,7 @@ namespace MyBlog.UI.Controllers
             _HomePageSetting = repositorySetting.GetSetting;
 
             ViewBag.NameSort = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
-            ViewBag.AgeSort = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
+            ViewBag.AgeSort = sortOrder == SortState.PriceAsc ? SortState.PriceDesc : SortState.PriceAsc;
             ViewBag.CompSort = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
          
             int PageSize = 4;
@@ -62,7 +62,7 @@ namespace MyBlog.UI.Controllers
                         HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model);
-                case SortState.AgeAsc:
+                case SortState.PriceAsc:
                     PostViewModel model1 = new PostViewModel
                     {
                         Posts = postRepository.PostList
@@ -80,7 +80,7 @@ namespace MyBlog.UI.Controllers
                         HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model1);
-                case SortState.AgeDesc:
+                case SortState.PriceDesc:
                     PostViewModel model2 = new PostViewModel
                     {
                         Posts = postRepository.PostList
@@ -164,7 +164,7 @@ namespace MyBlog.UI.Controllers
             _HomePageSetting = repositorySetting.GetSetting;
 
             ViewBag.NameSort = sortOrder == SortState.NameAsc ? SortState.NameDesc : SortState.NameAsc;
-            ViewBag.AgeSort = sortOrder == SortState.AgeAsc ? SortState.AgeDesc : SortState.AgeAsc;
+            ViewBag.AgeSort = sortOrder == SortState.PriceAsc ? SortState.PriceDesc : SortState.PriceAsc;
             ViewBag.CompSort = sortOrder == SortState.CompanyAsc ? SortState.CompanyDesc : SortState.CompanyAsc;
             ViewBag.SortOrder = sortOrder;
             int PageSize = _HomePageSetting.PostNumberInPage;
@@ -189,7 +189,7 @@ namespace MyBlog.UI.Controllers
                         HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model);
-                case SortState.AgeAsc:
+                case SortState.PriceAsc:
                     PostViewModel model1 = new PostViewModel
                     {
                         Posts = postRepository.PostList
@@ -208,7 +208,7 @@ namespace MyBlog.UI.Controllers
                         HomeImage3 = _HomePageSetting.HomeImage3,
                     };
                     return View(model1);
-                case SortState.AgeDesc:
+                case SortState.PriceDesc:
                     PostViewModel model2 = new PostViewModel
                     {
                         Posts = postRepository.PostList

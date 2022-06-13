@@ -15,16 +15,16 @@ namespace MyBlog.Data
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Title is required")]
+        [Required(ErrorMessage = "Заглавие обязательно")]
         public string CompanyId { get; set; }
         public string Title { get; set; }
         public string Model { get; set; }
 
-        [Required(ErrorMessage = "Post is required")]
+        [Required(ErrorMessage = "Содержание обязательно")]
         public string Content { get; set; }
       
-        [Required(ErrorMessage = "Featured Image is required")]
-        [DisplayName("Featured Image:")]
+        [Required(ErrorMessage = "Изображение обязательно")]
+        [DisplayName("Изображение:")]
         public string Image { get; set; }
 
         public string Article { get; set; }

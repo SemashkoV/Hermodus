@@ -50,7 +50,7 @@
                                 int _RoleId = Convert.ToInt32(identity.User.RoleId);
                                 if (_RoleId == 1 || _RoleId == 3)
                                 {
-                                    @Html.ActionLink("Edit", "Edit", new { id = Model.Post.PostId }, new { @class = "btn btn-primary glyphicon glyphicon-edit" })
+                                    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Post.PostId }, new { @class = "btn btn-primary glyphicon glyphicon-edit" })
                                     
                                 }
                             }

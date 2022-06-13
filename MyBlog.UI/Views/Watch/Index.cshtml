@@ -10,15 +10,15 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <div><span class="fa fa-text fa-2x" aria-hidden="true"></span> All Watches</div>
+        <div><span class="fa fa-text fa-2x" aria-hidden="true"></span> Все модели</div>
     </div>
     <div class="panel-body">
         <table class="table table-hover table-condensed">
             <tr>
-                <th>Model</th>
+                <th>Модель</th>
                 <th>Id</th>
-                <th>Image</th>
-                <th>Actions</th>
+                <th>Изображение</th>
+                <th>Действия</th>
             </tr>
             @foreach (var item in Model)
             {
@@ -26,7 +26,7 @@
                     <td class="col-md-3">
                         <p class="truncateOpt" href="/Upload/@item.Title">
                             <div class="CutlongTitle">
-                                <p>@item.Title</p>
+                                <p>@item.CompanyId @item.Model</p>
 
                             </div>
                         </p>
@@ -54,8 +54,8 @@
                     
                     <td class="col-md-2">
 
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger glyphicon glyphicon glyphicon-trash" })
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
+                        @Html.ActionLink(" Удалить", "Delete", new { id = item.Id }, new { @class = "btn btn-danger glyphicon glyphicon glyphicon-trash" })
+                        @Html.ActionLink(" Редактировать", "Edit", new { id = item.Id }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
                     </td>
                 </tr>
             }
@@ -67,7 +67,7 @@
 
     </div>
     <div class="panel-footer">
-        @Html.ActionLink("Add a New Model", "NewWatch", null, new { @class = "btn btn-default" })
+        @Html.ActionLink("Добавить модель", "NewWatch", null, new { @class = "btn btn-default" })
 
 
     </div>@*End of Panel Footer*@

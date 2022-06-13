@@ -12,10 +12,10 @@ namespace MyBlog.Data
     public class Category
     {
         public int CategoryId { get; set; }
-        [Required(ErrorMessage = "Category is required")]
-        [DisplayName("Category")]
+        [Required(ErrorMessage = "Категория обязательна")]
+        [DisplayName("Категория")]
         public string CategoryName { get; set; }
-        [DisplayName("Create Time:")]
+        [DisplayName("Дата создания:")]
         [Column(TypeName = "DateTime2")]
         public  DateTime Create_time { get; set; }
 

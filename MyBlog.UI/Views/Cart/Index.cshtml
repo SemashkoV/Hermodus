@@ -45,7 +45,7 @@
 <div class="cart-wrapper">
     <div class="cart-header">
         <h1>Корзина</h1>
-        <a href="~/Home/Catalog">Продолжить покупки</a>
+        <a href="~/Home/Catalog/?sortOrder=NameAsc">Продолжить покупки</a>
     </div>
     <div class="cart-info">
 
@@ -70,7 +70,7 @@
                         <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
                     }
                 </div>
-                ord += item.Watch.CompanyId + " " + item.Watch.Model + "\n";
+                ord +=item.Watch.CompanyId + " " + item.Watch.Model +" в количестве "+item.Quantity + "<br/>";
             }
             <div class="cart-info-bottom">
                 <p>Всего:</p>
@@ -81,7 +81,7 @@
         {
 
             @Html.Action("CartShipping")
-            @Html.HiddenFor(x => x.Cart = ord, htmlAttributes: new { @class = "control-label col-md-2" })
+            <input id="Cart" name="Cart" type="hidden" value="@ord" />
         } 
     </div>
 </div>

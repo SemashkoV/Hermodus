@@ -1,7 +1,7 @@
 ﻿@model MyBlog.Data.Post
 
 @{
-    ViewBag.Title = "New Post";
+    ViewBag.Title = "Новый пост";
 
 }
 <link href="~/Content/bootstrap-tagsinput-typeahead.css" rel="stylesheet" />
@@ -10,14 +10,14 @@
       rel="stylesheet">
 
 <div class="container body-content-pages">
-    <h2> New Post</h2>
+    <h2> Новый пост</h2>
     <hr/>
    
     @*Start Jq image upload block*@
-        <div id="dialog-1" title="Image Uploder...">
+        <div id="dialog-1" title="Добавить изображение...">
        @Html.Action("UploadImage", "Image")
         </div>
-        <button id="opener" class="btn btn-info fa fa-image"> Image Uploader</button>
+        <button id="opener" class="btn btn-info fa fa-image"> Добавить изображение</button>
     @*End Jq image upload block*@
     @using (Html.BeginForm("NewPost", "Post", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
@@ -41,7 +41,7 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon glyphicon-picture"></span>
                     </span>
-                    @Html.EditorFor(model => model.FeaturedImage, new { htmlAttributes = new { @class = "form-control", placeholder = "Featured Image" } })
+                    @Html.EditorFor(model => model.FeaturedImage, new { htmlAttributes = new { @class = "form-control", placeholder = "Ссылка на изображение" } })
                 </div>
                 <div>
                     @Html.ValidationMessageFor(model => model.FeaturedImage, "", new { @class = "text-danger" })
@@ -53,7 +53,7 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-pencil"></span>
                     </span>
-                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Title" } })
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Заглавие" } })
                 </div>
                 <div>
                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
@@ -67,13 +67,7 @@
                     @Html.ValidationMessageFor(model => model.Post_Content, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    @Html.LabelFor(model => model.Tages, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.Tages, new { htmlAttributes = new { @class = "form-control", data_role = "tagsinput", placeholder = "Add tags" } })
-                    @Html.ValidationMessageFor(model => model.Tages, "", new { @class = "text-danger" })
-                </div>
-            </div>
+  
             <div class="form-group">
 
                 <div class="col-md-12">
@@ -92,7 +86,7 @@
             <div class="form-group">
                 <div class="col-md-12 input-group">
                     <button type="submit" class="btn btn-primary" aria-label="Left Align">
-                        <span class="fa fa fa-pencil-square-o" aria-hidden="true"> </span> Publish
+                        <span class="fa fa fa-pencil-square-o" aria-hidden="true"> </span> Опубликовать
                     </button>
                 </div>
             </div>

@@ -15,7 +15,7 @@ namespace MyBlog.Data
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Name is required")]
+        [Required(ErrorMessage = "Имя обязательно")]
         
         public string Name { get; set; }
         public string Country { get; set; }

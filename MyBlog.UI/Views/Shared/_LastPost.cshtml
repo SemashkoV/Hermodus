@@ -7,7 +7,7 @@
     <table class="table table-hover table-responsive">
         <thead>
             <tr class="navbar-default">
-                <th>RECENT ARTICLES</th>
+                <th>Последние статьи</th>
                 
             </tr>
         </thead>
@@ -18,7 +18,7 @@
 
                     <td>
 
-                        <a class="PostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = item.GenerateSlug() })">@item.Title</a>
+                        <a class="PostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = item.PostId })">@item.Title</a>
 
                          @*
          @Html.ActionLink(item.Title, "Details", "Post",

@@ -18,7 +18,7 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/Loadme")
     @Styles.Render("~/Content/BootStrap")
-   
+
 
     @Styles.Render("~/Content/font-awesome")
     @Styles.Render("~/Content/Site")
@@ -27,6 +27,8 @@
     @Styles.Render("~/Content/style")
     @Styles.Render("~/Content/personal.css")
     <script src="~/scripts/jquery-3.1.1.js"></script>
+    <script src="~/scripts/jquery.dotdotdot.min.js"></script>
+
     <!-- Добавляем стили из CDN -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
     <!-- Добавляем тему по умолчанию из CDN -->
@@ -62,7 +64,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="~/Home/Catalog">Каталог</a></li>
+                        <li class="active"><a href="~/Home/Catalog/?sortOrder=NameAsc">Каталог</a></li>
                         <li class="active"><a href="~/News/index">Новости</a></li>
 
 
@@ -101,7 +103,7 @@
                                 <div class="foot-cust">
                                     <h3>Для покупателей</h3>
                                     <ul class="foot-shop-list">
-                                        <li><a href="@_WebsiteRoot/Home/Catalog" class="">Каталог</a></li>
+                                        <li><a href="@_WebsiteRoot/Home/Catalog/?sortOrder=NameAsc" class="">Каталог</a></li>
                                         <li><a href="@_WebsiteRoot/News/Index" class="">Новости</a></li>
                                         <li><a href="@_WebsiteRoot/Page/Details/9014" class="">Частые вопросы</a></li>
                                     </ul>
@@ -147,6 +149,7 @@
             </div>
         </div><!-- END FOOTER -->
 
+        <script src="~/scripts/jquery.dotdotdot.min.js"></script>
 
         <script>
 
@@ -161,7 +164,7 @@
                 if (document.getElementById(element_id)) {
                     //Записываем ссылку на элемент в переменную obj
                     var obj = document.getElementById(element_id);
-                    //Если css-свойство display не block, то: 
+                    //Если css-свойство display не block, то:
                     if (obj.style.display != "block") {
                         obj.style.display = "block"; //Показываем элемент
                     }
@@ -171,7 +174,13 @@
                 else alert("Элемент с id: " + element_id + " не найден!");
             }
         </script>
+        <script>
+    //to resize Images as img-reposive after erase inline css add new
+            $(document).ready(function () {
+          
+                $('.dot3').dotdotdot();
 
+            });</script>
         @Scripts.Render("~/bundles/bootstrap")
         @Scripts.Render("~/bundles/ckeditor")
         @Scripts.Render("~/bundles/modernizr")

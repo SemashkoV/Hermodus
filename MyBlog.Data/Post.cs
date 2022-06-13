@@ -16,29 +16,29 @@ namespace MyBlog.Data
        [Key]
         public int PostId { get; set; }
 
-        [Required(ErrorMessage = "Title is required")]
+        [Required(ErrorMessage = "Заполните заглавие")]
 
         public string Title { get; set; }
-        [Required(ErrorMessage = "Post is required")]
+        [Required(ErrorMessage = "Заполните пост")]
         public string Post_Content { get; set; }
 
-        [DisplayName("Create Time:") ]
+        [DisplayName("Дата создания:") ]
         
         public DateTime Create_time { get; set; }
 
-        [DisplayName("Last Update:")]
+        [DisplayName("Дата создания:")]
         
         public DateTime Update_time { get; set; }
         public int UserId { get; set; }
         [Required(ErrorMessage = "Tag is required")]
         [DisplayName("Tags:")]
         public string Tages { get; set; }
-        [Required(ErrorMessage = "Category is required")]
-        [DisplayName("Category:")]
+        [Required(ErrorMessage = "Категория обязательна")]
+        [DisplayName("Категория:")]
         public int CategoryId { get; set; }
         public int Frequence { get; set; }
-        [Required(ErrorMessage = "Featured Image is required")]
-        [DisplayName("Featured Image:")]
+        [Required(ErrorMessage = "Изображение обязательно")]
+        [DisplayName("Ссылка на изображение:")]
         public string FeaturedImage { get; set; }
 
         public virtual User UserDetails { get; set; }
