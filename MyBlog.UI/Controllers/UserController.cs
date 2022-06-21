@@ -194,6 +194,11 @@ namespace MyBlog.UI.Controllers
             }
             return PartialView("_UserFormDetails", UserAndCommment);
         }
+        public ActionResult SearchView()
+        {  
+            PostViewModel Search = new PostViewModel();
+            return PartialView("_SearchView", Search);
+        }
         [AllowAnonymous]
         [ChildActionOnly]
 

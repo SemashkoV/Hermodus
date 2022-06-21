@@ -35,6 +35,7 @@ namespace MyBlog.UI.Models
         public string DisplayLastCategory { get; set; }
         public string DisplayLastPost { get; set; }
         public string DisplayGoogleAdv { get; set; }
-     
+        public string Search { get; set; }
+
     }
 }

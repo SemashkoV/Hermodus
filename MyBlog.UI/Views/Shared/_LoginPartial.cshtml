@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
 @using System.Configuration;
+
 @{
     string _DisplayRegister = ConfigurationManager.AppSettings["DisplayRegister"];
 }
@@ -11,32 +12,30 @@
 @if (Request.IsAuthenticated)
 
 {
-   
-    <div class="search-inner search-inner-aut">@Html.Action("InsertImage", "Image", new { id = 21041 })<input id="sy" class="search-in" value="Ввести" onfocus="if (value == 'Ввести') {value = ''}"><input type="submit" class="search-put" value="⟵" onclick="location.href = '@_WebsiteRoot/Home/Catalog?name='+sy.value" /></div>
-
+    
+    @Html.Action("SearchView", "User")
     using (Html.BeginForm())
     {
-        @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken()
 
-        var identity = (HttpContext.Current.User as MyBlog.UI.Models.MyPrincipal).Identity as MyBlog.UI.Models.MyIdentity;
-
-
-        int _Id = Convert.ToInt32(identity.User.UserId);
+            var identity = (HttpContext.Current.User as MyBlog.UI.Models.MyPrincipal).Identity as MyBlog.UI.Models.MyIdentity;
 
 
-        @Html.Action("UserFormDetails", "User", new { Id = _Id })
+            int _Id = Convert.ToInt32(identity.User.UserId);
 
+
+            @Html.Action("UserFormDetails", "User", new { Id = _Id })
+
+
+        }
 
     }
-
-}
 else
-{   
+{
 <ul class="nav navbar-nav navbar-right">
 
-    <li><div class="search-inner">@Html.Action("InsertImage", "Image", new { id = 21041 })<input id="sr" class="search-in" value="Ввести"onfocus="if (value == 'Ввести') {value = ''}"><input type="submit" class="search-put" value="⟵" onclick="location.href = '/Home/Catalog?name='+sr.value  " /></div></li>
-
-    <li><a href="~/Account/Login">@Html.Action("InsertImage", "Image", new { id = 20053 })Войти</a></li>
+    @Html.Action("SearchView", "User")
+    <li><a href="~/Account/Login"> @Html.Action("InsertImage", "Image", new { id = 20053 })Войти</a></li>
 </ul>
-    
+
 }

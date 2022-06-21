@@ -25,8 +25,7 @@ namespace MyBlog.UI.App_Start
             bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
                         "~/Scripts/ckeditor/ckeditor.js"));
            
-            bundles.Add(new ScriptBundle("~/bundles/FooterJs").Include(
-                      "~/Footer/js/css3-animate-it.js"));
+           
             bundles.Add(new ScriptBundle("~/bundles/MaterializeJS").Include(
                      "~/Scripts/materialize/materialize.min.js"));
 

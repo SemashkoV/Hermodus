@@ -57,7 +57,19 @@
                     <p>@item.Watch.CompanyId @item.Watch.Model</p>
                     <div class="cart-info-top-double">
                         <p>Количество</p>
+                        @using (Html.BeginForm("RemoveItem", "Cart"))
+                    {
+                        @Html.Hidden("Id", item.Watch.Id)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="-" />
+                    }
                         @item.Quantity
+                        @using (Html.BeginForm("AddItem", "Cart"))
+                    {
+                        @Html.Hidden("Id", item.Watch.Id)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="+" />
+                    }
                     </div>
                     <div class="cart-info-top-double">
                         <p>Итого</p>
@@ -70,7 +82,7 @@
                         <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
                     }
                 </div>
-                ord +=item.Watch.CompanyId + " " + item.Watch.Model +" в количестве "+item.Quantity + "<br/>";
+                ord += item.Watch.CompanyId + " " + item.Watch.Model + " в количестве " + item.Quantity + "<br/>";
             }
             <div class="cart-info-bottom">
                 <p>Всего:</p>
@@ -82,6 +94,7 @@
 
             @Html.Action("CartShipping")
             <input id="Cart" name="Cart" type="hidden" value="@ord" />
-        } 
+         
+        }
     </div>
 </div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>benefits_02</title>
+    <desc>Created with Sketch.</desc>
+    <g id="benefits_02" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke="#323232" stroke-width="2" cx="21" cy="22" r="16"></circle>
+        <path d="M19,30.5 C19,31.8807119 21.6862915,33 25,33 C28.3137085,33 31,31.8807119 31,30.5 L31,22.5 C31,21.1192881 33.6862915,20 37,20 C40.3137085,20 43,21.1192881 43,22.5 L43,37.1875 C43,38.7408009 40.3137085,40 37,40 C33.6862915,40 31,38.7408009 31,37.1875 L31,40.8125 C31,42.0206229 28.3137085,43 25,43 C21.6862915,43 19,42.0206229 19,40.8125 L19,30.5 L19,30.5 Z" id="Path" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"></path>
+        <polyline id="Path-8" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="14.4918707 16.6343707 21 22 29 12.7023063"></polyline>
+        <circle id="Oval" stroke="#323232" stroke-width="2" fill="#FFFFFF" cx="21" cy="22" r="2"></circle>
+        <g id="Group-2" transform="translate(31.000000, 20.000000)" fill="#FFFFFF" stroke="#323232" stroke-width="2">
+            <path d="M2.27373675e-13,17.1875 L2.27373675e-13,2.5 L12,2.5 L12,17.1875 C12,18.7408009 9.3137085,20 6,20 C2.6862915,20 6.82121026e-13,18.7408009 6.82121026e-13,17.1875 Z" id="Combined-Shape" stroke-linejoin="round"></path>
+            <path d="M6,15 C9.3137085,15 12,13.8807119 12,12.5 C12,12.3087639 12,10.9754306 12,8.5 L6.82121026e-13,9 C6.82121026e-13,10.9337937 6.82121026e-13,12.1004604 6.82121026e-13,12.5 C6.82121026e-13,13.8807119 2.6862915,15 6,15 Z" id="Oval"></path>
+            <path d="M6,10 C9.3137085,10 12,8.88071187 12,7.5 C12,7.3087639 12,5.97543057 12,3.5 L-1.13686838e-13,3.5 C3.41060513e-13,5.76712708 5.68434189e-13,7.10046041 5.68434189e-13,7.5 C5.68434189e-13,8.88071187 2.6862915,10 6,10 Z" id="Oval"></path>
+            <ellipse id="Oval" cx="6" cy="2.5" rx="6" ry="2.5"></ellipse>
+        </g>
+        <g id="Group" transform="translate(19.000000, 28.000000)" fill="#FFFFFF" stroke="#323232" stroke-width="2">
+            <path d="M-4.54747351e-13,12.8125 L-4.54747351e-13,2.5 L12,2.5 L12,12.8125 C12,14.0206229 9.3137085,15 6,15 C2.6862915,15 0,14.0206229 0,12.8125 Z" id="Combined-Shape" stroke-linejoin="round"></path>
+            <path d="M6,10 C9.3137085,10 12,8.88071187 12,7.5 C12,7.3087639 12,5.8087639 12,3 L8.8817842e-16,3 C8.8817842e-16,5.60046041 8.8817842e-16,7.10046041 8.8817842e-16,7.5 C8.8817842e-16,8.88071187 2.6862915,10 6,10 Z" id="Oval" stroke-linejoin="round"></path>
+            <ellipse id="Oval" cx="6" cy="2.5" rx="6" ry="2.5"></ellipse>
+        </g>
+    </g>
+</svg>

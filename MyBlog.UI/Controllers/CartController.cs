@@ -30,6 +30,28 @@ namespace MyBlog.UI.Controllers
                 ReturnUrl = returnUrl
             });
         }
+        public RedirectToRouteResult RemoveItem(int Id)
+        {
+            Watch watch = repository.WatchList
+                .FirstOrDefault(g => g.Id == Id);
+
+            if (watch != null)
+            {
+                GetCart().RemoveItem(watch, 1);
+            }
+            return RedirectToAction("Index", "Cart");
+        }
+        public RedirectToRouteResult AddItem(int Id)
+        {
+            Watch watch = repository.WatchList
+                .FirstOrDefault(g => g.Id == Id);
+
+            if (watch != null)
+            {
+                GetCart().AddItem(watch, 1);
+            }
+            return RedirectToAction("Index", "Cart");
+        }
         public RedirectToRouteResult AddToCart(int Id)
         {
             Watch watch = repository.WatchList
@@ -63,6 +85,13 @@ namespace MyBlog.UI.Controllers
                 GetCart().RemoveLine(watch);
             }
             return RedirectToAction("Index", new { returnUrl });
+        }
+        public ActionResult ClearCart()
+        {
+           
+                GetCart().Clear();
+            
+            return RedirectToAction("Index", "Cart");
         }
         public ViewResult Checkout(ShippingDetail shippingDetail)
         {

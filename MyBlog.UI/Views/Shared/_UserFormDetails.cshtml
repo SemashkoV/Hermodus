@@ -12,7 +12,7 @@
     @{if (Model.User.RoleId == 1)
         {
 
-            <li><a href="~/Post/NewPost"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Новый пост</a></li>
+            <style>.search-inner{display:none;}</style>
             <li><a href="~/Comment/CommentNeedAprove"><i class="fa fa-comments" aria-hidden="true"></i> Комментарии <span class="badge">@Model.NumberOfCommentNeedApprove</span></a></li>
             <li><a href="~/Account/index"><i class="fa fa-fw fa-dashboard"></i> Панель управления</a></li>
         }
@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <p class="text-center">
-                                <img class="img-responsive img-rounded" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                <img class="img-responsive img-rounded img-adapt-down" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
                             </p>
                         </div>
                         <div class="col-lg-8">

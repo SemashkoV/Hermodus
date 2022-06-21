@@ -13,36 +13,36 @@
         <div><span class="fa fa-file-text-o fa-2x" aria-hidden="true"></span> Страницы</div>
     </div>
     <div class="panel-body">
-        <table class="table table-hover table-responsive">
-            <tr>
-                <th>
+        <table class="table table-hover table-responsive table-r">
+            <tr class="com-resp">
+                <th class="com-resp-th">
                     Заглавие
                 </th>
 
-                <th>
+                <th class="com-resp-th">
                     Последнее обновление
                 </th>
-                <th>
+                <th class="com-resp-th">
                     Выпущено
                 </th>
-                <th></th>
+               
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
+                <tr class="com-resp">
+                    <td class="com-resp-td">
                         @item.Title
                     </td>
 
-                    <td>
+                    <td class="com-resp-td">
                         @item.Update_Time
                     </td>
-                    <td>
+                    <td class="com-resp-td">
 
                         @item.UserDetail.FName   @item.UserDetail.LName
                     </td>
-                    <td>
+                    <td class="com-resp-td">
 
                         @Html.ActionLink("Просмотреть", "Details", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon-modal-window" })
                         @Html.ActionLink("Редактировать", "Edit", new { id = item.PageId }, new { @class = "btn btn-primary glyphicon glyphicon glyphicon-edit" })

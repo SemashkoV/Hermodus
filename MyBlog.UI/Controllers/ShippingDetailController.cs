@@ -81,13 +81,13 @@ namespace MyBlog.UI.Controllers
 
                 else {
                     obj.Create_time = data.Create_time;
-                    obj.Publish = false; //Edite  Commnet need aprove(Dash) to publish it ,again
+                    obj.Publish = false; //Edit  Commnet need aprove(Dash) to publish it ,again
                 }
                 
                 repositoryCommment.Save(obj);
                 int? Newid = obj.Id;
                 
-                return RedirectToAction("Index","Cart");
+                return RedirectToAction("ClearCart", "Cart");
            
         }
         [Authorize(Roles = "User,Admin")]
@@ -132,7 +132,7 @@ namespace MyBlog.UI.Controllers
             {
                 TempData["message"] = string.Format("deleted");
             }
-            return RedirectToAction("Index", "Cart");
+            return RedirectToAction("Index", "ShippingDetail");
         }
 
         [Authorize(Roles = "Admin")]

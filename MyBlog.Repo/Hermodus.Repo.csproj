@@ -380,7 +380,6 @@
     <Compile Include="EFDbContext.cs" />
     <Compile Include="EFEmailSettingRepository.cs" />
     <Compile Include="EFEncryptionRepository.cs" />
-    <Compile Include="EFCSSRespository.cs" />
     <Compile Include="EFCompanyRespository.cs" />
     <Compile Include="EFWatchRespository.cs" />
     <Compile Include="EFImageRespository.cs" />

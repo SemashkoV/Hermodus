@@ -369,7 +369,6 @@
     <Compile Include="CartIndexViewModel.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="EmailSetting.cs" />
-    <Compile Include="CSS.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="SortState.cs" />
     <Compile Include="Watch.cs" />

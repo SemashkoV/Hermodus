@@ -290,9 +290,14 @@ namespace MyBlog.UI.Controllers
          
             
     }
+        [HttpPost]
+        public ActionResult Search(PostViewModel model)
+        {
 
+    return Redirect("/Home/Catalog?name="+model.Search);
+        }
 
-    public ActionResult Feed()
+        public ActionResult Feed()
         {
             IEnumerable<Post> posts = postRepository.PostIEnum.OrderByDescending(c => c.Create_time).Take(10);
             string websiteRoot = Request.Url.GetLeftPart(UriPartial.Authority);//Full Website address with protocol

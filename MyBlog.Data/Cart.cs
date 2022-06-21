@@ -46,7 +46,18 @@ namespace MyBlog.Data
                 line.Quantity += quantity;
             }
         }
+        public void RemoveItem(Watch watch, int quantity)
+        {
+            CartLine line = lineCollection
+                .Where(g => g.Watch.Id == watch.Id)
+                .FirstOrDefault();
 
+            if (line != null && line.Quantity!=1)
+            {
+                line.Quantity -= quantity;
+            }
+         
+        }
         public void RemoveLine(Watch watch)
         {
             lineCollection.RemoveAll(l => l.Watch.Id == watch.Id);

@@ -12,19 +12,19 @@
         <div><span class="fa fa-check-square-o fa-2x" aria-hidden="true"></span> Заказы</div>
     </div>
     <div class="panel-body">
-        <table class="table table-hover table-responsive">
-            <tr>
-                <th>Данные заказчика</th>
-                <th>Комментарий</th>
-                <th>Заказ</th>
-                <th>Архив</th>
+        <table class="table table-hover table-responsive table-r">
+            <tr class="com-resp">
+                <th class="com-resp-th">Данные заказчика</th>
+                <th class="com-resp-th">Комментарий</th>
+                <th class="com-resp-th">Заказ</th>
+                <th class="com-resp-th">Архив</th>
 
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td class="col-md-3">
+                <tr class="com-resp">
+                    <td class="col-md-3 com-resp-td">
                         <div class="col-md-4">
                             <div>
                                 <p style="margin-top:5px;margin-bottom:0;">Имя:</p>
@@ -41,11 +41,11 @@
                         </div>
 
                     </td>
-                    <td class="col-md-4">
+                    <td class="col-md-4 com-resp-td">
                         <p style="margin-top:5px;margin-bottom:0;">Комментарий:</p>
-                        @item.Comment
+                        <p>@item.Comment</p>
                     </td>
-                    <td class="col-md-4">
+                    <td class="col-md-4 com-resp-td">
 
                         <div>
                             <small>Заказ от </small>@item.Create_time

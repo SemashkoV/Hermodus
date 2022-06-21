@@ -14,27 +14,27 @@
     </div>
     <div class="panel-body">
         <table class="table table-hover table-condensed">
-            <tr>
-                <th>Изображение</th>
-                <th>Id</th>
-                <th>Ссылка</th>
-                <th>Размер</th>
-                <th>Действия</th>
+            <tr class="com-resp">
+                <th class="com-resp-th">Изображение</th>
+                <th class="com-resp-th">Id</th>
+                <th class="com-resp-th">Ссылка</th>
+                <th class="com-resp-th">Размер</th>
+                <th class="com-resp-th">Действия</th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td class="col-md-3">
+                <tr class="com-resp">
+                    <td class="col-md-3 com-resp-td">
                         <a class="truncateOpt" href="/Upload/@item.Imagepath">
                             <div class="CutlongTitle">
-                                <img src="/Upload/@item.Imagepath" alt="Image" height="150"/>
+                                <img src="/Upload/@item.Imagepath" alt="Image" height="150" class="dash-img-resp"/>
                               
                             </div>
                         </a>
 
                     </td>
-                    <td class="col-md-2">
+                    <td class="col-md-2 com-resp-td">
                         <a class="truncateOpt" href="~/Upload/@item.Id">
                             <div class="CutlongTitle">
                                 <p class="disabled">@item.Id</p>
@@ -43,7 +43,7 @@
                         </a>
 
                     </td>
-                    <td class="col-md-2">
+                    <td class="col-md-2 com-resp-td">
                         <a class="truncateOpt" href="~/Upload/@item.Imagepath">
                             <div class="CutlongTitle">
                                 <p class="disabled">/Upload/@item.Imagepath</p>
@@ -52,7 +52,7 @@
                         </a>
 
                     </td>
-                    <td class="col-md-2">
+                    <td class="col-md-2 com-resp-td">
                         <a href="/Upload/@item.Imagepath">
                             <div>
                                 @{ 
