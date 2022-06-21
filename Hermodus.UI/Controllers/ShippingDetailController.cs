@@ -130,7 +130,7 @@ namespace Hermodus.UI.Controllers
            
             if (_Comment != null)
             {
-                TempData["message"] = string.Format("deleted");
+                TempData["message"] = string.Format("удалено");
             }
             return RedirectToAction("Index", "ShippingDetail");
         }
@@ -157,7 +157,7 @@ namespace Hermodus.UI.Controllers
             _Comment.Publish = true;//Aprove 
             repositoryCommment.Save(_Comment);
             
-                TempData["message"] = string.Format(" Published Successfully");
+                TempData["message"] = string.Format(" Опубликовано успешно");
 
             if (_CurrentUserRole == 1) { 
              return RedirectToAction("OrderNeedAprove", "ShippingDetail");

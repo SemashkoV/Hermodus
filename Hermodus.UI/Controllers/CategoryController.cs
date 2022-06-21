@@ -133,7 +133,7 @@ namespace Hermodus.UI.Controllers
             Category _Category = repositoryICategory.Details(Id);
             if (_Category.Frequence != 0)
             {
-                string CommnetError = string.Format("You cannot delete this Post , Because its has {0} Posts", _Category.Frequence.ToString());
+                string CommnetError = string.Format("Вы не можете удалить эту категорию, она имеет {0} постов", _Category.Frequence.ToString());
                 //  ModelState.AddModelError("", CommnetError);
                 TempData["message"] = CommnetError;
                 return View(_Category);
@@ -141,7 +141,7 @@ namespace Hermodus.UI.Controllers
             Category category = repositoryICategory.Delete(Id);
             if (category != null)
             {
-                TempData["message"] = string.Format("{0} was deleted", category.CategoryName);
+                TempData["message"] = string.Format("{0} было удалено", category.CategoryName);
             }
             return RedirectToAction("Index", "Category");
         }

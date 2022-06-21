@@ -30,8 +30,8 @@ namespace Hermodus.Data
         
         public DateTime Update_time { get; set; }
         public int UserId { get; set; }
-        [Required(ErrorMessage = "Tag is required")]
-        [DisplayName("Tags:")]
+        [Required(ErrorMessage = "Тег обязателен")]
+        [DisplayName("Теги:")]
         public string Tages { get; set; }
         [Required(ErrorMessage = "Категория обязательна")]
         [DisplayName("Категория:")]
@@ -46,7 +46,7 @@ namespace Hermodus.Data
         public virtual IEnumerable<Category> CategoryDetails { get; set; }
 
 
-        // Slug generation taken from http://stackoverflow.com/questions/2920744/url-slugify-algorithm-in-c
+   
         public string GenerateSlug()
         {
             string phrase = string.Format("{0}-{1}", PostId, Title);

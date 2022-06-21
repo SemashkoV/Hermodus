@@ -146,11 +146,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if(data.PostId == 0)
                     { 
-                      TempData["message"] = string.Format("{0} was Added Successfully", obj.Title);
+                      TempData["message"] = string.Format("{0} добавлено успешно", obj.Title);
                      }
                     else
                     {
-                      TempData["message"] = string.Format("{0} was Edited Successfully", obj.Title);
+                      TempData["message"] = string.Format("{0} изменено успешно", obj.Title);
                     }
                 }
                 return RedirectToAction("Details", new { Id = Newid });
@@ -224,7 +224,7 @@ namespace Hermodus.UI.Controllers
             Post post = repositoryPost.Details(Id);
             if (post.Frequence != 0)
             {
-                string CommnetError = string.Format("You cannot delete this Post , Because its has {0} Comments", post.Frequence.ToString());
+                string CommnetError = string.Format("Вы не можете удалить этот пост, он имеет {0} комментариев", post.Frequence.ToString());
                 //  ModelState.AddModelError("", CommnetError);
                 TempData["message"] = CommnetError;
                 return View(post);
@@ -233,7 +233,7 @@ namespace Hermodus.UI.Controllers
             repositoryCategory.DecreaseFreqOne(post.CategoryId);//How many time we use this category
             if (_post != null)
             {
-                TempData["message"] = string.Format("{0} was deleted", post.Title);
+                TempData["message"] = string.Format("{0} удалено", post.Title);
             }
             return RedirectToAction("Index","Post");
         }

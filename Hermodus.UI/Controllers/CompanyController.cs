@@ -81,7 +81,7 @@ namespace Hermodus.UI.Controllers
                     result= AddCompany(data);
                     if (result==true)
                     {
-                        TempData["message"] = string.Format("Company was Added Successfully");
+                        TempData["message"] = string.Format("Добавлено успешно");
                     }
                 }
             }
@@ -127,11 +127,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if (data.Id == 0)
                     {
-                        TempData["message"] = string.Format("Company was Added Successfully");
+                        TempData["message"] = string.Format("Добавлено успешно");
                     }
                     else
                     {
-                        TempData["message"] = string.Format("Company was Edited Successfully");
+                        TempData["message"] = string.Format("Добавлено успешно");
                     }
                 }
                 return RedirectToAction("");
@@ -187,7 +187,7 @@ namespace Hermodus.UI.Controllers
             Company text = textRepository.Delete(Id);
             if (text != null)
             {
-                TempData["message"] = string.Format("deleted");
+                TempData["message"] = string.Format("удалено");
             }
             return RedirectToAction("Index", "Company");
         }

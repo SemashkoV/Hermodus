@@ -640,7 +640,7 @@
     <Content Include="Footer\Images\corner-bottom.png" />
     <Content Include="Footer\Images\corner-upper.png" />
     <Content Include="Footer\Images\texture-4.png" />
-    <Content Include="Footer\js\css3-animate-it.js" />
+
     <Content Include="Global.asax" />
     <Content Include="Images\avatar.jpg" />
     <Content Include="Images\HomePageBanner.jpg" />

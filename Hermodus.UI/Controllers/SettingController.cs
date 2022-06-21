@@ -80,11 +80,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if (data.Id == 0)
                     {
-                        TempData["message"] = string.Format("Added Successfully");
+                        TempData["message"] = string.Format("Добавлено успешно");
                     }
                     else
                     {
-                        TempData["message"] = string.Format("Edited Successfully");
+                        TempData["message"] = string.Format("Изменено успешно");
                     }
                 }
                 return RedirectToAction("Details", "Setting",data);//SamePlace
@@ -145,11 +145,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if (data.Id == 0)//New or Update
                     {
-                        TempData["message"] = string.Format("Added Successfully");
+                        TempData["message"] = string.Format("Добавлено успешно");
                     }
                     else
                     {
-                        TempData["message"] = string.Format("Edited Successfully");
+                        TempData["message"] = string.Format("Изменено успешно");
                     }
                 }
                 return RedirectToAction("EmailSettingDetails", "Setting", data);//SamePlace

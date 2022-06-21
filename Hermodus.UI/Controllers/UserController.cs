@@ -142,7 +142,7 @@ namespace Hermodus.UI.Controllers
                 int? Newid = obj.UserId;
                 if (obj != null)
                 {
-                    TempData["message"] = string.Format("{0} was Edited Successfully", obj.FName+ " "+obj.LName);
+                    TempData["message"] = string.Format("{0} изменено успешно", obj.FName+ " "+obj.LName);
                    
                 }
                 return RedirectToAction("Details", new { Id = Newid });
@@ -172,7 +172,7 @@ namespace Hermodus.UI.Controllers
             User user = repositoryUser.Delete(Id);
             if (user != null)
             {
-                TempData["message"] = string.Format("{0} was deleted", user.FName+" "+user.LName);
+                TempData["message"] = string.Format("{0} удалено", user.FName+" "+user.LName);
             }
             return RedirectToAction("Index", "User");
         }

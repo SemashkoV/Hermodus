@@ -73,7 +73,7 @@ namespace Hermodus.UI.Controllers
                     result= AddImage(data);
                     if (result==true)
                     {
-                        TempData["message"] = string.Format("Image was Added Successfully");
+                        TempData["message"] = string.Format("Изображение добавлено успешно");
                     }
                     // resizing image
                //     MemoryStream ms = new MemoryStream();
@@ -135,11 +135,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if (data.Id == 0)
                     {
-                        TempData["message"] = string.Format("Image was Added Successfully");
+                        TempData["message"] = string.Format("Изображение добавлено успешно");
                     }
                     else
                     {
-                        TempData["message"] = string.Format("Image was Edited Successfully");
+                        TempData["message"] = string.Format("Изображение изменено успешно");
                     }
                 }
                 return RedirectToAction("");
@@ -179,7 +179,7 @@ namespace Hermodus.UI.Controllers
             Image image = imageRepository.Delete(Id);
             if (image != null)
             {
-                TempData["message"] = string.Format("deleted");
+                TempData["message"] = string.Format("удалено");
             }
             return RedirectToAction("Index", "Image");
         }

@@ -88,7 +88,7 @@ namespace Hermodus.UI.Controllers
                     result= AddWatch(data);
                     if (result==true)
                     {
-                        TempData["message"] = string.Format("Text was Added Successfully");
+                        TempData["message"] = string.Format("Добавлено успешно");
                     }
                 }
             }
@@ -148,11 +148,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if (data.Id == 0)
                     {
-                        TempData["message"] = string.Format("Watch was Added Successfully");
+                        TempData["message"] = string.Format("Модель добавлена успешно");
                     }
                     else
                     {
-                        TempData["message"] = string.Format("Watch was Edited Successfully");
+                        TempData["message"] = string.Format("Модель изменена успешно");
                     }
                 }
                 return RedirectToAction("");
@@ -235,7 +235,7 @@ namespace Hermodus.UI.Controllers
             Watch text = textRepository.Delete(Id);
             if (text != null)
             {
-                TempData["message"] = string.Format("deleted");
+                TempData["message"] = string.Format("удалено");
             }
             return RedirectToAction("Index", "Watch");
         }

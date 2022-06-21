@@ -97,11 +97,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if (data.PageId == 0)
                     {
-                        TempData["message"] = string.Format("{0} was Added Successfully", obj.Title);
+                        TempData["message"] = string.Format("{0} добавлено успешно", obj.Title);
                     }
                     else
                     {
-                        TempData["message"] = string.Format("{0} was Edited Successfully", obj.Title);
+                        TempData["message"] = string.Format("{0} изменено успешно", obj.Title);
                     }
                 }
                 return RedirectToAction("Details", new { Id = Newid });
@@ -161,7 +161,7 @@ namespace Hermodus.UI.Controllers
          
             if (_page != null)
             {
-                TempData["message"] = string.Format("{0} was deleted", page.Title);
+                TempData["message"] = string.Format("{0} удалено", page.Title);
             }
             return RedirectToAction("Index", "Page");
         }

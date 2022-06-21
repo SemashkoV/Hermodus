@@ -64,7 +64,7 @@ namespace Hermodus.UI.Controllers
                 obj.CommentId = data.CommentId;
             if(String.IsNullOrEmpty(data.Comment_Content))
             {
-                TempData["message"] = string.Format(" Write Commnet Before Publish it .");
+                TempData["message"] = string.Format(" Оставьте комментарий перед отправкой");
                 return View();
             }
                 obj.Comment_Content = data.Comment_Content;
@@ -101,11 +101,11 @@ namespace Hermodus.UI.Controllers
                 {
                     if (data.CommentId == 0)
                     {
-                        TempData["message"] = string.Format(" Added Successfully , it's on Waiting list to aprove it.");
+                        TempData["message"] = string.Format(" Успешно добавлено в очередь на проверку");
                     }
                     else
                     {
-                        TempData["message"] = string.Format(" Edited Successfully, it's on Waiting list to aprove it.");
+                        TempData["message"] = string.Format(" Изменено успешно, добавлено в очередь на проверку");
                     }
                 }
                 return RedirectToAction("Details","Post", new { Id = obj.PostId });
@@ -151,7 +151,7 @@ namespace Hermodus.UI.Controllers
             repositoryPost.DecreaseFreqOne(_Comment.PostId);
             if (_Comment != null)
             {
-                TempData["message"] = string.Format("deleted");
+                TempData["message"] = string.Format("удалено");
             }
             return RedirectToAction("Details", "Post", new { Id = _Comment.PostId });
         }
@@ -188,7 +188,7 @@ namespace Hermodus.UI.Controllers
             _Comment.Publish = true;//Aprove 
             repositoryCommment.Save(_Comment);
             
-                TempData["message"] = string.Format(" Published Successfully");
+                TempData["message"] = string.Format(" Опубликовано успешно");
 
             if (_CurrentUserRole == 1) { 
              return RedirectToAction("CommentNeedAprove", "Comment");
