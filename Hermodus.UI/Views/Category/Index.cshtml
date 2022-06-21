@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Hermodus.Data.Category>
+@using GridMvc.Html
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashbord.cshtml";
+}
+
+
+<link href="~/Content/reveal.css" rel="stylesheet" />
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <div>Все категории</div>
+    </div>
+    <div class="panel-body">
+
+        <div class="code-cut table table-responsive">
+            @Html.Grid(Model).Columns(columns =>
+       {
+           columns.Add(c => c.CategoryName).Titled("Название").Filterable(true);
+           columns.Add(c => c.Frequence).Titled("Кол-во постов").Filterable(true);
+           columns.Add(c => c.Create_time).Titled("Дата создания").Filterable(true);
+          
+           columns.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Редактировать", "Edit", new { id = o.CategoryId }));
+          
+           columns.Add().Encoded(false).Sanitized(false).SetWidth(30).RenderValueAs(o => Html.ActionLink("Удалить", "Delete", new { id = o.CategoryId }));
+
+       }).WithPaging(10).Sortable(true)
+        </div>
+
+
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink(" Добавить категорию", "NewCategory", null, new { @class = "btn btn-primary fa fa-plus"  })
+     
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+﻿@model Hermodus.UI.Models.PostViewModel
+@using (Html.BeginForm("Search", "Home", FormMethod.Post, new { role = "form" }))
+    {
+<div class="search-inner search-inner-aut">@Html.Action("InsertImage", "Image", new { id = 21041 })@Html.TextBoxFor(m => m.Search, new { @class = "search-in", @type = "search", @placeholder = "Поиск" })<input type="submit" class="search-put" value="⟵" /></div>
+    }

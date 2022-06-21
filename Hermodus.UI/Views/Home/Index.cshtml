@@ -1,0 +1,109 @@
+﻿@model Hermodus.UI.Models.PostViewModel
+
+@using System.Configuration;
+@{
+    string _DisplayLastCategory = ConfigurationManager.AppSettings["DisplayLastCategory"];
+    string _DisplayLastPost = ConfigurationManager.AppSettings["DisplayLastPost"];
+    string _DisplayGoogleAdv = ConfigurationManager.AppSettings["DisplayGoogleAdv"];
+    ViewBag.Title = $"{@Model.HomeImageText}";
+    ViewBag.Image1 = $"{@Model.HomeImage1}";
+    ViewBag.Image2 = $"{@Model.HomeImage2}";
+    ViewBag.Image3 = $"{@Model.HomeImage3}";
+}
+
+
+        <div class="Bannerimage">
+            <a href="~/Home/Catalog/?sortOrder=NameAsc">
+            <div class="slider single-item">
+                <div>@Html.Action("InsertImage", "Image", new { id = @ViewBag.Image1 })</div>
+                <div>@Html.Action("InsertImage", "Image", new { id = @ViewBag.Image2 })</div>
+                <div>@Html.Action("InsertImage", "Image", new { id = @ViewBag.Image3 })</div>
+            </div>
+            </a>
+        </div>
+        <div class="benefits">
+            <ul>
+                <li>
+                    <img src="~/Images/benefits_03.svg" class="" />
+                    <p>Международная гарантия</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_04.svg" class="" />
+                    <p>Работаем более 10 лет</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_02.svg" class="" />
+                    <p>Рассрочка под 0%</p>
+                </li>
+                <li>
+                    <img src="~/Images/benefits_01.svg" class="" />
+                    <p>Бесплатная доставка</p>
+                </li>
+            </ul>
+        </div>
+        @*<h1 id="HomePage-h-text-box-img">
+            @Model.HomeImageText
+        </h1>*@
+        
+            @Html.Partial("_MainPageWatch", Model.Watches)
+            <section>
+                @Html.Partial("_MainPagePost", Model.Posts)
+            </section>
+            <div class="main-collab">
+                <h1>Бренды</h1>
+                <div class="collab-list">
+                    @Html.Action("InsertImage", "Image", new { id = 20044 })
+                    @Html.Action("InsertImage", "Image", new { id = 20045 })
+                    @Html.Action("InsertImage", "Image", new { id = 20046 })
+                    @Html.Action("InsertImage", "Image", new { id = 20047 })
+                    @Html.Action("InsertImage", "Image", new { id = 20048 })
+                    @Html.Action("InsertImage", "Image", new { id = 20049 })
+                </div>
+            </div>
+            <div class="main-about">
+                <div class="about-inner">
+                    <div class="about-info">
+                        <h1>Швейцарские часы</h1>
+                        <p>Нет ничего более ценного, чем время. Оформите этот ускользающий ресурс в идеальную оболочку — купите оригинальные часы знаменитых европейских брендов. Такой аксессуар поможет вам заявить о себе и подчеркнёт статус.</p>
+                    </div>
+                    <div class="about-double">
+                        @Html.Action("InsertImage", "Image", new { id = 20050 })
+                        <div class="info-text">
+                            <p>По выбору наручных украшений мы многое можем рассказать о вас. Например, утончённые и романтичные натуры выбирают изящные формы и тонкие линии. Серьёзные и представительные мужчины предпочитают классику и строгость форм. Спортивные модели — для самых активных личностей. Переходите в каталог Swisstime.</p>
+                        </div>
+                    </div>
+                    <div class="about-double">
+                        <div class="info-text">
+                            <p>Знакомьтесь с аксессуарами, которые уже заслужили доверие миллионов – Tissot, Longines, Tag Heuer, Hamilton, Victorinox, Swatch, Calvin Klein, Claude Bernard, Flik Flak. Уверены, вы найдете модель, которая придется по душе.</p>
+                        </div>
+                        @Html.Action("InsertImage", "Image", new { id = 20051 })
+                    </div>
+                    <div class="about-bottom">
+                        <p>
+                            Компания Hermodus — официальный импортёр швейцарских часов. Мы осуществляем продажу через розничные магазины и интернет-каталог. Предлагаем только оригиналы швейцарских аксессуаров. Оформляем гарантию от производителя. К вашим услугам работа авторизированного сервисного центра и гарантийное обслуживание.
+                        </p>
+                    </div>
+                </div>
+            </div>
+  
+
+@section Scripts {
+
+    
+    <script src="~/scripts/jquery.dotdotdot.min.js"></script>
+
+
+    <script>
+    //to resize Images as img-reposive after erase inline css add new
+        $(document).ready(function () {
+            $('img').attr('style', 'max-width: 100%; height:auto;');
+            $('.dot3').dotdotdot();
+
+        });</script>
+
+
+}
+
+
+
+

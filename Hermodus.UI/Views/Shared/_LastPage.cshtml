@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Hermodus.Data.Page>
+
+@foreach (var item in Model)
+{
+    <li class="active"><a href="~/Page/Details/@item.PageId">@item.Title</a></li>
+    @*@Html.ActionLink(item.Title, "PostByCategory", "Post",
+        new
+        {
+            category = @item.PageId,
+            page = 1
+        }, null)*@
+
+}

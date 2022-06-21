@@ -1,9 +1,0 @@
-﻿@model MyBlog.Data.Cart
-
-<a href="~/Cart">
-    <div class="lk-item">
-        <h1>Корзина</h1>
-        @Model.Lines.Sum(x => x.Quantity) моделей,
-        @Model.ComputeTotalValue().ToString("# USD")
-    </div>
-</a>

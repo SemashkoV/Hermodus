@@ -1,0 +1,50 @@
+﻿@using X.PagedList.Mvc;
+@using X.PagedList;
+@using System.Configuration;
+@using Hermodus.Data;
+
+@model IPagedList<Hermodus.Data.Post>
+
+<style type="text/css" media="all">
+    div.box {
+        height: 50px;
+        /* 				overflow: hidden; */
+    }
+</style>
+<div class="news-wrapper blog-wrapper">
+    <h1 class="news-title blog-title">Новости</h1>
+    <div class="blog-inner">
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("Details", "Post", new { id = item.PostId })">
+                <div class="row MainPost-news blog-news">
+                    <div class="ImagePostTitle">
+                        <img src="@item.FeaturedImage" class="img-responsive" />
+
+                        @* <div class="Bannertext">@Model.Title</div>*@
+                        <a class="BannerPostTitle truncateOpt" href="@Url.Action("Details", "Post", new { id = item.PostId })">@item.Title</a>
+
+                    </div>
+
+                    <article style="padding:5px 5px 5px 5px">
+                        
+                        @*For Cutting long Post Countent*@
+                        <div class="box dot3">
+                            @Html.Raw(item.Post_Content)
+                        </div>
+
+                        <a class="btn btn-default navbar-btn" href="@Url.Action("Details", "Post", new { id = item.PostId })">Подробнее...</a>
+                        <footer>
+                            @* <i class="fa fa-calendar" aria-hidden="true"></i>*@
+                            <time><small>  @item.Create_time.ToShortDateString() </small></time>
+                        </footer>
+                    </article>
+                </div>
+            </a>
+
+        }
+    </div>
+</div>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+
